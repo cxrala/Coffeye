@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci6wt1upxjlkb"]
+
+[ext_resource type="Texture2D" uid="uid://bbi711pcrbxii" path="res://image.webp" id="1_x0h6b"]
+[ext_resource type="Texture2D" uid="uid://br5v0gut2r41n" path="res://pixil-frame-0.webp" id="2_qqwum"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(577.222, 325)
+scale = Vector2(5.98148, 5.98148)
+texture = ExtResource("1_x0h6b")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 627.0
+offset_top = 473.0
+offset_right = 694.0
+offset_bottom = 504.0
+text = "Exit"
+
+[node name="Pixil-frame-0" type="Sprite2D" parent="."]
+position = Vector2(543, 495)
+texture = ExtResource("2_qqwum")
+
+[node name="Button" type="Button" parent="Pixil-frame-0"]
+offset_left = -52.0
+offset_top = -16.0
+offset_right = 50.0
+offset_bottom = 13.0

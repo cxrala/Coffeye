@@ -7,24 +7,15 @@
 [ext_resource type="Script" path="res://Button4.gd" id="5_qtpxt"]
 [ext_resource type="Texture2D" uid="uid://cxrud0qus42rw" path="res://eye1.tres" id="6_4mxcu"]
 [ext_resource type="Texture2D" uid="uid://bi1a3wqikmna2" path="res://eye2.tres" id="7_q83rs"]
-[ext_resource type="Texture2D" uid="uid://dfihewkutrpt0" path="res://Insanity.png" id="8_2sak0"]
-[ext_resource type="Script" path="res://EyeofDoom.gd" id="9_oln6d"]
+[ext_resource type="Texture2D" uid="uid://cgrjxsolld11y" path="res://eye 3.tres" id="8_f350j"]
+[ext_resource type="Texture2D" uid="uid://dsqq6at63rne5" path="res://eye4.tres" id="9_2qbwj"]
 [ext_resource type="Texture2D" uid="uid://bfcxevbtc6606" path="res://coneup.png" id="10_7wew0"]
+[ext_resource type="Texture2D" uid="uid://cn6ny150pjien" path="res://eye5.tres" id="10_n7krk"]
 [ext_resource type="Script" path="res://Coneup.gd" id="11_0o45p"]
+[ext_resource type="Script" path="res://Eye1.gd" id="11_vyiow"]
 [ext_resource type="Texture2D" uid="uid://h1hqsp335gld" path="res://conedown.png" id="12_s177a"]
 [ext_resource type="Script" path="res://Conedown.gd" id="13_rylyu"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dmmxd"]
-atlas = ExtResource("8_2sak0")
-region = Rect2(600, 0, 250, 208)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sn4mf"]
-atlas = ExtResource("8_2sak0")
-region = Rect2(850, 0, 250, 208)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nmhjh"]
-atlas = ExtResource("8_2sak0")
-region = Rect2(100, 208, 250, 208)
+[ext_resource type="Script" path="res://Timer.gd" id="16_y3vcr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehnir"]
 animations = [{
@@ -36,13 +27,13 @@ animations = [{
 "texture": ExtResource("7_q83rs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dmmxd")
+"texture": ExtResource("8_f350j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sn4mf")
+"texture": ExtResource("9_2qbwj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nmhjh")
+"texture": ExtResource("10_n7krk")
 }],
 "loop": true,
 "name": &"default",
@@ -105,6 +96,7 @@ text = "X"
 script = ExtResource("5_qtpxt")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(356, 291)
@@ -112,10 +104,10 @@ sprite_frames = SubResource("SpriteFrames_ehnir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 
-[node name="EyeofDoom" type="Sprite2D" parent="."]
-position = Vector2(806, 275)
+[node name="Eye1" type="Sprite2D" parent="."]
+position = Vector2(1032, 140)
 texture = ExtResource("6_4mxcu")
-script = ExtResource("9_oln6d")
+script = ExtResource("11_vyiow")
 
 [node name="Coneup" type="Sprite2D" parent="."]
 position = Vector2(289, 608)
@@ -129,9 +121,34 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("12_s177a")
 script = ExtResource("13_rylyu")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+script = ExtResource("16_y3vcr")
+
+[node name="Eye2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1031, 141)
+texture = ExtResource("7_q83rs")
+
+[node name="Eye3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1031, 140)
+texture = ExtResource("8_f350j")
+
+[node name="Eye4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1033, 139)
+texture = ExtResource("9_2qbwj")
+
+[node name="Eye5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1032, 141)
+texture = ExtResource("10_n7krk")
+
 [connection signal="button_down" from="ConeButton" to="Coneup" method="_on_cone_button_button_down"]
 [connection signal="button_down" from="ConeButton" to="Conedown" method="_on_cone_button_button_down"]
 [connection signal="button_up" from="ConeButton" to="Coneup" method="_on_cone_button_button_up"]
 [connection signal="button_up" from="ConeButton" to="Conedown" method="_on_cone_button_button_up"]
 [connection signal="button_down" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_down"]
 [connection signal="button_up" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_up"]
+[connection signal="timeout" from="Timer" to="Eye1" method="_on_timer_timeout"]

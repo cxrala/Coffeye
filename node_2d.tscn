@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bbi711pcrbxii" path="res://image.webp" id="1_x0h6b"]
 [ext_resource type="Texture2D" uid="uid://br5v0gut2r41n" path="res://pixil-frame-0.webp" id="2_qqwum"]
-[ext_resource type="Script" path="res://Pixil-frame-0.gd" id="3_bj07k"]
+[ext_resource type="Script" path="res://Button2.gd" id="2_xf0t5"]
 [ext_resource type="Script" path="res://Button.gd" id="4_216ok"]
 
 [node name="Node2D" type="Node2D"]
@@ -18,11 +18,11 @@ offset_top = 474.0
 offset_right = 694.0
 offset_bottom = 505.0
 text = "Exit"
+script = ExtResource("2_xf0t5")
 
 [node name="Pixil-frame-0" type="Sprite2D" parent="."]
 position = Vector2(550, 491)
 texture = ExtResource("2_qqwum")
-script = ExtResource("3_bj07k")
 
 [node name="Button" type="Button" parent="Pixil-frame-0"]
 offset_left = -52.0

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=6 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://image.png" id="1_13jsy"]
 [ext_resource type="Script" path="res://Button1.gd" id="2_8h4am"]
 [ext_resource type="Texture2D" uid="uid://cpljp4kawcfr4" path="res://icon.svg" id="3_s12f3"]
 [ext_resource type="Script" path="res://Placeholderdrag.gd" id="4_rduy5"]
+[ext_resource type="Script" path="res://Button4.gd" id="5_qtpxt"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-3, 0)
@@ -50,6 +51,14 @@ offset_top = -63.0
 offset_right = 63.0
 offset_bottom = -48.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 1130.0
+offset_top = 2.0
+offset_right = 1156.0
+offset_bottom = 28.0
+text = "X"
+script = ExtResource("5_qtpxt")
 
 [connection signal="button_down" from="Button/Placeholder/Button" to="Button/Placeholder" method="_on_button_button_down"]
 [connection signal="button_up" from="Button/Placeholder/Button" to="Button/Placeholder" method="_on_button_button_up"]

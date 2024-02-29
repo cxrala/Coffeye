@@ -1,11 +1,16 @@
 extends Sprite2D
-
-
-# Called when the node enters the scene tree for the first time.
+var timer = 0
 func _ready():
-	pass # Replace with function body.
+	self.visible=false # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if timer == 1 :
+		self.visible = true
+	if timer == 2 :
+		self.visible =false
+	
+func _on_timer_timeout():
+	print ("hi")
+	timer = timer + 1 # Replace with function body.

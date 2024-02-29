@@ -14,5 +14,5 @@ func _process(delta):
 
 
 func _on_timer_timeout():
-	print ("hi")
+	print ("timer 0")
 	timer = timer + 1 # Replace with function body.

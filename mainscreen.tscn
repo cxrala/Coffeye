@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=22 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://image.png" id="1_13jsy"]
 [ext_resource type="Script" path="res://Button1.gd" id="2_8h4am"]
@@ -17,6 +17,9 @@
 [ext_resource type="Script" path="res://Conedown.gd" id="13_rylyu"]
 [ext_resource type="Script" path="res://Timer.gd" id="16_y3vcr"]
 [ext_resource type="Script" path="res://Eye2.gd" id="17_8peql"]
+[ext_resource type="Script" path="res://Eye3.gd" id="18_y8xcv"]
+[ext_resource type="Script" path="res://Eye4.gd" id="19_f7lim"]
+[ext_resource type="Script" path="res://Eye5.gd" id="20_px06j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehnir"]
 animations = [{
@@ -132,19 +135,20 @@ texture = ExtResource("7_q83rs")
 script = ExtResource("17_8peql")
 
 [node name="Eye3" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(1031, 140)
 texture = ExtResource("8_f350j")
+script = ExtResource("18_y8xcv")
 
 [node name="Eye4" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(1033, 139)
 texture = ExtResource("9_2qbwj")
+script = ExtResource("19_f7lim")
 
 [node name="Eye5" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1032, 141)
 texture = ExtResource("10_n7krk")
+script = ExtResource("20_px06j")
 
 [connection signal="button_down" from="ConeButton" to="Coneup" method="_on_cone_button_button_down"]
 [connection signal="button_down" from="ConeButton" to="Conedown" method="_on_cone_button_button_down"]
@@ -154,3 +158,6 @@ texture = ExtResource("10_n7krk")
 [connection signal="button_up" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_up"]
 [connection signal="timeout" from="Timer" to="Eye1" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Eye2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Eye3" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Eye4" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Eye5" method="_on_timer_timeout"]

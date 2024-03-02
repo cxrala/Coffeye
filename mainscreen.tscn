@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=37 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://image.png" id="1_13jsy"]
 [ext_resource type="Script" path="res://mainscreen.gd" id="1_vyssm"]
@@ -30,6 +30,11 @@
 [ext_resource type="Texture2D" uid="uid://dge5qrld2bwbi" path="res://foxup.png" id="26_mf5ep"]
 [ext_resource type="Script" path="res://Foxup.gd" id="27_sf2jq"]
 [ext_resource type="AudioStream" uid="uid://de3ecj3mtxhdm" path="res://lofi3.mp3" id="29_fsasq"]
+[ext_resource type="AudioStream" uid="uid://kucjw78r18fp" path="res://lofi4.mp3" id="31_nn7ne"]
+[ext_resource type="AudioStream" uid="uid://brlgcyq0015d8" path="res://lofi5.mp3" id="32_6r3pk"]
+[ext_resource type="AudioStream" uid="uid://de7n4cmeeqvt1" path="res://lofi7.mp3" id="33_sg8bv"]
+[ext_resource type="AudioStream" uid="uid://4s5if03loyds" path="res://lofi8.mp3" id="34_yegks"]
+[ext_resource type="Texture2D" uid="uid://bepfa4uoiodr5" path="res://CUDAS_Coffee.png" id="35_y1qje"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehnir"]
 animations = [{
@@ -92,8 +97,8 @@ script = ExtResource("2_8h4am")
 metadata/_edit_use_anchors_ = true
 
 [node name="Placeholder" type="Sprite2D" parent="ConeButton"]
-position = Vector2(150, -339)
-scale = Vector2(2.65625, 2.65625)
+position = Vector2(262.479, -305.975)
+scale = Vector2(7.1026, 3.9147)
 texture = ExtResource("3_s12f3")
 script = ExtResource("4_rduy5")
 
@@ -158,7 +163,6 @@ texture = ExtResource("9_2qbwj")
 script = ExtResource("19_f7lim")
 
 [node name="Eye5" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(1032, 141)
 texture = ExtResource("10_n7krk")
 script = ExtResource("20_px06j")
@@ -187,9 +191,30 @@ scale = Vector2(2.125, 2.125)
 texture = ExtResource("26_mf5ep")
 script = ExtResource("27_sf2jq")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="lo-fi3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("29_fsasq")
 autoplay = true
+
+[node name="lo-fi4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_nn7ne")
+
+[node name="lo-fi5" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("32_6r3pk")
+
+[node name="lof-fi6" type="AudioStreamPlayer2D" parent="."]
+
+[node name="lo-fi7" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("33_sg8bv")
+
+[node name="lo-fi8" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("34_yegks")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CudasCoffee" type="Sprite2D" parent="."]
+position = Vector2(1004, 552)
+scale = Vector2(2.89844, 2.89844)
+texture = ExtResource("35_y1qje")
 
 [connection signal="button_down" from="BirdButton" to="Birddown" method="_on_button_2_button_down"]
 [connection signal="button_down" from="BirdButton" to="Birdup" method="_on_bird_button_button_down"]

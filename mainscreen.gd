@@ -7,10 +7,6 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-
-	
-
-
 func _on_timer_timeout():
 	print ("timer 0")
 	timer = timer + 1 

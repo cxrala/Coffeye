@@ -1,23 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://f72quhfwt2u6"]
+[gd_scene load_steps=5 format=3 uid="uid://f72quhfwt2u6"]
 
 [ext_resource type="Texture2D" uid="uid://ckgi0ovpkktti" path="res://pixilart-drawing_2.png" id="1_c0hx5"]
+[ext_resource type="Script" path="res://RetryButton.gd" id="2_sedkd"]
 [ext_resource type="Texture2D" uid="uid://cw1b5bihxx851" path="res://pixilart-drawing_3.png" id="2_uotom"]
+[ext_resource type="Texture2D" uid="uid://diww0q6krqib3" path="res://pixil-frame-0.png" id="4_j2y4b"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Pixilart-drawing2" type="Sprite2D" parent="."]
-position = Vector2(583, 309)
-scale = Vector2(8.025, 8.025)
+z_index = 1
+position = Vector2(609, 285)
+scale = Vector2(6.5925, 6.5925)
 texture = ExtResource("1_c0hx5")
 
-[node name="Button" type="Button" parent="."]
+[node name="RetryButton" type="Button" parent="."]
+z_index = 1
 offset_left = 423.0
 offset_top = 570.0
 offset_right = 779.0
 offset_bottom = 637.0
 text = "RETRY"
+script = ExtResource("2_sedkd")
 
 [node name="Pixilart-drawing3" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(601.375, 602.5)
 scale = Vector2(3.5625, 3.5625)
 texture = ExtResource("2_uotom")
+
+[node name="Pixil-frame-0" type="Sprite2D" parent="."]
+position = Vector2(582, 343)
+scale = Vector2(11.5, 11.5)
+texture = ExtResource("4_j2y4b")

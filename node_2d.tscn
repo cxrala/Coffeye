@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci6wt1upxjlkb"]
+[gd_scene load_steps=6 format=3 uid="uid://ci6wt1upxjlkb"]
 
 [ext_resource type="Texture2D" uid="uid://bbi711pcrbxii" path="res://image.webp" id="1_x0h6b"]
 [ext_resource type="Texture2D" uid="uid://br5v0gut2r41n" path="res://pixil-frame-0.webp" id="2_qqwum"]
 [ext_resource type="Script" path="res://Button2.gd" id="2_xf0t5"]
 [ext_resource type="Script" path="res://Button.gd" id="4_216ok"]
+[ext_resource type="Texture2D" uid="uid://c53v8u6tfr1qa" path="res://pixilart-drawing_1.png" id="4_nc5pg"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,16 +13,9 @@ position = Vector2(577.222, 325)
 scale = Vector2(5.98148, 5.98148)
 texture = ExtResource("1_x0h6b")
 
-[node name="Button2" type="Button" parent="."]
-offset_left = 627.0
-offset_top = 474.0
-offset_right = 694.0
-offset_bottom = 505.0
-text = "Exit"
-script = ExtResource("2_xf0t5")
-
 [node name="Pixil-frame-0" type="Sprite2D" parent="."]
-position = Vector2(550, 491)
+position = Vector2(603, 488)
+scale = Vector2(1.86, 1.86)
 texture = ExtResource("2_qqwum")
 
 [node name="Button" type="Button" parent="Pixil-frame-0"]
@@ -30,3 +24,15 @@ offset_top = -16.0
 offset_right = 50.0
 offset_bottom = 13.0
 script = ExtResource("4_216ok")
+
+[node name="Pixilart-drawing1" type="Sprite2D" parent="."]
+position = Vector2(602, 559)
+scale = Vector2(1.755, 1.755)
+texture = ExtResource("4_nc5pg")
+
+[node name="Button2" type="Button" parent="Pixilart-drawing1"]
+offset_left = -49.0
+offset_top = -9.0
+offset_right = 50.0
+offset_bottom = 7.0
+script = ExtResource("2_xf0t5")

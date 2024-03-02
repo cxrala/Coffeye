@@ -184,6 +184,8 @@ scale = Vector2(2.125, 2.125)
 texture = ExtResource("26_mf5ep")
 script = ExtResource("27_sf2jq")
 
+[node name="End Game" type="Node2D" parent="."]
+
 [connection signal="button_down" from="BirdButton" to="Birddown" method="_on_button_2_button_down"]
 [connection signal="button_down" from="BirdButton" to="Birdup" method="_on_bird_button_button_down"]
 [connection signal="button_up" from="BirdButton" to="Birddown" method="_on_button_2_button_up"]

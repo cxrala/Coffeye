@@ -190,9 +190,10 @@ offset_bottom = -48.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Selection Button" type="Button" parent="ConeButton/Placeholder"]
-offset_left = -41.8268
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 16.7979
 offset_top = 5.96962
-offset_right = -15.8268
+offset_right = 42.7979
 offset_bottom = 45.9696
 
 [node name="SelectionButtonPressed" type="Sprite2D" parent="ConeButton/Placeholder/Selection Button"]
@@ -203,7 +204,7 @@ script = ExtResource("48_w1s11")
 
 [node name="SelectionButton" type="Sprite2D" parent="ConeButton/Placeholder/Selection Button"]
 z_index = 2
-position = Vector2(64.5039, 16.9371)
+position = Vector2(10.9186, 16.9371)
 scale = Vector2(0.434506, 0.694143)
 texture = ExtResource("38_1255l")
 script = ExtResource("46_ag604")

@@ -78,6 +78,18 @@ offset_bottom = 626.0
 text = "B"
 metadata/_edit_use_anchors_ = true
 
+[node name="Birddown" type="Sprite2D" parent="BirdButton"]
+position = Vector2(18.5, 19.5)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("21_ok2il")
+script = ExtResource("22_11c82")
+
+[node name="Birdup" type="Sprite2D" parent="BirdButton"]
+position = Vector2(18, 20.0001)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("23_ocetr")
+script = ExtResource("24_aes1w")
+
 [node name="FoxButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 480.0
@@ -86,6 +98,18 @@ offset_right = 520.0
 offset_bottom = 627.0
 text = "C"
 metadata/_edit_use_anchors_ = true
+
+[node name="Foxup" type="Sprite2D" parent="FoxButton"]
+position = Vector2(20, 19.125)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("26_mf5ep")
+script = ExtResource("27_sf2jq")
+
+[node name="Foxdown" type="Sprite2D" parent="FoxButton"]
+position = Vector2(20, 17.9999)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("25_1tprk")
+script = ExtResource("26_66p0f")
 
 [node name="ConeButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -98,6 +122,7 @@ script = ExtResource("2_8h4am")
 metadata/_edit_use_anchors_ = true
 
 [node name="Placeholder" type="Sprite2D" parent="ConeButton"]
+z_index = 1
 position = Vector2(262.479, -305.975)
 scale = Vector2(7.1026, 3.9147)
 texture = ExtResource("3_s12f3")
@@ -109,6 +134,18 @@ offset_top = -63.0
 offset_right = 63.0
 offset_bottom = -48.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Coneup" type="Sprite2D" parent="ConeButton"]
+position = Vector2(23.8618, 21.7388)
+scale = Vector2(2.72173, 2.47959)
+texture = ExtResource("10_7wew0")
+script = ExtResource("11_0o45p")
+
+[node name="Conedown" type="Sprite2D" parent="ConeButton"]
+position = Vector2(23.8618, 21.7388)
+scale = Vector2(2.98272, 2.71736)
+texture = ExtResource("12_s177a")
+script = ExtResource("13_rylyu")
 
 [node name="Button4" type="Button" parent="."]
 offset_left = 1130.0
@@ -131,18 +168,6 @@ sprite_frames = SubResource("SpriteFrames_ehnir")
 position = Vector2(1032, 140)
 texture = ExtResource("6_4mxcu")
 script = ExtResource("11_vyiow")
-
-[node name="Coneup" type="Sprite2D" parent="."]
-position = Vector2(289, 608)
-scale = Vector2(2.28125, 2.28125)
-texture = ExtResource("10_7wew0")
-script = ExtResource("11_0o45p")
-
-[node name="Conedown" type="Sprite2D" parent="."]
-position = Vector2(289, 608)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("12_s177a")
-script = ExtResource("13_rylyu")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
@@ -168,30 +193,6 @@ position = Vector2(1032, 141)
 texture = ExtResource("10_n7krk")
 script = ExtResource("20_px06j")
 
-[node name="Birddown" type="Sprite2D" parent="."]
-position = Vector2(396.5, 606.5)
-scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("21_ok2il")
-script = ExtResource("22_11c82")
-
-[node name="Birdup" type="Sprite2D" parent="."]
-position = Vector2(396, 607)
-scale = Vector2(2.125, 2.125)
-texture = ExtResource("23_ocetr")
-script = ExtResource("24_aes1w")
-
-[node name="Foxdown" type="Sprite2D" parent="."]
-position = Vector2(500, 605)
-scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("25_1tprk")
-script = ExtResource("26_66p0f")
-
-[node name="Foxup" type="Sprite2D" parent="."]
-position = Vector2(500, 606.125)
-scale = Vector2(2.125, 2.125)
-texture = ExtResource("26_mf5ep")
-script = ExtResource("27_sf2jq")
-
 [node name="lo-fi3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("29_fsasq")
 autoplay = true
@@ -216,22 +217,24 @@ scale = Vector2(2.89844, 2.89844)
 texture = ExtResource("35_y1qje")
 
 [node name="CoffeeButton" type="Button" parent="CudasCoffee"]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -48.0
 offset_top = -31.0
 offset_right = 47.0
 offset_bottom = 33.0
 script = ExtResource("36_up3wl")
 
-[connection signal="button_down" from="BirdButton" to="Birddown" method="_on_button_2_button_down"]
-[connection signal="button_down" from="BirdButton" to="Birdup" method="_on_bird_button_button_down"]
-[connection signal="button_up" from="BirdButton" to="Birddown" method="_on_button_2_button_up"]
-[connection signal="button_up" from="BirdButton" to="Birdup" method="_on_bird_button_button_up"]
-[connection signal="button_down" from="FoxButton" to="Foxup" method="_on_fox_button_button_down"]
-[connection signal="button_up" from="FoxButton" to="Foxup" method="_on_fox_button_button_up"]
-[connection signal="button_down" from="ConeButton" to="Coneup" method="_on_cone_button_button_down"]
-[connection signal="button_down" from="ConeButton" to="Conedown" method="_on_cone_button_button_down"]
-[connection signal="button_up" from="ConeButton" to="Coneup" method="_on_cone_button_button_up"]
-[connection signal="button_up" from="ConeButton" to="Conedown" method="_on_cone_button_button_up"]
+[connection signal="button_down" from="BirdButton" to="BirdButton/Birddown" method="_on_button_2_button_down"]
+[connection signal="button_down" from="BirdButton" to="BirdButton/Birdup" method="_on_bird_button_button_down"]
+[connection signal="button_up" from="BirdButton" to="BirdButton/Birddown" method="_on_button_2_button_up"]
+[connection signal="button_up" from="BirdButton" to="BirdButton/Birdup" method="_on_bird_button_button_up"]
+[connection signal="button_down" from="FoxButton" to="FoxButton/Foxup" method="_on_fox_button_button_down"]
+[connection signal="button_up" from="FoxButton" to="FoxButton/Foxup" method="_on_fox_button_button_up"]
+[connection signal="button_down" from="ConeButton" to="ConeButton/Coneup" method="_on_cone_button_button_down"]
+[connection signal="button_down" from="ConeButton" to="ConeButton/Conedown" method="_on_cone_button_button_down"]
+[connection signal="button_up" from="ConeButton" to="ConeButton/Coneup" method="_on_cone_button_button_up"]
+[connection signal="button_up" from="ConeButton" to="ConeButton/Conedown" method="_on_cone_button_button_up"]
+[connection signal="pressed" from="ConeButton" to="ConeButton/Placeholder" method="_on_cone_button_pressed"]
 [connection signal="button_down" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_down"]
 [connection signal="button_up" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_up"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

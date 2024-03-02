@@ -17,3 +17,7 @@ func _on_button_button_down():
 
 func _on_button_button_up():
 	dragging = false # Replace with function body.
+
+
+func _on_cone_button_pressed():
+	position = Vector2 (262,-306)  # Replace with function body.

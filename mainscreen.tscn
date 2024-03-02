@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=30 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://image.png" id="1_13jsy"]
 [ext_resource type="Script" path="res://Button1.gd" id="2_8h4am"]
@@ -20,6 +20,14 @@
 [ext_resource type="Script" path="res://Eye3.gd" id="18_y8xcv"]
 [ext_resource type="Script" path="res://Eye4.gd" id="19_f7lim"]
 [ext_resource type="Script" path="res://Eye5.gd" id="20_px06j"]
+[ext_resource type="Texture2D" uid="uid://cpdme3ypuptso" path="res://birddown.png" id="21_ok2il"]
+[ext_resource type="Script" path="res://Birddown.gd" id="22_11c82"]
+[ext_resource type="Texture2D" uid="uid://dv8lrfmg1qpca" path="res://birdup.png" id="23_ocetr"]
+[ext_resource type="Script" path="res://Birdup.gd" id="24_aes1w"]
+[ext_resource type="Texture2D" uid="uid://c35ewicttwbtx" path="res://foxdown.png" id="25_1tprk"]
+[ext_resource type="Script" path="res://Foxdown.gd" id="26_66p0f"]
+[ext_resource type="Texture2D" uid="uid://dge5qrld2bwbi" path="res://foxup.png" id="26_mf5ep"]
+[ext_resource type="Script" path="res://Foxup.gd" id="27_sf2jq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehnir"]
 animations = [{
@@ -52,7 +60,8 @@ position = Vector2(578.667, 322.5)
 scale = Vector2(0.602778, 0.602778)
 texture = ExtResource("1_13jsy")
 
-[node name="Button2" type="Button" parent="."]
+[node name="BirdButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 378.0
 offset_top = 587.0
 offset_right = 417.0
@@ -60,11 +69,12 @@ offset_bottom = 626.0
 text = "B"
 metadata/_edit_use_anchors_ = true
 
-[node name="Button3" type="Button" parent="."]
-offset_left = 479.0
-offset_top = 591.0
-offset_right = 519.0
-offset_bottom = 631.0
+[node name="FoxButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 480.0
+offset_top = 587.0
+offset_right = 520.0
+offset_bottom = 627.0
 text = "C"
 metadata/_edit_use_anchors_ = true
 
@@ -150,6 +160,36 @@ position = Vector2(1032, 141)
 texture = ExtResource("10_n7krk")
 script = ExtResource("20_px06j")
 
+[node name="Birddown" type="Sprite2D" parent="."]
+position = Vector2(396.5, 606.5)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("21_ok2il")
+script = ExtResource("22_11c82")
+
+[node name="Birdup" type="Sprite2D" parent="."]
+position = Vector2(396, 607)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("23_ocetr")
+script = ExtResource("24_aes1w")
+
+[node name="Foxdown" type="Sprite2D" parent="."]
+position = Vector2(500, 605)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("25_1tprk")
+script = ExtResource("26_66p0f")
+
+[node name="Foxup" type="Sprite2D" parent="."]
+position = Vector2(500, 606.125)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("26_mf5ep")
+script = ExtResource("27_sf2jq")
+
+[connection signal="button_down" from="BirdButton" to="Birddown" method="_on_button_2_button_down"]
+[connection signal="button_down" from="BirdButton" to="Birdup" method="_on_bird_button_button_down"]
+[connection signal="button_up" from="BirdButton" to="Birddown" method="_on_button_2_button_up"]
+[connection signal="button_up" from="BirdButton" to="Birdup" method="_on_bird_button_button_up"]
+[connection signal="button_down" from="FoxButton" to="Foxup" method="_on_fox_button_button_down"]
+[connection signal="button_up" from="FoxButton" to="Foxup" method="_on_fox_button_button_up"]
 [connection signal="button_down" from="ConeButton" to="Coneup" method="_on_cone_button_button_down"]
 [connection signal="button_down" from="ConeButton" to="Conedown" method="_on_cone_button_button_down"]
 [connection signal="button_up" from="ConeButton" to="Coneup" method="_on_cone_button_button_up"]

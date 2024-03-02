@@ -1,6 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=32 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://image.png" id="1_13jsy"]
+[ext_resource type="Script" path="res://mainscreen.gd" id="1_vyssm"]
 [ext_resource type="Script" path="res://Button1.gd" id="2_8h4am"]
 [ext_resource type="Texture2D" uid="uid://cpljp4kawcfr4" path="res://icon.svg" id="3_s12f3"]
 [ext_resource type="Script" path="res://Placeholderdrag.gd" id="4_rduy5"]
@@ -55,6 +56,7 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-3, 0)
+script = ExtResource("1_vyssm")
 
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(578.667, 322.5)
@@ -185,8 +187,6 @@ scale = Vector2(2.125, 2.125)
 texture = ExtResource("26_mf5ep")
 script = ExtResource("27_sf2jq")
 
-[node name="End Game" type="Node2D" parent="."]
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("29_fsasq")
 autoplay = true
@@ -203,6 +203,7 @@ autoplay = true
 [connection signal="button_up" from="ConeButton" to="Conedown" method="_on_cone_button_button_up"]
 [connection signal="button_down" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_down"]
 [connection signal="button_up" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Eye1" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Eye2" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Eye3" method="_on_timer_timeout"]

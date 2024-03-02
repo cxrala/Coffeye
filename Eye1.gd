@@ -1,18 +1,21 @@
 extends Sprite2D
 var timer = 0
+func _on_coffee_button_pressed():
+	timer = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	self.visible= true # Replace with function body.
+	self.visible= true 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if timer == 0 :
+		self.visible = true
 	if timer == 1 :
 		self.visible = false
 	
-
-
 func _on_timer_timeout():
 	print ("timer 0")
 	timer = timer + 1 # Replace with function body.
+
+
+ # Replace with function body.

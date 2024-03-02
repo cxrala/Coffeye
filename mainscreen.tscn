@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=38 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://image.png" id="1_13jsy"]
 [ext_resource type="Script" path="res://mainscreen.gd" id="1_vyssm"]
@@ -35,6 +35,7 @@
 [ext_resource type="AudioStream" uid="uid://de7n4cmeeqvt1" path="res://lofi7.mp3" id="33_sg8bv"]
 [ext_resource type="AudioStream" uid="uid://4s5if03loyds" path="res://lofi8.mp3" id="34_yegks"]
 [ext_resource type="Texture2D" uid="uid://bepfa4uoiodr5" path="res://CUDAS_Coffee.png" id="35_y1qje"]
+[ext_resource type="Script" path="res://CoffeeButton.gd" id="36_up3wl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehnir"]
 animations = [{
@@ -209,12 +210,17 @@ stream = ExtResource("33_sg8bv")
 [node name="lo-fi8" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("34_yegks")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-
 [node name="CudasCoffee" type="Sprite2D" parent="."]
-position = Vector2(1004, 552)
+position = Vector2(1018, 552)
 scale = Vector2(2.89844, 2.89844)
 texture = ExtResource("35_y1qje")
+
+[node name="CoffeeButton" type="Button" parent="CudasCoffee"]
+offset_left = -48.0
+offset_top = -31.0
+offset_right = 47.0
+offset_bottom = 33.0
+script = ExtResource("36_up3wl")
 
 [connection signal="button_down" from="BirdButton" to="Birddown" method="_on_button_2_button_down"]
 [connection signal="button_down" from="BirdButton" to="Birdup" method="_on_bird_button_button_down"]
@@ -234,3 +240,8 @@ texture = ExtResource("35_y1qje")
 [connection signal="timeout" from="Timer" to="Eye3" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Eye4" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Eye5" method="_on_timer_timeout"]
+[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="Eye1" method="_on_coffee_button_pressed"]
+[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="Eye2" method="_on_coffee_button_pressed"]
+[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="Eye3" method="_on_coffee_button_pressed"]
+[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="Eye4" method="_on_coffee_button_pressed"]
+[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="Eye5" method="_on_coffee_button_pressed"]

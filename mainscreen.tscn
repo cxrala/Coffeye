@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=50 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://image.png" id="1_13jsy"]
 [ext_resource type="Script" path="res://mainscreen.gd" id="1_vyssm"]
@@ -36,6 +36,18 @@
 [ext_resource type="AudioStream" uid="uid://4s5if03loyds" path="res://lofi8.mp3" id="34_yegks"]
 [ext_resource type="Texture2D" uid="uid://bepfa4uoiodr5" path="res://CUDAS_Coffee.png" id="35_y1qje"]
 [ext_resource type="Script" path="res://CoffeeButton.gd" id="36_up3wl"]
+[ext_resource type="Texture2D" uid="uid://d3ckus7luettm" path="res://Iteration Button.png" id="37_lrb67"]
+[ext_resource type="Texture2D" uid="uid://c6xvffjegsfcd" path="res://Selection Button.png" id="38_1255l"]
+[ext_resource type="Texture2D" uid="uid://cy2qd1jok1l1r" path="res://Selection Button Pressed.png" id="39_dkwyx"]
+[ext_resource type="Texture2D" uid="uid://ddgyrrdqpmb7j" path="res://Iteration Button Pressed.png" id="40_g26tu"]
+[ext_resource type="Texture2D" uid="uid://fbvcoqmrwrse" path="res://Haskell Button.png" id="41_jk7i3"]
+[ext_resource type="Script" path="res://IterationButton.gd" id="42_60k4n"]
+[ext_resource type="Script" path="res://HaskellButton.gd" id="42_win75"]
+[ext_resource type="Texture2D" uid="uid://m68u3axv7hcr" path="res://Haskell Button Pressed.png" id="43_0hhvs"]
+[ext_resource type="Script" path="res://IterationButtonPressed.gd" id="44_erpoh"]
+[ext_resource type="Script" path="res://HaskellButtonPressed.gd" id="44_po0rc"]
+[ext_resource type="Script" path="res://SelectionButton.gd" id="46_ag604"]
+[ext_resource type="Script" path="res://SelectionButtonPressed.gd" id="48_w1s11"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehnir"]
 animations = [{
@@ -128,12 +140,73 @@ scale = Vector2(7.1026, 3.9147)
 texture = ExtResource("3_s12f3")
 script = ExtResource("4_rduy5")
 
+[node name="Haskell Button" type="Button" parent="ConeButton/Placeholder"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -14.6142
+offset_top = -47.3406
+offset_right = 13.3858
+offset_bottom = -2.34057
+
+[node name="HaskellButton" type="Sprite2D" parent="ConeButton/Placeholder/Haskell Button"]
+z_index = 2
+position = Vector2(13.5276, 23.0781)
+scale = Vector2(0.428519, 0.714784)
+texture = ExtResource("41_jk7i3")
+script = ExtResource("42_win75")
+
+[node name="HaskellButtonPressed" type="Sprite2D" parent="ConeButton/Placeholder/Haskell Button"]
+z_index = 2
+position = Vector2(14.0315, 20.3015)
+scale = Vector2(0.428673, 0.798265)
+texture = ExtResource("43_0hhvs")
+script = ExtResource("44_po0rc")
+
+[node name="Iteration Button" type="Button" parent="ConeButton/Placeholder"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -43.6745
+offset_top = 0.138821
+offset_right = -16.6745
+offset_bottom = 45.1388
+
+[node name="IterationButton" type="Sprite2D" parent="ConeButton/Placeholder/Iteration Button"]
+z_index = 2
+position = Vector2(13.2205, 22.1123)
+scale = Vector2(0.410474, 0.686161)
+texture = ExtResource("37_lrb67")
+script = ExtResource("42_60k4n")
+
+[node name="IterationButtonPressed" type="Sprite2D" parent="ConeButton/Placeholder/Iteration Button"]
+z_index = 2
+position = Vector2(12.8845, 18.9414)
+scale = Vector2(0.414698, 0.759219)
+texture = ExtResource("40_g26tu")
+script = ExtResource("44_erpoh")
+
 [node name="Button" type="Button" parent="ConeButton/Placeholder"]
 offset_left = -62.0
 offset_top = -63.0
 offset_right = 63.0
 offset_bottom = -48.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Selection Button" type="Button" parent="ConeButton/Placeholder"]
+offset_left = -41.8268
+offset_top = 5.96962
+offset_right = -15.8268
+offset_bottom = 45.9696
+
+[node name="SelectionButtonPressed" type="Sprite2D" parent="ConeButton/Placeholder/Selection Button"]
+position = Vector2(11.2309, 15.5488)
+scale = Vector2(0.445454, 0.772235)
+texture = ExtResource("39_dkwyx")
+script = ExtResource("48_w1s11")
+
+[node name="SelectionButton" type="Sprite2D" parent="ConeButton/Placeholder/Selection Button"]
+z_index = 2
+position = Vector2(64.5039, 16.9371)
+scale = Vector2(0.434506, 0.694143)
+texture = ExtResource("38_1255l")
+script = ExtResource("46_ag604")
 
 [node name="Coneup" type="Sprite2D" parent="ConeButton"]
 position = Vector2(23.8618, 21.7388)
@@ -235,8 +308,20 @@ script = ExtResource("36_up3wl")
 [connection signal="button_up" from="ConeButton" to="ConeButton/Coneup" method="_on_cone_button_button_up"]
 [connection signal="button_up" from="ConeButton" to="ConeButton/Conedown" method="_on_cone_button_button_up"]
 [connection signal="pressed" from="ConeButton" to="ConeButton/Placeholder" method="_on_cone_button_pressed"]
+[connection signal="button_down" from="ConeButton/Placeholder/Haskell Button" to="ConeButton/Placeholder/Haskell Button/HaskellButton" method="_on_haskell_button_button_down"]
+[connection signal="button_down" from="ConeButton/Placeholder/Haskell Button" to="ConeButton/Placeholder/Haskell Button/HaskellButtonPressed" method="_on_haskell_button_button_down"]
+[connection signal="button_up" from="ConeButton/Placeholder/Haskell Button" to="ConeButton/Placeholder/Haskell Button/HaskellButton" method="_on_haskell_button_button_up"]
+[connection signal="button_up" from="ConeButton/Placeholder/Haskell Button" to="ConeButton/Placeholder/Haskell Button/HaskellButtonPressed" method="_on_haskell_button_button_up"]
+[connection signal="button_down" from="ConeButton/Placeholder/Iteration Button" to="ConeButton/Placeholder/Iteration Button/IterationButton" method="_on_iteration_button_button_down"]
+[connection signal="button_down" from="ConeButton/Placeholder/Iteration Button" to="ConeButton/Placeholder/Iteration Button/IterationButtonPressed" method="_on_iteration_button_button_down"]
+[connection signal="button_up" from="ConeButton/Placeholder/Iteration Button" to="ConeButton/Placeholder/Iteration Button/IterationButton" method="_on_iteration_button_button_up"]
+[connection signal="button_up" from="ConeButton/Placeholder/Iteration Button" to="ConeButton/Placeholder/Iteration Button/IterationButtonPressed" method="_on_iteration_button_button_up"]
 [connection signal="button_down" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_down"]
 [connection signal="button_up" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_up"]
+[connection signal="button_down" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButton" method="_on_selection_button_button_down"]
+[connection signal="button_down" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButtonPressed" method="_on_selection_button_button_down"]
+[connection signal="button_up" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButton" method="_on_selection_button_button_up"]
+[connection signal="button_up" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButtonPressed" method="_on_selection_button_button_up"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Eye1" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Eye2" method="_on_timer_timeout"]

@@ -192,9 +192,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Selection Button" type="Button" parent="ConeButton/Placeholder"]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 16.7979
-offset_top = 5.96962
+offset_top = 5.41431
 offset_right = 42.7979
-offset_bottom = 45.9696
+offset_bottom = 45.4143
 
 [node name="SelectionButtonPressed" type="Sprite2D" parent="ConeButton/Placeholder/Selection Button"]
 position = Vector2(11.2309, 15.5488)

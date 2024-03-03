@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=51 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://image.png" id="1_13jsy"]
 [ext_resource type="Script" path="res://mainscreen.gd" id="1_vyssm"]
@@ -36,6 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://4s5if03loyds" path="res://lofi8.mp3" id="34_yegks"]
 [ext_resource type="Texture2D" uid="uid://bepfa4uoiodr5" path="res://CUDAS_Coffee.png" id="35_y1qje"]
 [ext_resource type="Script" path="res://CoffeeButton.gd" id="36_up3wl"]
+[ext_resource type="Script" path="res://Node2D.gd" id="36_v54uy"]
 [ext_resource type="Texture2D" uid="uid://d3ckus7luettm" path="res://Iteration Button.png" id="37_lrb67"]
 [ext_resource type="Texture2D" uid="uid://c6xvffjegsfcd" path="res://Selection Button.png" id="38_1255l"]
 [ext_resource type="Texture2D" uid="uid://cy2qd1jok1l1r" path="res://Selection Button Pressed.png" id="39_dkwyx"]
@@ -238,34 +239,37 @@ sprite_frames = SubResource("SpriteFrames_ehnir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 
-[node name="Eye1" type="Sprite2D" parent="."]
+[node name="EyeNode" type="Node2D" parent="."]
 position = Vector2(1032, 140)
+script = ExtResource("36_v54uy")
+
+[node name="Eye1" type="Sprite2D" parent="EyeNode"]
 texture = ExtResource("6_4mxcu")
 script = ExtResource("11_vyiow")
+
+[node name="Eye2" type="Sprite2D" parent="EyeNode"]
+position = Vector2(-1, 1)
+texture = ExtResource("7_q83rs")
+script = ExtResource("17_8peql")
+
+[node name="Eye3" type="Sprite2D" parent="EyeNode"]
+position = Vector2(-1, 0)
+texture = ExtResource("8_f350j")
+script = ExtResource("18_y8xcv")
+
+[node name="Eye4" type="Sprite2D" parent="EyeNode"]
+position = Vector2(1, -1)
+texture = ExtResource("9_2qbwj")
+script = ExtResource("19_f7lim")
+
+[node name="Eye5" type="Sprite2D" parent="EyeNode"]
+position = Vector2(0, 1)
+texture = ExtResource("10_n7krk")
+script = ExtResource("20_px06j")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 script = ExtResource("16_y3vcr")
-
-[node name="Eye2" type="Sprite2D" parent="."]
-position = Vector2(1031, 141)
-texture = ExtResource("7_q83rs")
-script = ExtResource("17_8peql")
-
-[node name="Eye3" type="Sprite2D" parent="."]
-position = Vector2(1031, 140)
-texture = ExtResource("8_f350j")
-script = ExtResource("18_y8xcv")
-
-[node name="Eye4" type="Sprite2D" parent="."]
-position = Vector2(1033, 139)
-texture = ExtResource("9_2qbwj")
-script = ExtResource("19_f7lim")
-
-[node name="Eye5" type="Sprite2D" parent="."]
-position = Vector2(1032, 141)
-texture = ExtResource("10_n7krk")
-script = ExtResource("20_px06j")
 
 [node name="lo-fi3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("29_fsasq")
@@ -319,18 +323,14 @@ script = ExtResource("36_up3wl")
 [connection signal="button_up" from="ConeButton/Placeholder/Iteration Button" to="ConeButton/Placeholder/Iteration Button/IterationButtonPressed" method="_on_iteration_button_button_up"]
 [connection signal="button_down" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_down"]
 [connection signal="button_up" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_up"]
-[connection signal="button_down" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButton" method="_on_selection_button_button_down"]
 [connection signal="button_down" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButtonPressed" method="_on_selection_button_button_down"]
-[connection signal="button_up" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButton" method="_on_selection_button_button_up"]
+[connection signal="button_down" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButton" method="_on_selection_button_button_down"]
 [connection signal="button_up" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButtonPressed" method="_on_selection_button_button_up"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="Eye1" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="Eye2" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="Eye3" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="Eye4" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="Eye5" method="_on_timer_timeout"]
-[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="Eye1" method="_on_coffee_button_pressed"]
-[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="Eye2" method="_on_coffee_button_pressed"]
-[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="Eye3" method="_on_coffee_button_pressed"]
-[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="Eye4" method="_on_coffee_button_pressed"]
-[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="Eye5" method="_on_coffee_button_pressed"]
+[connection signal="button_up" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButton" method="_on_selection_button_button_up"]
+[connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]
+[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="EyeNode/Eye1" method="_on_coffee_button_pressed"]
+[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="EyeNode/Eye2" method="_on_coffee_button_pressed"]
+[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="EyeNode/Eye3" method="_on_coffee_button_pressed"]
+[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="EyeNode/Eye4" method="_on_coffee_button_pressed"]
+[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="EyeNode/Eye5" method="_on_coffee_button_pressed"]
+[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="EyeNode" method="_on_coffee_button_pressed"]

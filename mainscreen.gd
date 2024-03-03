@@ -7,11 +7,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _on_timer_timeout():
-	print ("timer 0")
-	timer = timer + 1 
-	if timer == 5 :
-		get_tree().change_scene_to_file("res://GameOver.tscn") # Replace with function body.
+	
+	 # Replace with function body.
 
 
 func _on_selection_button_button_down():

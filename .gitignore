@@ -7,3 +7,4 @@
 Coffeye.csproj
 Coffeye.sln
 *.dll
+*.tmp

@@ -1,0 +1,411 @@
+[gd_scene load_steps=57 format=3 uid="uid://bd0r1njn22wdj"]
+
+[ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://assets/sprites/backgrounds/image.png" id="1_13jsy"]
+[ext_resource type="Script" path="res://assets/scripts/scenes/mainscreen.gd" id="1_vyssm"]
+[ext_resource type="Texture2D" uid="uid://dt65bbepybr8l" path="res://assets/sprites/buttons/taskbar_icons/birddown.tres" id="3_cog37"]
+[ext_resource type="Texture2D" uid="uid://cpljp4kawcfr4" path="res://icon.svg" id="3_s12f3"]
+[ext_resource type="Script" path="res://assets/scripts/buttons/GenericButton.gd" id="4_1yvtw"]
+[ext_resource type="Script" path="res://assets/scripts/windows/Placeholderdrag.gd" id="4_rduy5"]
+[ext_resource type="Texture2D" uid="uid://c7psy1j1kfrlj" path="res://assets/sprites/buttons/taskbar_icons/birdup.tres" id="5_fnhsn"]
+[ext_resource type="Script" path="res://assets/scripts/buttons/Button4.gd" id="5_qtpxt"]
+[ext_resource type="Texture2D" uid="uid://cxrud0qus42rw" path="res://assets/sprites/indicators/eye1.tres" id="6_4mxcu"]
+[ext_resource type="Texture2D" uid="uid://bwqq8yv4wtfo6" path="res://assets/sprites/buttons/taskbar_icons/foxup.tres" id="7_8yolj"]
+[ext_resource type="Texture2D" uid="uid://bi1a3wqikmna2" path="res://assets/sprites/indicators/eye2.tres" id="7_q83rs"]
+[ext_resource type="Texture2D" uid="uid://cgrjxsolld11y" path="res://assets/sprites/indicators/eye 3.tres" id="8_f350j"]
+[ext_resource type="Texture2D" uid="uid://dsqq6at63rne5" path="res://assets/sprites/indicators/eye4.tres" id="9_2qbwj"]
+[ext_resource type="Texture2D" uid="uid://cx537sbw7euh3" path="res://assets/sprites/buttons/taskbar_icons/foxdown.tres" id="9_is2xg"]
+[ext_resource type="Texture2D" uid="uid://cn6ny150pjien" path="res://assets/sprites/indicators/eye5.tres" id="10_n7krk"]
+[ext_resource type="Texture2D" uid="uid://b51ufnl1t3gi2" path="res://assets/sprites/minigames/vscone/Lambda.tres" id="11_njiyn"]
+[ext_resource type="Texture2D" uid="uid://d1eav2k28wept" path="res://assets/sprites/minigames/vscone/LambdaPressed.tres" id="13_8at2l"]
+[ext_resource type="Texture2D" uid="uid://cchrlc81a4wtt" path="res://assets/sprites/minigames/vscone/Iteration.tres" id="15_gdigs"]
+[ext_resource type="Script" path="res://Timer.gd" id="16_y3vcr"]
+[ext_resource type="Texture2D" uid="uid://bbq3lp0c847vp" path="res://assets/sprites/minigames/vscone/IterationPressed.tres" id="17_hi5iy"]
+[ext_resource type="Texture2D" uid="uid://bvnismg6pny30" path="res://assets/sprites/minigames/vscone/SelectionPressed.tres" id="19_rjcvb"]
+[ext_resource type="Texture2D" uid="uid://bs08umbgtpbkn" path="res://assets/sprites/minigames/vscone/Selection.tres" id="21_jogwe"]
+[ext_resource type="Texture2D" uid="uid://q3at084pson6" path="res://assets/sprites/buttons/taskbar_icons/coneup.tres" id="26_t8lr2"]
+[ext_resource type="Texture2D" uid="uid://d3fi3lbrrwvp3" path="res://assets/sprites/buttons/taskbar_icons/conedown.tres" id="28_r3pwj"]
+[ext_resource type="AudioStream" uid="uid://de3ecj3mtxhdm" path="res://assets/audio/music/lofi3.mp3" id="29_fsasq"]
+[ext_resource type="AudioStream" uid="uid://kucjw78r18fp" path="res://assets/audio/music/lofi4.mp3" id="31_nn7ne"]
+[ext_resource type="AudioStream" uid="uid://brlgcyq0015d8" path="res://assets/audio/music/lofi5.mp3" id="32_6r3pk"]
+[ext_resource type="AudioStream" uid="uid://de7n4cmeeqvt1" path="res://assets/audio/music/lofi7.mp3" id="33_sg8bv"]
+[ext_resource type="AudioStream" uid="uid://4s5if03loyds" path="res://assets/audio/music/lofi8.mp3" id="34_yegks"]
+[ext_resource type="Texture2D" uid="uid://bepfa4uoiodr5" path="res://assets/sprites/buttons/CUDAS_Coffee.png" id="35_y1qje"]
+[ext_resource type="Script" path="res://assets/scripts/buttons/CoffeeButton.gd" id="36_up3wl"]
+[ext_resource type="Script" path="res://assets/scripts/scenes/Node2D.gd" id="36_v54uy"]
+[ext_resource type="Texture2D" uid="uid://cmsb6l5if3dny" path="res://assets/sprites/indicators/eye/eye7.tres" id="37_3scmm"]
+[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/IterationButton.gd" id="42_60k4n"]
+[ext_resource type="Texture2D" uid="uid://dwoh7og8ynlb3" path="res://assets/sprites/indicators/eye/eye0.tres" id="42_g286k"]
+[ext_resource type="Texture2D" uid="uid://sfmuinjd07kn" path="res://assets/sprites/indicators/eye/eye2.tres" id="42_rgfkj"]
+[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/HaskellButton.gd" id="42_win75"]
+[ext_resource type="Texture2D" uid="uid://dq3radg507nqh" path="res://assets/sprites/indicators/eye/eye1.tres" id="43_6q3k4"]
+[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/IterationButtonPressed.gd" id="44_erpoh"]
+[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/HaskellButtonPressed.gd" id="44_po0rc"]
+[ext_resource type="Texture2D" uid="uid://4ioo50fap3eo" path="res://assets/sprites/indicators/eye/eye3.tres" id="45_wtpk0"]
+[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/SelectionButton.gd" id="46_ag604"]
+[ext_resource type="Texture2D" uid="uid://saoc8vermrmt" path="res://assets/sprites/indicators/eye/eye4.tres" id="46_icmtf"]
+[ext_resource type="Texture2D" uid="uid://b0wl0csvha5v4" path="res://assets/sprites/indicators/eye/eye5.tres" id="48_kkwep"]
+[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/SelectionButtonPressed.gd" id="48_w1s11"]
+[ext_resource type="Texture2D" uid="uid://0xfe7vv42mvc" path="res://assets/sprites/indicators/eye/eye6.tres" id="49_ynso2"]
+[ext_resource type="Texture2D" uid="uid://b37ibr41sbdhr" path="res://assets/sprites/indicators/eye/eye8.tres" id="50_pf52i"]
+[ext_resource type="Texture2D" uid="uid://0ppis28ur7i7" path="res://assets/sprites/indicators/eye/eye9.tres" id="51_pqxfo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ehnir"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4mxcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q83rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f350j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2qbwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n7krk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_3ibpc"]
+resource_name = "eye1"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eye:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 2.1, 2.2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("42_rgfkj"), ExtResource("43_6q3k4"), ExtResource("42_g286k"), ExtResource("43_6q3k4"), ExtResource("42_rgfkj")]
+}
+
+[sub_resource type="Animation" id="Animation_supcr"]
+resource_name = "eye2"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eye:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 2.1, 2.2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("45_wtpk0"), ExtResource("43_6q3k4"), ExtResource("42_g286k"), ExtResource("43_6q3k4"), ExtResource("45_wtpk0")]
+}
+
+[sub_resource type="Animation" id="Animation_eca53"]
+resource_name = "eye3"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eye:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 2.1, 2.2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("46_icmtf"), ExtResource("43_6q3k4"), ExtResource("42_g286k"), ExtResource("43_6q3k4"), ExtResource("46_icmtf")]
+}
+
+[sub_resource type="Animation" id="Animation_no8qi"]
+resource_name = "eye4"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eye:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("48_kkwep")]
+}
+
+[sub_resource type="Animation" id="Animation_dkxmf"]
+resource_name = "eye5"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eye:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("49_ynso2"), ExtResource("37_3scmm")]
+}
+
+[sub_resource type="Animation" id="Animation_ctq02"]
+resource_name = "eye6"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eye:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("50_pf52i"), ExtResource("51_pqxfo")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g7umh"]
+_data = {
+"eye1": SubResource("Animation_3ibpc"),
+"eye2": SubResource("Animation_supcr"),
+"eye3": SubResource("Animation_eca53"),
+"eye4": SubResource("Animation_no8qi"),
+"eye5": SubResource("Animation_dkxmf"),
+"eye6": SubResource("Animation_ctq02")
+}
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-3, 0)
+script = ExtResource("1_vyssm")
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(578.667, 322.5)
+scale = Vector2(0.602778, 0.602778)
+texture = ExtResource("1_13jsy")
+
+[node name="BirdButton" type="Button" parent="." node_paths=PackedStringArray("sprite")]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 378.0
+offset_top = 587.0
+offset_right = 418.0
+offset_bottom = 627.0
+text = "B"
+icon = ExtResource("3_cog37")
+icon_alignment = 1
+script = ExtResource("4_1yvtw")
+sprite = NodePath("BirdSprite")
+upTexture = ExtResource("5_fnhsn")
+downTexture = ExtResource("3_cog37")
+metadata/_edit_use_anchors_ = true
+
+[node name="BirdSprite" type="Sprite2D" parent="BirdButton"]
+position = Vector2(18.5, 19.5)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("5_fnhsn")
+
+[node name="FoxButton" type="Button" parent="." node_paths=PackedStringArray("sprite")]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 480.0
+offset_top = 587.0
+offset_right = 520.0
+offset_bottom = 627.0
+icon = ExtResource("3_cog37")
+icon_alignment = 1
+script = ExtResource("4_1yvtw")
+sprite = NodePath("FoxSprite")
+upTexture = ExtResource("7_8yolj")
+downTexture = ExtResource("9_is2xg")
+metadata/_edit_use_anchors_ = true
+
+[node name="FoxSprite" type="Sprite2D" parent="FoxButton"]
+position = Vector2(18.5, 19.5)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("7_8yolj")
+
+[node name="ConeButton" type="Button" parent="." node_paths=PackedStringArray("sprite")]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 269.0
+offset_top = 588.0
+offset_right = 317.0
+offset_bottom = 632.0
+scale = Vector2(0.838161, 0.92001)
+script = ExtResource("4_1yvtw")
+sprite = NodePath("ConeSprite")
+upTexture = ExtResource("26_t8lr2")
+downTexture = ExtResource("28_r3pwj")
+metadata/_edit_use_anchors_ = true
+
+[node name="ConeSprite" type="Sprite2D" parent="ConeButton"]
+position = Vector2(23.8618, 21.7388)
+scale = Vector2(2.72173, 2.47959)
+texture = ExtResource("26_t8lr2")
+
+[node name="Placeholder" type="Sprite2D" parent="ConeButton"]
+z_index = 1
+position = Vector2(262.479, -305.975)
+scale = Vector2(7.1026, 3.9147)
+texture = ExtResource("3_s12f3")
+script = ExtResource("4_rduy5")
+
+[node name="Haskell Button" type="Button" parent="ConeButton/Placeholder"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -14.6142
+offset_top = -47.3406
+offset_right = 13.3858
+offset_bottom = -2.34057
+
+[node name="HaskellButton" type="Sprite2D" parent="ConeButton/Placeholder/Haskell Button"]
+z_index = 2
+position = Vector2(13.5276, 23.0781)
+scale = Vector2(0.428519, 0.714784)
+texture = ExtResource("11_njiyn")
+script = ExtResource("42_win75")
+
+[node name="HaskellButtonPressed" type="Sprite2D" parent="ConeButton/Placeholder/Haskell Button"]
+z_index = 2
+position = Vector2(14.0315, 20.3015)
+scale = Vector2(0.428673, 0.798265)
+texture = ExtResource("13_8at2l")
+script = ExtResource("44_po0rc")
+
+[node name="Iteration Button" type="Button" parent="ConeButton/Placeholder"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -43.6745
+offset_top = 0.138821
+offset_right = -16.6745
+offset_bottom = 45.1388
+
+[node name="IterationButton" type="Sprite2D" parent="ConeButton/Placeholder/Iteration Button"]
+z_index = 2
+position = Vector2(13.2205, 22.1123)
+scale = Vector2(0.410474, 0.686161)
+texture = ExtResource("15_gdigs")
+script = ExtResource("42_60k4n")
+
+[node name="IterationButtonPressed" type="Sprite2D" parent="ConeButton/Placeholder/Iteration Button"]
+z_index = 2
+position = Vector2(12.8845, 18.9414)
+scale = Vector2(0.414698, 0.759219)
+texture = ExtResource("17_hi5iy")
+script = ExtResource("44_erpoh")
+
+[node name="Button" type="Button" parent="ConeButton/Placeholder"]
+offset_left = -62.0
+offset_top = -63.0
+offset_right = 63.0
+offset_bottom = -48.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Selection Button" type="Button" parent="ConeButton/Placeholder"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 16.7979
+offset_top = 5.41431
+offset_right = 42.7979
+offset_bottom = 45.4143
+
+[node name="SelectionButtonPressed" type="Sprite2D" parent="ConeButton/Placeholder/Selection Button"]
+position = Vector2(11.2309, 15.5488)
+scale = Vector2(0.445454, 0.772235)
+texture = ExtResource("19_rjcvb")
+script = ExtResource("48_w1s11")
+
+[node name="SelectionButton" type="Sprite2D" parent="ConeButton/Placeholder/Selection Button"]
+z_index = 2
+position = Vector2(10.9186, 16.9371)
+scale = Vector2(0.434506, 0.694143)
+texture = ExtResource("21_jogwe")
+script = ExtResource("46_ag604")
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 1130.0
+offset_top = 2.0
+offset_right = 1156.0
+offset_bottom = 28.0
+text = "X"
+script = ExtResource("5_qtpxt")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(356, 291)
+sprite_frames = SubResource("SpriteFrames_ehnir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+
+[node name="EyeNode" type="Node2D" parent="."]
+position = Vector2(1032, 140)
+script = ExtResource("36_v54uy")
+
+[node name="Eye" type="Sprite2D" parent="EyeNode"]
+position = Vector2(-200, 158)
+scale = Vector2(8.4, 8.4)
+texture = ExtResource("42_rgfkj")
+
+[node name="EyeAnimator" type="AnimationPlayer" parent="EyeNode"]
+libraries = {
+"": SubResource("AnimationLibrary_g7umh")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+script = ExtResource("16_y3vcr")
+
+[node name="lo-fi3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_fsasq")
+autoplay = true
+
+[node name="lo-fi4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_nn7ne")
+
+[node name="lo-fi5" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("32_6r3pk")
+
+[node name="lof-fi6" type="AudioStreamPlayer2D" parent="."]
+
+[node name="lo-fi7" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("33_sg8bv")
+
+[node name="lo-fi8" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("34_yegks")
+
+[node name="CudasCoffee" type="Sprite2D" parent="."]
+position = Vector2(1018, 552)
+scale = Vector2(2.89844, 2.89844)
+texture = ExtResource("35_y1qje")
+
+[node name="CoffeeButton" type="Button" parent="CudasCoffee"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -48.0
+offset_top = -31.0
+offset_right = 47.0
+offset_bottom = 33.0
+script = ExtResource("36_up3wl")
+
+[connection signal="pressed" from="ConeButton" to="ConeButton/Placeholder" method="_on_cone_button_pressed"]
+[connection signal="button_down" from="ConeButton/Placeholder/Haskell Button" to="ConeButton/Placeholder/Haskell Button/HaskellButton" method="_on_haskell_button_button_down"]
+[connection signal="button_down" from="ConeButton/Placeholder/Haskell Button" to="ConeButton/Placeholder/Haskell Button/HaskellButtonPressed" method="_on_haskell_button_button_down"]
+[connection signal="button_up" from="ConeButton/Placeholder/Haskell Button" to="ConeButton/Placeholder/Haskell Button/HaskellButton" method="_on_haskell_button_button_up"]
+[connection signal="button_up" from="ConeButton/Placeholder/Haskell Button" to="ConeButton/Placeholder/Haskell Button/HaskellButtonPressed" method="_on_haskell_button_button_up"]
+[connection signal="button_down" from="ConeButton/Placeholder/Iteration Button" to="ConeButton/Placeholder/Iteration Button/IterationButton" method="_on_iteration_button_button_down"]
+[connection signal="button_down" from="ConeButton/Placeholder/Iteration Button" to="ConeButton/Placeholder/Iteration Button/IterationButtonPressed" method="_on_iteration_button_button_down"]
+[connection signal="button_up" from="ConeButton/Placeholder/Iteration Button" to="ConeButton/Placeholder/Iteration Button/IterationButton" method="_on_iteration_button_button_up"]
+[connection signal="button_up" from="ConeButton/Placeholder/Iteration Button" to="ConeButton/Placeholder/Iteration Button/IterationButtonPressed" method="_on_iteration_button_button_up"]
+[connection signal="button_down" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_down"]
+[connection signal="button_up" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_up"]
+[connection signal="button_down" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButtonPressed" method="_on_selection_button_button_down"]
+[connection signal="button_down" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButton" method="_on_selection_button_button_down"]
+[connection signal="button_up" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButtonPressed" method="_on_selection_button_button_up"]
+[connection signal="button_up" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButton" method="_on_selection_button_button_up"]
+[connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]
+[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="EyeNode" method="_on_coffee_button_pressed"]

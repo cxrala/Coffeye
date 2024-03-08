@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://nbm17hcplvsl"]
+
+[ext_resource type="Texture2D" uid="uid://dbbe23p2ekeuv" path="res://assets/sprites/indicators/thought/FlowerIndicator.png" id="1_npjgs"]
+
+[resource]
+atlas = ExtResource("1_npjgs")
+region = Rect2(0, 0, 32, 32)

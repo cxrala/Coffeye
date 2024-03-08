@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://j1fg6wt0kly3"]
+
+[ext_resource type="Texture2D" uid="uid://d8o8jukj6nsg" path="res://assets/sprites/minigames/vscone/VSConeButtonsPushed.png" id="1_hft8j"]
+
+[resource]
+atlas = ExtResource("1_hft8j")
+region = Rect2(192, 0, 64, 64)

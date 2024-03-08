@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=53 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://assets/sprites/backgrounds/image.png" id="1_13jsy"]
 [ext_resource type="Script" path="res://assets/scripts/scenes/mainscreen.gd" id="1_vyssm"]
@@ -16,7 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://cx537sbw7euh3" path="res://assets/sprites/buttons/taskbar_icons/foxdown.tres" id="9_is2xg"]
 [ext_resource type="Texture2D" uid="uid://cn6ny150pjien" path="res://assets/sprites/indicators/eye5.tres" id="10_n7krk"]
 [ext_resource type="Texture2D" uid="uid://b51ufnl1t3gi2" path="res://assets/sprites/minigames/vscone/Lambda.tres" id="11_njiyn"]
+[ext_resource type="Texture2D" uid="uid://rguwnx1a6im3" path="res://assets/sprites/minigames/vscone/Assignment.tres" id="12_kwwyi"]
 [ext_resource type="Texture2D" uid="uid://d1eav2k28wept" path="res://assets/sprites/minigames/vscone/LambdaPressed.tres" id="13_8at2l"]
+[ext_resource type="Texture2D" uid="uid://j1fg6wt0kly3" path="res://assets/sprites/minigames/vscone/AssignmentPressed.tres" id="14_njy5u"]
 [ext_resource type="Texture2D" uid="uid://cchrlc81a4wtt" path="res://assets/sprites/minigames/vscone/Iteration.tres" id="15_gdigs"]
 [ext_resource type="Script" path="res://Timer.gd" id="16_y3vcr"]
 [ext_resource type="Texture2D" uid="uid://bbq3lp0c847vp" path="res://assets/sprites/minigames/vscone/IterationPressed.tres" id="17_hi5iy"]
@@ -33,18 +35,12 @@
 [ext_resource type="Script" path="res://assets/scripts/buttons/CoffeeButton.gd" id="36_up3wl"]
 [ext_resource type="Script" path="res://assets/scripts/scenes/Node2D.gd" id="36_v54uy"]
 [ext_resource type="Texture2D" uid="uid://cmsb6l5if3dny" path="res://assets/sprites/indicators/eye/eye7.tres" id="37_3scmm"]
-[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/IterationButton.gd" id="42_60k4n"]
 [ext_resource type="Texture2D" uid="uid://dwoh7og8ynlb3" path="res://assets/sprites/indicators/eye/eye0.tres" id="42_g286k"]
 [ext_resource type="Texture2D" uid="uid://sfmuinjd07kn" path="res://assets/sprites/indicators/eye/eye2.tres" id="42_rgfkj"]
-[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/HaskellButton.gd" id="42_win75"]
 [ext_resource type="Texture2D" uid="uid://dq3radg507nqh" path="res://assets/sprites/indicators/eye/eye1.tres" id="43_6q3k4"]
-[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/IterationButtonPressed.gd" id="44_erpoh"]
-[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/HaskellButtonPressed.gd" id="44_po0rc"]
 [ext_resource type="Texture2D" uid="uid://4ioo50fap3eo" path="res://assets/sprites/indicators/eye/eye3.tres" id="45_wtpk0"]
-[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/SelectionButton.gd" id="46_ag604"]
 [ext_resource type="Texture2D" uid="uid://saoc8vermrmt" path="res://assets/sprites/indicators/eye/eye4.tres" id="46_icmtf"]
 [ext_resource type="Texture2D" uid="uid://b0wl0csvha5v4" path="res://assets/sprites/indicators/eye/eye5.tres" id="48_kkwep"]
-[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/SelectionButtonPressed.gd" id="48_w1s11"]
 [ext_resource type="Texture2D" uid="uid://0xfe7vv42mvc" path="res://assets/sprites/indicators/eye/eye6.tres" id="49_ynso2"]
 [ext_resource type="Texture2D" uid="uid://b37ibr41sbdhr" path="res://assets/sprites/indicators/eye/eye8.tres" id="50_pf52i"]
 [ext_resource type="Texture2D" uid="uid://0ppis28ur7i7" path="res://assets/sprites/indicators/eye/eye9.tres" id="51_pqxfo"]
@@ -257,47 +253,25 @@ scale = Vector2(7.1026, 3.9147)
 texture = ExtResource("3_s12f3")
 script = ExtResource("4_rduy5")
 
-[node name="Haskell Button" type="Button" parent="ConeButton/Placeholder"]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -14.6142
-offset_top = -47.3406
-offset_right = 13.3858
-offset_bottom = -2.34057
+[node name="Iteration Button" type="TextureButton" parent="ConeButton/Placeholder"]
+offset_left = -50.2257
+offset_top = -10.6898
+offset_right = -22.2257
+offset_bottom = 33.3102
+texture_normal = ExtResource("15_gdigs")
+texture_pressed = ExtResource("17_hi5iy")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="HaskellButton" type="Sprite2D" parent="ConeButton/Placeholder/Haskell Button"]
-z_index = 2
-position = Vector2(13.5276, 23.0781)
-scale = Vector2(0.428519, 0.714784)
-texture = ExtResource("11_njiyn")
-script = ExtResource("42_win75")
-
-[node name="HaskellButtonPressed" type="Sprite2D" parent="ConeButton/Placeholder/Haskell Button"]
-z_index = 2
-position = Vector2(14.0315, 20.3015)
-scale = Vector2(0.428673, 0.798265)
-texture = ExtResource("13_8at2l")
-script = ExtResource("44_po0rc")
-
-[node name="Iteration Button" type="Button" parent="ConeButton/Placeholder"]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -43.6745
-offset_top = 0.138821
-offset_right = -16.6745
-offset_bottom = 45.1388
-
-[node name="IterationButton" type="Sprite2D" parent="ConeButton/Placeholder/Iteration Button"]
-z_index = 2
-position = Vector2(13.2205, 22.1123)
-scale = Vector2(0.410474, 0.686161)
-texture = ExtResource("15_gdigs")
-script = ExtResource("42_60k4n")
-
-[node name="IterationButtonPressed" type="Sprite2D" parent="ConeButton/Placeholder/Iteration Button"]
-z_index = 2
-position = Vector2(12.8845, 18.9414)
-scale = Vector2(0.414698, 0.759219)
-texture = ExtResource("17_hi5iy")
-script = ExtResource("44_erpoh")
+[node name="Selection Button" type="TextureButton" parent="ConeButton/Placeholder"]
+offset_left = 23.5171
+offset_top = -11.8004
+offset_right = 51.5171
+offset_bottom = 32.1996
+texture_normal = ExtResource("21_jogwe")
+texture_pressed = ExtResource("19_rjcvb")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Button" type="Button" parent="ConeButton/Placeholder"]
 offset_left = -62.0
@@ -306,25 +280,25 @@ offset_right = 63.0
 offset_bottom = -48.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Selection Button" type="Button" parent="ConeButton/Placeholder"]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = 16.7979
-offset_top = 5.41431
-offset_right = 42.7979
-offset_bottom = 45.4143
+[node name="Assignment Button" type="TextureButton" parent="ConeButton/Placeholder"]
+offset_left = -15.454
+offset_top = 14.0217
+offset_right = 12.546
+offset_bottom = 58.0217
+texture_normal = ExtResource("12_kwwyi")
+texture_pressed = ExtResource("14_njy5u")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="SelectionButtonPressed" type="Sprite2D" parent="ConeButton/Placeholder/Selection Button"]
-position = Vector2(11.2309, 15.5488)
-scale = Vector2(0.445454, 0.772235)
-texture = ExtResource("19_rjcvb")
-script = ExtResource("48_w1s11")
-
-[node name="SelectionButton" type="Sprite2D" parent="ConeButton/Placeholder/Selection Button"]
-z_index = 2
-position = Vector2(10.9186, 16.9371)
-scale = Vector2(0.434506, 0.694143)
-texture = ExtResource("21_jogwe")
-script = ExtResource("46_ag604")
+[node name="Haskell Button" type="TextureButton" parent="ConeButton/Placeholder"]
+offset_left = -15.454
+offset_top = -45.3969
+offset_right = 12.546
+offset_bottom = -1.39694
+texture_normal = ExtResource("11_njiyn")
+texture_pressed = ExtResource("13_8at2l")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Button4" type="Button" parent="."]
 offset_left = 1130.0
@@ -393,19 +367,7 @@ offset_bottom = 33.0
 script = ExtResource("36_up3wl")
 
 [connection signal="pressed" from="ConeButton" to="ConeButton/Placeholder" method="_on_cone_button_pressed"]
-[connection signal="button_down" from="ConeButton/Placeholder/Haskell Button" to="ConeButton/Placeholder/Haskell Button/HaskellButton" method="_on_haskell_button_button_down"]
-[connection signal="button_down" from="ConeButton/Placeholder/Haskell Button" to="ConeButton/Placeholder/Haskell Button/HaskellButtonPressed" method="_on_haskell_button_button_down"]
-[connection signal="button_up" from="ConeButton/Placeholder/Haskell Button" to="ConeButton/Placeholder/Haskell Button/HaskellButton" method="_on_haskell_button_button_up"]
-[connection signal="button_up" from="ConeButton/Placeholder/Haskell Button" to="ConeButton/Placeholder/Haskell Button/HaskellButtonPressed" method="_on_haskell_button_button_up"]
-[connection signal="button_down" from="ConeButton/Placeholder/Iteration Button" to="ConeButton/Placeholder/Iteration Button/IterationButton" method="_on_iteration_button_button_down"]
-[connection signal="button_down" from="ConeButton/Placeholder/Iteration Button" to="ConeButton/Placeholder/Iteration Button/IterationButtonPressed" method="_on_iteration_button_button_down"]
-[connection signal="button_up" from="ConeButton/Placeholder/Iteration Button" to="ConeButton/Placeholder/Iteration Button/IterationButton" method="_on_iteration_button_button_up"]
-[connection signal="button_up" from="ConeButton/Placeholder/Iteration Button" to="ConeButton/Placeholder/Iteration Button/IterationButtonPressed" method="_on_iteration_button_button_up"]
 [connection signal="button_down" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_down"]
 [connection signal="button_up" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_up"]
-[connection signal="button_down" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButtonPressed" method="_on_selection_button_button_down"]
-[connection signal="button_down" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButton" method="_on_selection_button_button_down"]
-[connection signal="button_up" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButtonPressed" method="_on_selection_button_button_up"]
-[connection signal="button_up" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButton" method="_on_selection_button_button_up"]
 [connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]
 [connection signal="pressed" from="CudasCoffee/CoffeeButton" to="EyeNode" method="_on_coffee_button_pressed"]

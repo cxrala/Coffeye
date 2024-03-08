@@ -3,28 +3,28 @@
 [ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://assets/sprites/backgrounds/image.png" id="1_13jsy"]
 [ext_resource type="Script" path="res://assets/scripts/scenes/mainscreen.gd" id="1_vyssm"]
 [ext_resource type="Script" path="res://assets/scripts/buttons/Button1.gd" id="2_8h4am"]
+[ext_resource type="Texture2D" uid="uid://dt65bbepybr8l" path="res://assets/sprites/buttons/taskbar_icons/birddown.tres" id="3_cog37"]
 [ext_resource type="Texture2D" uid="uid://cpljp4kawcfr4" path="res://icon.svg" id="3_s12f3"]
 [ext_resource type="Script" path="res://assets/scripts/windows/Placeholderdrag.gd" id="4_rduy5"]
+[ext_resource type="Texture2D" uid="uid://c7psy1j1kfrlj" path="res://assets/sprites/buttons/taskbar_icons/birdup.tres" id="5_fnhsn"]
 [ext_resource type="Script" path="res://assets/scripts/buttons/Button4.gd" id="5_qtpxt"]
 [ext_resource type="Texture2D" uid="uid://cxrud0qus42rw" path="res://assets/sprites/indicators/eye1.tres" id="6_4mxcu"]
+[ext_resource type="Texture2D" uid="uid://bwqq8yv4wtfo6" path="res://assets/sprites/buttons/taskbar_icons/foxup.tres" id="7_8yolj"]
 [ext_resource type="Texture2D" uid="uid://bi1a3wqikmna2" path="res://assets/sprites/indicators/eye2.tres" id="7_q83rs"]
 [ext_resource type="Texture2D" uid="uid://cgrjxsolld11y" path="res://assets/sprites/indicators/eye 3.tres" id="8_f350j"]
 [ext_resource type="Texture2D" uid="uid://dsqq6at63rne5" path="res://assets/sprites/indicators/eye4.tres" id="9_2qbwj"]
-[ext_resource type="Texture2D" uid="uid://bfcxevbtc6606" path="res://assets/sprites/buttons/taskbar_icons/coneup.png" id="10_7wew0"]
+[ext_resource type="Texture2D" uid="uid://cx537sbw7euh3" path="res://assets/sprites/buttons/taskbar_icons/foxdown.tres" id="9_is2xg"]
 [ext_resource type="Texture2D" uid="uid://cn6ny150pjien" path="res://assets/sprites/indicators/eye5.tres" id="10_n7krk"]
 [ext_resource type="Script" path="res://assets/scripts/buttons/Coneup.gd" id="11_0o45p"]
 [ext_resource type="Script" path="res://assets/scripts/indicators/Eye1.gd" id="11_vyiow"]
-[ext_resource type="Texture2D" uid="uid://h1hqsp335gld" path="res://assets/sprites/buttons/taskbar_icons/conedown.png" id="12_s177a"]
 [ext_resource type="Script" path="res://assets/scripts/buttons/Conedown.gd" id="13_rylyu"]
 [ext_resource type="Script" path="res://Timer.gd" id="16_y3vcr"]
-[ext_resource type="Texture2D" uid="uid://cpdme3ypuptso" path="res://assets/sprites/buttons/taskbar_icons/birddown.png" id="21_ok2il"]
 [ext_resource type="Script" path="res://assets/scripts/buttons/Birddown.gd" id="22_11c82"]
-[ext_resource type="Texture2D" uid="uid://dv8lrfmg1qpca" path="res://assets/sprites/buttons/taskbar_icons/birdup.png" id="23_ocetr"]
 [ext_resource type="Script" path="res://assets/scripts/buttons/Birdup.gd" id="24_aes1w"]
-[ext_resource type="Texture2D" uid="uid://c35ewicttwbtx" path="res://assets/sprites/buttons/taskbar_icons/foxdown.png" id="25_1tprk"]
 [ext_resource type="Script" path="res://assets/scripts/buttons/Foxdown.gd" id="26_66p0f"]
-[ext_resource type="Texture2D" uid="uid://dge5qrld2bwbi" path="res://assets/sprites/buttons/taskbar_icons/foxup.png" id="26_mf5ep"]
+[ext_resource type="Texture2D" uid="uid://q3at084pson6" path="res://assets/sprites/buttons/taskbar_icons/coneup.tres" id="26_t8lr2"]
 [ext_resource type="Script" path="res://assets/scripts/buttons/Foxup.gd" id="27_sf2jq"]
+[ext_resource type="Texture2D" uid="uid://d3fi3lbrrwvp3" path="res://assets/sprites/buttons/taskbar_icons/conedown.tres" id="28_r3pwj"]
 [ext_resource type="AudioStream" uid="uid://de3ecj3mtxhdm" path="res://assets/audio/music/lofi3.mp3" id="29_fsasq"]
 [ext_resource type="AudioStream" uid="uid://kucjw78r18fp" path="res://assets/audio/music/lofi4.mp3" id="31_nn7ne"]
 [ext_resource type="AudioStream" uid="uid://brlgcyq0015d8" path="res://assets/audio/music/lofi5.mp3" id="32_6r3pk"]
@@ -213,13 +213,13 @@ metadata/_edit_use_anchors_ = true
 [node name="Birddown" type="Sprite2D" parent="BirdButton"]
 position = Vector2(18.5, 19.5)
 scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("21_ok2il")
+texture = ExtResource("3_cog37")
 script = ExtResource("22_11c82")
 
 [node name="Birdup" type="Sprite2D" parent="BirdButton"]
 position = Vector2(18, 20.0001)
 scale = Vector2(2.125, 2.125)
-texture = ExtResource("23_ocetr")
+texture = ExtResource("5_fnhsn")
 script = ExtResource("24_aes1w")
 
 [node name="FoxButton" type="Button" parent="."]
@@ -234,13 +234,13 @@ metadata/_edit_use_anchors_ = true
 [node name="Foxup" type="Sprite2D" parent="FoxButton"]
 position = Vector2(20, 19.125)
 scale = Vector2(2.125, 2.125)
-texture = ExtResource("26_mf5ep")
+texture = ExtResource("7_8yolj")
 script = ExtResource("27_sf2jq")
 
 [node name="Foxdown" type="Sprite2D" parent="FoxButton"]
 position = Vector2(20, 17.9999)
 scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("25_1tprk")
+texture = ExtResource("9_is2xg")
 script = ExtResource("26_66p0f")
 
 [node name="ConeButton" type="Button" parent="."]
@@ -332,13 +332,13 @@ script = ExtResource("46_ag604")
 [node name="Coneup" type="Sprite2D" parent="ConeButton"]
 position = Vector2(23.8618, 21.7388)
 scale = Vector2(2.72173, 2.47959)
-texture = ExtResource("10_7wew0")
+texture = ExtResource("26_t8lr2")
 script = ExtResource("11_0o45p")
 
 [node name="Conedown" type="Sprite2D" parent="ConeButton"]
 position = Vector2(23.8618, 21.7388)
 scale = Vector2(2.98272, 2.71736)
-texture = ExtResource("12_s177a")
+texture = ExtResource("28_r3pwj")
 script = ExtResource("13_rylyu")
 
 [node name="Button4" type="Button" parent="."]
@@ -375,6 +375,10 @@ libraries = {
 script = ExtResource("45_2dpfb")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+script = ExtResource("16_y3vcr")
+
+[node name="Timer2" type="Timer" parent="."]
 wait_time = 10.0
 script = ExtResource("16_y3vcr")
 
@@ -435,4 +439,5 @@ script = ExtResource("36_up3wl")
 [connection signal="button_up" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButtonPressed" method="_on_selection_button_button_up"]
 [connection signal="button_up" from="ConeButton/Placeholder/Selection Button" to="ConeButton/Placeholder/Selection Button/SelectionButton" method="_on_selection_button_button_up"]
 [connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="EyeNode" method="_on_timer_timeout"]
 [connection signal="pressed" from="CudasCoffee/CoffeeButton" to="EyeNode" method="_on_coffee_button_pressed"]

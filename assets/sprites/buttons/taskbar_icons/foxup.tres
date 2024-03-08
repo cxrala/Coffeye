@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bwqq8yv4wtfo6"]
+
+[ext_resource type="Texture2D" uid="uid://csekupeue2qlp" path="res://assets/sprites/buttons/taskbar_icons/Icons.png" id="1_cqlrm"]
+
+[resource]
+atlas = ExtResource("1_cqlrm")
+region = Rect2(16, 0, 16, 19)

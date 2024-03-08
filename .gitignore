@@ -1,2 +1,8 @@
 # Godot 4+ specific ignores
 .godot/
+.mono/
+.vscode/
+
+addons/godot-git-plugin/win64/~libgit_plugin.windows.editor.x86_64.dll~RF505f9f.TMP
+Coffeye.csproj
+Coffeye.sln

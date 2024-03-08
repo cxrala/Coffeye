@@ -254,6 +254,7 @@ texture = ExtResource("3_s12f3")
 script = ExtResource("4_rduy5")
 
 [node name="Iteration Button" type="TextureButton" parent="ConeButton/Placeholder"]
+visible = false
 offset_left = -50.2257
 offset_top = -10.6898
 offset_right = -22.2257
@@ -299,6 +300,8 @@ texture_normal = ExtResource("11_njiyn")
 texture_pressed = ExtResource("13_8at2l")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Game Controller" type="Node2D" parent="ConeButton/Placeholder"]
 
 [node name="Button4" type="Button" parent="."]
 offset_left = 1130.0

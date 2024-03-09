@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=52 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://assets/sprites/backgrounds/image.png" id="1_13jsy"]
 [ext_resource type="Script" path="res://assets/scripts/scenes/mainscreen.gd" id="1_vyssm"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://d1eav2k28wept" path="res://assets/sprites/minigames/vscone/LambdaPressed.tres" id="13_8at2l"]
 [ext_resource type="Texture2D" uid="uid://j1fg6wt0kly3" path="res://assets/sprites/minigames/vscone/AssignmentPressed.tres" id="14_njy5u"]
 [ext_resource type="Texture2D" uid="uid://cchrlc81a4wtt" path="res://assets/sprites/minigames/vscone/Iteration.tres" id="15_gdigs"]
+[ext_resource type="Script" path="res://assets/scenes/Game Controller.gd" id="15_t1l60"]
 [ext_resource type="Script" path="res://Timer.gd" id="16_y3vcr"]
 [ext_resource type="Texture2D" uid="uid://bbq3lp0c847vp" path="res://assets/sprites/minigames/vscone/IterationPressed.tres" id="17_hi5iy"]
 [ext_resource type="Texture2D" uid="uid://bvnismg6pny30" path="res://assets/sprites/minigames/vscone/SelectionPressed.tres" id="19_rjcvb"]
@@ -211,7 +212,6 @@ texture = ExtResource("3_s12f3")
 script = ExtResource("4_rduy5")
 
 [node name="Iteration Button" type="TextureButton" parent="Taskbar/ConeButton/Placeholder"]
-visible = false
 offset_left = -50.2257
 offset_top = -10.6898
 offset_right = -22.2257
@@ -262,6 +262,7 @@ stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Game Controller" type="Node2D" parent="Taskbar/ConeButton/Placeholder"]
+script = ExtResource("15_t1l60")
 
 [node name="BirdButton" type="TextureButton" parent="Taskbar"]
 layout_mode = 0
@@ -274,7 +275,6 @@ texture_pressed = ExtResource("3_cog37")
 stretch_mode = 5
 
 [node name="Placeholder" type="Sprite2D" parent="Taskbar/BirdButton"]
-z_index = 1
 position = Vector2(262.479, -305.975)
 scale = Vector2(7.1026, 3.9147)
 texture = ExtResource("3_s12f3")
@@ -293,7 +293,6 @@ texture_pressed = ExtResource("9_is2xg")
 stretch_mode = 5
 
 [node name="Placeholder" type="Sprite2D" parent="Taskbar/FoxButton"]
-z_index = 1
 position = Vector2(262.479, -305.975)
 scale = Vector2(7.1026, 3.9147)
 texture = ExtResource("3_s12f3")
@@ -302,10 +301,10 @@ script = ExtResource("4_rduy5")
 [node name="Game Controller" type="Node2D" parent="Taskbar/FoxButton/Placeholder"]
 
 [node name="Button4" type="Button" parent="."]
-offset_left = 1130.0
+offset_left = 1874.0
 offset_top = 2.0
-offset_right = 1156.0
-offset_bottom = 28.0
+offset_right = 1921.0
+offset_bottom = 58.0
 text = "X"
 script = ExtResource("5_qtpxt")
 

@@ -194,6 +194,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="ConeButton" type="TextureButton" parent="Taskbar"]
+layout_mode = 0
 offset_left = 100.0
 offset_top = 10.0
 offset_right = 180.0
@@ -263,6 +264,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Game Controller" type="Node2D" parent="Taskbar/ConeButton/Placeholder"]
 
 [node name="BirdButton" type="TextureButton" parent="Taskbar"]
+layout_mode = 0
 offset_left = 190.0
 offset_top = 10.0
 offset_right = 270.0
@@ -281,6 +283,7 @@ script = ExtResource("4_rduy5")
 [node name="Game Controller" type="Node2D" parent="Taskbar/BirdButton/Placeholder"]
 
 [node name="FoxButton" type="TextureButton" parent="Taskbar"]
+layout_mode = 0
 offset_left = 280.0
 offset_top = 10.0
 offset_right = 360.0

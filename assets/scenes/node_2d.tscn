@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://assets/scripts/buttons/Button2.gd" id="5_fbhny"]
 
 [node name="Node2D" type="Node2D"]
+scale = Vector2(1.667, 1.667)
 
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(577.222, 325)

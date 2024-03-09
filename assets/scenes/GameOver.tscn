@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://diww0q6krqib3" path="res://pixil-frame-0.png" id="4_j2y4b"]
 
 [node name="Node2D" type="Node2D"]
+scale = Vector2(1.667, 1.667)
 
 [node name="Pixilart-drawing2" type="Sprite2D" parent="."]
 z_index = 1

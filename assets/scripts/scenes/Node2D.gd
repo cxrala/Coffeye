@@ -2,6 +2,7 @@ extends Node2D
 var timer = 0
 func _on_coffee_button_pressed():
 	timer = 0
+	update_anim()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +16,9 @@ func _process(delta):
 func _on_timer_timeout():
 	print (timer)
 	timer = timer + 1 # Replace with function body.
+	update_anim()
+
+func update_anim():
 	if timer == 0 :
 		$EyeAnimator.play("eye1")
 	else: if timer == 1 :
@@ -27,4 +31,3 @@ func _on_timer_timeout():
 		$EyeAnimator.play("eye5")
 	else: if timer == 5 :
 		$EyeAnimator.play("eye6")
-

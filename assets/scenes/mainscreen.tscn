@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=51 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://assets/sprites/backgrounds/image.png" id="1_13jsy"]
 [ext_resource type="Script" path="res://assets/scripts/scenes/mainscreen.gd" id="1_vyssm"]
@@ -31,7 +31,6 @@
 [ext_resource type="AudioStream" uid="uid://de7n4cmeeqvt1" path="res://assets/audio/music/lofi7.mp3" id="33_sg8bv"]
 [ext_resource type="AudioStream" uid="uid://4s5if03loyds" path="res://assets/audio/music/lofi8.mp3" id="34_yegks"]
 [ext_resource type="Texture2D" uid="uid://bepfa4uoiodr5" path="res://assets/sprites/buttons/CUDAS_Coffee.png" id="35_y1qje"]
-[ext_resource type="Script" path="res://assets/scripts/buttons/CoffeeButton.gd" id="36_up3wl"]
 [ext_resource type="Script" path="res://assets/scripts/scenes/Node2D.gd" id="36_v54uy"]
 [ext_resource type="Texture2D" uid="uid://cmsb6l5if3dny" path="res://assets/sprites/indicators/eye/eye7.tres" id="37_3scmm"]
 [ext_resource type="Texture2D" uid="uid://dwoh7og8ynlb3" path="res://assets/sprites/indicators/eye/eye0.tres" id="42_g286k"]
@@ -180,6 +179,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_vyssm")
 
 [node name="Image" type="Sprite2D" parent="."]
@@ -319,12 +319,11 @@ sprite_frames = SubResource("SpriteFrames_ehnir")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 
 [node name="EyeNode" type="Node2D" parent="."]
-position = Vector2(1032, 140)
+position = Vector2(1820, 140)
+scale = Vector2(5, 5)
 script = ExtResource("36_v54uy")
 
 [node name="Eye" type="Sprite2D" parent="EyeNode"]
-position = Vector2(-200, 158)
-scale = Vector2(8.4, 8.4)
 texture = ExtResource("42_rgfkj")
 
 [node name="EyeAnimator" type="AnimationPlayer" parent="EyeNode"]
@@ -354,18 +353,15 @@ stream = ExtResource("33_sg8bv")
 [node name="lo-fi8" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("34_yegks")
 
-[node name="CudasCoffee" type="Sprite2D" parent="."]
-position = Vector2(1018, 552)
-scale = Vector2(2.89844, 2.89844)
-texture = ExtResource("35_y1qje")
-
-[node name="CoffeeButton" type="Button" parent="CudasCoffee"]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -48.0
-offset_top = -31.0
-offset_right = 47.0
-offset_bottom = 33.0
-script = ExtResource("36_up3wl")
+[node name="Coffee" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 1440.0
+offset_top = 760.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("35_y1qje")
+texture_pressed = ExtResource("35_y1qje")
+stretch_mode = 4
 
 [connection signal="pressed" from="Taskbar/ConeButton" to="Taskbar/ConeButton/Placeholder" method="_on_cone_button_pressed"]
 [connection signal="button_down" from="Taskbar/ConeButton/Placeholder/Button" to="Taskbar/ConeButton/Placeholder" method="_on_button_button_down"]
@@ -373,4 +369,4 @@ script = ExtResource("36_up3wl")
 [connection signal="pressed" from="Taskbar/BirdButton" to="Taskbar/BirdButton/Placeholder" method="_on_cone_button_pressed"]
 [connection signal="pressed" from="Taskbar/FoxButton" to="Taskbar/FoxButton/Placeholder" method="_on_cone_button_pressed"]
 [connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]
-[connection signal="pressed" from="CudasCoffee/CoffeeButton" to="EyeNode" method="_on_coffee_button_pressed"]
+[connection signal="pressed" from="Coffee" to="EyeNode" method="_on_coffee_button_pressed"]

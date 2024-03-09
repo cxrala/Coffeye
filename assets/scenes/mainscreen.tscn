@@ -1,10 +1,9 @@
-[gd_scene load_steps=53 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=52 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Texture2D" uid="uid://jje882nvrgbd" path="res://assets/sprites/backgrounds/image.png" id="1_13jsy"]
 [ext_resource type="Script" path="res://assets/scripts/scenes/mainscreen.gd" id="1_vyssm"]
 [ext_resource type="Texture2D" uid="uid://dt65bbepybr8l" path="res://assets/sprites/buttons/taskbar_icons/birddown.tres" id="3_cog37"]
 [ext_resource type="Texture2D" uid="uid://cpljp4kawcfr4" path="res://icon.svg" id="3_s12f3"]
-[ext_resource type="Script" path="res://assets/scripts/buttons/GenericButton.gd" id="4_1yvtw"]
 [ext_resource type="Script" path="res://assets/scripts/windows/Placeholderdrag.gd" id="4_rduy5"]
 [ext_resource type="Texture2D" uid="uid://c7psy1j1kfrlj" path="res://assets/sprites/buttons/taskbar_icons/birdup.tres" id="5_fnhsn"]
 [ext_resource type="Script" path="res://assets/scripts/buttons/Button4.gd" id="5_qtpxt"]
@@ -189,62 +188,14 @@ position = Vector2(578.667, 322.5)
 scale = Vector2(0.602778, 0.602778)
 texture = ExtResource("1_13jsy")
 
-[node name="BirdButton" type="Button" parent="." node_paths=PackedStringArray("sprite")]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = 378.0
-offset_top = 587.0
-offset_right = 418.0
-offset_bottom = 627.0
-text = "B"
-icon = ExtResource("3_cog37")
-icon_alignment = 1
-script = ExtResource("4_1yvtw")
-sprite = NodePath("BirdSprite")
-upTexture = ExtResource("5_fnhsn")
-downTexture = ExtResource("3_cog37")
-metadata/_edit_use_anchors_ = true
-
-[node name="BirdSprite" type="Sprite2D" parent="BirdButton"]
-position = Vector2(18.5, 19.5)
-scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("5_fnhsn")
-
-[node name="FoxButton" type="Button" parent="." node_paths=PackedStringArray("sprite")]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = 480.0
-offset_top = 587.0
-offset_right = 520.0
-offset_bottom = 627.0
-icon = ExtResource("3_cog37")
-icon_alignment = 1
-script = ExtResource("4_1yvtw")
-sprite = NodePath("FoxSprite")
-upTexture = ExtResource("7_8yolj")
-downTexture = ExtResource("9_is2xg")
-metadata/_edit_use_anchors_ = true
-
-[node name="FoxSprite" type="Sprite2D" parent="FoxButton"]
-position = Vector2(18.5, 19.5)
-scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("7_8yolj")
-
-[node name="ConeButton" type="Button" parent="." node_paths=PackedStringArray("sprite")]
-self_modulate = Color(1, 1, 1, 0)
+[node name="ConeButton" type="TextureButton" parent="."]
 offset_left = 269.0
 offset_top = 588.0
-offset_right = 317.0
-offset_bottom = 632.0
-scale = Vector2(0.838161, 0.92001)
-script = ExtResource("4_1yvtw")
-sprite = NodePath("ConeSprite")
-upTexture = ExtResource("26_t8lr2")
-downTexture = ExtResource("28_r3pwj")
-metadata/_edit_use_anchors_ = true
-
-[node name="ConeSprite" type="Sprite2D" parent="ConeButton"]
-position = Vector2(23.8618, 21.7388)
-scale = Vector2(2.72173, 2.47959)
-texture = ExtResource("26_t8lr2")
+offset_right = 309.0
+offset_bottom = 628.0
+texture_normal = ExtResource("26_t8lr2")
+texture_pressed = ExtResource("28_r3pwj")
+stretch_mode = 5
 
 [node name="Placeholder" type="Sprite2D" parent="ConeButton"]
 z_index = 1
@@ -273,6 +224,7 @@ texture_normal = ExtResource("21_jogwe")
 texture_pressed = ExtResource("19_rjcvb")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="ConeButton/Placeholder"]
 offset_left = -62.0
@@ -290,6 +242,7 @@ texture_normal = ExtResource("12_kwwyi")
 texture_pressed = ExtResource("14_njy5u")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Haskell Button" type="TextureButton" parent="ConeButton/Placeholder"]
 offset_left = -15.454
@@ -300,8 +253,45 @@ texture_normal = ExtResource("11_njiyn")
 texture_pressed = ExtResource("13_8at2l")
 ignore_texture_size = true
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Game Controller" type="Node2D" parent="ConeButton/Placeholder"]
+
+[node name="BirdButton" type="TextureButton" parent="."]
+offset_left = 378.0
+offset_top = 587.0
+offset_right = 418.0
+offset_bottom = 627.0
+texture_normal = ExtResource("5_fnhsn")
+texture_pressed = ExtResource("3_cog37")
+stretch_mode = 5
+
+[node name="Placeholder" type="Sprite2D" parent="BirdButton"]
+z_index = 1
+position = Vector2(262.479, -305.975)
+scale = Vector2(7.1026, 3.9147)
+texture = ExtResource("3_s12f3")
+script = ExtResource("4_rduy5")
+
+[node name="Game Controller" type="Node2D" parent="BirdButton/Placeholder"]
+
+[node name="FoxButton" type="TextureButton" parent="."]
+offset_left = 480.0
+offset_top = 588.0
+offset_right = 520.0
+offset_bottom = 628.0
+texture_normal = ExtResource("7_8yolj")
+texture_pressed = ExtResource("9_is2xg")
+stretch_mode = 5
+
+[node name="Placeholder" type="Sprite2D" parent="FoxButton"]
+z_index = 1
+position = Vector2(262.479, -305.975)
+scale = Vector2(7.1026, 3.9147)
+texture = ExtResource("3_s12f3")
+script = ExtResource("4_rduy5")
+
+[node name="Game Controller" type="Node2D" parent="FoxButton/Placeholder"]
 
 [node name="Button4" type="Button" parent="."]
 offset_left = 1130.0
@@ -372,5 +362,7 @@ script = ExtResource("36_up3wl")
 [connection signal="pressed" from="ConeButton" to="ConeButton/Placeholder" method="_on_cone_button_pressed"]
 [connection signal="button_down" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_down"]
 [connection signal="button_up" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_up"]
+[connection signal="pressed" from="BirdButton" to="BirdButton/Placeholder" method="_on_cone_button_pressed"]
+[connection signal="pressed" from="FoxButton" to="FoxButton/Placeholder" method="_on_cone_button_pressed"]
 [connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]
 [connection signal="pressed" from="CudasCoffee/CoffeeButton" to="EyeNode" method="_on_coffee_button_pressed"]

@@ -180,31 +180,36 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(-3, 0)
 script = ExtResource("1_vyssm")
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(578.667, 322.5)
-scale = Vector2(0.602778, 0.602778)
+position = Vector2(960, 540)
 texture = ExtResource("1_13jsy")
 
-[node name="ConeButton" type="TextureButton" parent="."]
-offset_left = 269.0
-offset_top = 588.0
-offset_right = 309.0
-offset_bottom = 628.0
+[node name="Taskbar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 965.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ConeButton" type="TextureButton" parent="Taskbar"]
+offset_left = 100.0
+offset_top = 10.0
+offset_right = 180.0
+offset_bottom = 105.0
 texture_normal = ExtResource("26_t8lr2")
 texture_pressed = ExtResource("28_r3pwj")
 stretch_mode = 5
 
-[node name="Placeholder" type="Sprite2D" parent="ConeButton"]
+[node name="Placeholder" type="Sprite2D" parent="Taskbar/ConeButton"]
 z_index = 1
 position = Vector2(262.479, -305.975)
 scale = Vector2(7.1026, 3.9147)
 texture = ExtResource("3_s12f3")
 script = ExtResource("4_rduy5")
 
-[node name="Iteration Button" type="TextureButton" parent="ConeButton/Placeholder"]
+[node name="Iteration Button" type="TextureButton" parent="Taskbar/ConeButton/Placeholder"]
 visible = false
 offset_left = -50.2257
 offset_top = -10.6898
@@ -215,7 +220,7 @@ texture_pressed = ExtResource("17_hi5iy")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Selection Button" type="TextureButton" parent="ConeButton/Placeholder"]
+[node name="Selection Button" type="TextureButton" parent="Taskbar/ConeButton/Placeholder"]
 offset_left = 23.5171
 offset_top = -11.8004
 offset_right = 51.5171
@@ -226,14 +231,14 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="ConeButton/Placeholder"]
+[node name="Button" type="Button" parent="Taskbar/ConeButton/Placeholder"]
 offset_left = -62.0
 offset_top = -63.0
 offset_right = 63.0
 offset_bottom = -48.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Assignment Button" type="TextureButton" parent="ConeButton/Placeholder"]
+[node name="Assignment Button" type="TextureButton" parent="Taskbar/ConeButton/Placeholder"]
 offset_left = -15.454
 offset_top = 14.0217
 offset_right = 12.546
@@ -244,7 +249,7 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Haskell Button" type="TextureButton" parent="ConeButton/Placeholder"]
+[node name="Haskell Button" type="TextureButton" parent="Taskbar/ConeButton/Placeholder"]
 offset_left = -15.454
 offset_top = -45.3969
 offset_right = 12.546
@@ -255,43 +260,43 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Game Controller" type="Node2D" parent="ConeButton/Placeholder"]
+[node name="Game Controller" type="Node2D" parent="Taskbar/ConeButton/Placeholder"]
 
-[node name="BirdButton" type="TextureButton" parent="."]
-offset_left = 378.0
-offset_top = 587.0
-offset_right = 418.0
-offset_bottom = 627.0
+[node name="BirdButton" type="TextureButton" parent="Taskbar"]
+offset_left = 190.0
+offset_top = 10.0
+offset_right = 270.0
+offset_bottom = 105.0
 texture_normal = ExtResource("5_fnhsn")
 texture_pressed = ExtResource("3_cog37")
 stretch_mode = 5
 
-[node name="Placeholder" type="Sprite2D" parent="BirdButton"]
+[node name="Placeholder" type="Sprite2D" parent="Taskbar/BirdButton"]
 z_index = 1
 position = Vector2(262.479, -305.975)
 scale = Vector2(7.1026, 3.9147)
 texture = ExtResource("3_s12f3")
 script = ExtResource("4_rduy5")
 
-[node name="Game Controller" type="Node2D" parent="BirdButton/Placeholder"]
+[node name="Game Controller" type="Node2D" parent="Taskbar/BirdButton/Placeholder"]
 
-[node name="FoxButton" type="TextureButton" parent="."]
-offset_left = 480.0
-offset_top = 588.0
-offset_right = 520.0
-offset_bottom = 628.0
+[node name="FoxButton" type="TextureButton" parent="Taskbar"]
+offset_left = 280.0
+offset_top = 10.0
+offset_right = 360.0
+offset_bottom = 105.0
 texture_normal = ExtResource("7_8yolj")
 texture_pressed = ExtResource("9_is2xg")
 stretch_mode = 5
 
-[node name="Placeholder" type="Sprite2D" parent="FoxButton"]
+[node name="Placeholder" type="Sprite2D" parent="Taskbar/FoxButton"]
 z_index = 1
 position = Vector2(262.479, -305.975)
 scale = Vector2(7.1026, 3.9147)
 texture = ExtResource("3_s12f3")
 script = ExtResource("4_rduy5")
 
-[node name="Game Controller" type="Node2D" parent="FoxButton/Placeholder"]
+[node name="Game Controller" type="Node2D" parent="Taskbar/FoxButton/Placeholder"]
 
 [node name="Button4" type="Button" parent="."]
 offset_left = 1130.0
@@ -359,10 +364,10 @@ offset_right = 47.0
 offset_bottom = 33.0
 script = ExtResource("36_up3wl")
 
-[connection signal="pressed" from="ConeButton" to="ConeButton/Placeholder" method="_on_cone_button_pressed"]
-[connection signal="button_down" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_down"]
-[connection signal="button_up" from="ConeButton/Placeholder/Button" to="ConeButton/Placeholder" method="_on_button_button_up"]
-[connection signal="pressed" from="BirdButton" to="BirdButton/Placeholder" method="_on_cone_button_pressed"]
-[connection signal="pressed" from="FoxButton" to="FoxButton/Placeholder" method="_on_cone_button_pressed"]
+[connection signal="pressed" from="Taskbar/ConeButton" to="Taskbar/ConeButton/Placeholder" method="_on_cone_button_pressed"]
+[connection signal="button_down" from="Taskbar/ConeButton/Placeholder/Button" to="Taskbar/ConeButton/Placeholder" method="_on_button_button_down"]
+[connection signal="button_up" from="Taskbar/ConeButton/Placeholder/Button" to="Taskbar/ConeButton/Placeholder" method="_on_button_button_up"]
+[connection signal="pressed" from="Taskbar/BirdButton" to="Taskbar/BirdButton/Placeholder" method="_on_cone_button_pressed"]
+[connection signal="pressed" from="Taskbar/FoxButton" to="Taskbar/FoxButton/Placeholder" method="_on_cone_button_pressed"]
 [connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]
 [connection signal="pressed" from="CudasCoffee/CoffeeButton" to="EyeNode" method="_on_coffee_button_pressed"]

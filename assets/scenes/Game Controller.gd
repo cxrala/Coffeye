@@ -17,6 +17,7 @@ func _process(delta):
 		emit_signal("off")
 	if state == 1 :
 		emit_signal("on")
+		rungame(0)
 	
 	
 
@@ -25,6 +26,8 @@ func get_number():
 	# Returns "apple", "orange", "pear", or "banana" every time the code runs.
 	# We may get the same fruit multiple times in a row.
 	return random_number
+func rungame(level):
+	ready
 
 func generatearray(a: int,c):
 	if a == 0 :

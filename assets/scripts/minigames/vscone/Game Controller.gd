@@ -16,30 +16,31 @@ signal value
 @export var sequencetimer : Timer
 
 func _ready():
-	iteration.pressed.connect(func(): inputvalue(0, []))
-	selection.pressed.connect(func(): inputvalue(1, []))
-	assignment.pressed.connect(func(): inputvalue(2, []))
-	haskell.pressed.connect(func(): inputvalue(3, []))
+	iteration.pressed.connect(func(): inputvalue(1))
+	selection.pressed.connect(func(): inputvalue(2))
+	assignment.pressed.connect(func(): inputvalue(3))
+	haskell.pressed.connect(func(): inputvalue(4))
 # Called when the node enters the scene tree for the first time.
 	 # Replace with function body.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func inputvalue(a, b):
+func inputvalue(a):
 	if state == 0 :
 		state == 1
 		emit_signal("on")
-		array =[]
+		array = []
 		rungame(0)
-	if input == true:
-		checkinput(a,b)
+	elif input == true:
+		checkinput(a, array)
 		
 func checkinput(a:int, b: Array):
 	if a == b[inputpointer] :
 		if inputpointer == b.size() :
 			inputpointer = 0
+			noinput()
 			rungame(b.size() + 1)
 		elif inputpointer < b.size() :
 			inputpointer = inputpointer + 1
-			takeinput(b)
+			takeinput()
 			
 	
 func _process(delta):
@@ -53,23 +54,23 @@ func get_number():
 	return random_number
 	
 func rungame(level):
-	appendtoarray(1,array)
+	appendtoarray(1, array)
 	var pointer = 0 
 	makeglow(array,pointer)
 	
 func makeglow(array, pointer) :
 	if pointer == array.size() :
-		takeinput(array)
+		takeinput()
 	elif pointer < array.size() :
 		emit_signal("value",array[pointer])
 		sequencetimer.timeout.connect(func() : makeglow(array,pointer + 1))
 	
-func takeinput(a: Array):
+func noinput():
+	input = false
+	
+func takeinput():
 	input = true
-	iteration.pressed.connect(func(): inputvalue(1, a))
-	selection.pressed.connect(func(): inputvalue(2, a))
-	assignment.pressed.connect(func(): inputvalue(3, a))
-	haskell.pressed.connect(func(): inputvalue(4,a))
+	
 func appendtoarray(a: int,c: Array):
 	for i in range(a):
 		c.append(get_number())

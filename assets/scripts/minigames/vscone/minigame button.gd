@@ -15,22 +15,28 @@ func _ready():
 	timer.timeout.connect(makeglow)
 	controller.value.connect(sequentialglow)
 	pass # Replace with function body.
+	
 func sequentialglow(number):
 	if buttonindex == number :
 		emit_signal("starttimer")
 		flashingtimer.timeout.connect(texturecontrol)
+		
 func texturecontrol():
 	self.texture_normal = glowtexture
 	emit_signal("starttimer")
 	flashingtimer.timeout.connect(reverttexture)
+	
 func reverttexture():
 	self.texture_normal = standardtexture
+	
 func setglow():
 	glow = 1
 	self.texture_normal = standardtexture
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	pass
+	
 func makeglow(): 
 	if glow == 0 :
 		shiny = !shiny

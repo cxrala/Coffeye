@@ -1,11 +1,13 @@
 extends TextureButton
+
 @export var glowtexture : Texture2D
 @export var standardtexture: Texture2D
 @export var controller : Node2D
 @export var timer : Timer
 @export var buttonindex : int
-@export var sequencetimer: Timer
-@export var flashingtimer: Timer
+@export var sequencetimer : Timer
+@export var flashingtimer : Timer
+
 var shiny = false 
 var glow = 0
 signal starttimer

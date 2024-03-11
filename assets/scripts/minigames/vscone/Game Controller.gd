@@ -1,10 +1,10 @@
 extends Node2D
-var numbers = [1,2,3,4]
-var list = []
+var numbers = [0,1,2,3]
 var state = 0
 var level = 1 
 var input = false
 var array = []
+var response = []
 var inputpointer = 0
 signal off
 signal on
@@ -14,23 +14,16 @@ signal value
 @export var assignment : TextureButton
 @export var haskell : TextureButton
 @export var sequencetimer : Timer
+@export var buttons : Array
 
 func _ready():
-	iteration.pressed.connect(func(): inputvalue(1))
-	selection.pressed.connect(func(): inputvalue(2))
-	assignment.pressed.connect(func(): inputvalue(3))
-	haskell.pressed.connect(func(): inputvalue(4))
-# Called when the node enters the scene tree for the first time.
-	 # Replace with function body.
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func inputvalue(a):
-	if state == 0 :
-		state == 1
-		emit_signal("on")
-		array = []
-		rungame(0)
-	elif input == true:
-		checkinput(a, array)
+	response = []
+	startinput()
+
+func startgame():
+	emit_signal("on")
+	array = []
+	rungame(0)
 		
 func checkinput(a:int, b: Array):
 	if a == b[inputpointer] :
@@ -40,6 +33,7 @@ func checkinput(a:int, b: Array):
 			rungame(b.size() + 1)
 		elif inputpointer < b.size() :
 			inputpointer = inputpointer + 1
+			noinput()
 			takeinput()
 			
 	
@@ -62,14 +56,23 @@ func makeglow(array, pointer) :
 	if pointer == array.size() :
 		takeinput()
 	elif pointer < array.size() :
-		emit_signal("value",array[pointer])
-		sequencetimer.timeout.connect(func() : makeglow(array,pointer + 1))
+		emit_signal("value", array[pointer])
+		sequencetimer.timeout.connect(func() : makeglow(array, pointer + 1))
 	
 func noinput():
 	input = false
+	for i in range(buttons.size()):
+		buttons[i].pressed.disconnect(response[i]);
 	
+func startinput():
+	for i in range(buttons.size()):
+		response.append(startgame)
+		buttons[i].pressed.connect(response[i])
+
 func takeinput():
 	input = true
+	for i in range(buttons.size()):
+		buttons[i].pressed.connect(func() : checkinput(i, array));
 	
 func appendtoarray(a: int,c: Array):
 	for i in range(a):

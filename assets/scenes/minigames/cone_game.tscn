@@ -124,6 +124,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="FlashingTimer" type="Timer" parent="." node_paths=PackedStringArray("iteration", "selection", "assignment", "haskell")]
+wait_time = 0.5
 autostart = true
 script = ExtResource("17_k14h7")
 iteration = NodePath("../Iteration Button")

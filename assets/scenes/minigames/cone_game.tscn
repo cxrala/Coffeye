@@ -121,4 +121,6 @@ autostart = true
 
 [node name="SequenceTimer" type="Timer" parent="."]
 
+[node name="FlashingTimer" type="Timer" parent="."]
+
 [connection signal="pressed" from="ConeGameClose" to="." method="_minimise"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmdsmp0t0tult"]
+
+[ext_resource type="Texture2D" uid="uid://cx7nrvbs22uyy" path="res://assets/sprites/backgrounds/MonitorBorder.png" id="1_iry3w"]
+[ext_resource type="Texture2D" uid="uid://bepfa4uoiodr5" path="res://assets/sprites/buttons/CUDAS_Coffee.png" id="2_ex8tt"]
+
+[node name="MonitorBorder" type="Sprite2D"]
+position = Vector2(192, 108)
+scale = Vector2(1, 1)
+texture = ExtResource("1_iry3w")
+
+[node name="Coffee" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 96.0
+offset_top = 44.0
+offset_right = 192.0
+offset_bottom = 108.0
+texture_normal = ExtResource("2_ex8tt")
+texture_pressed = ExtResource("2_ex8tt")
+stretch_mode = 4

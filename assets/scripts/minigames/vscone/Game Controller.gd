@@ -5,22 +5,30 @@ var state = 0
 var level = 1 
 signal off
 signal on
+@export var iteration : TextureButton
+@export var selection : TextureButton
+@export var assignment : TextureButton
+@export var haskell : TextureButton
 
-@export iteration : TextureButton
-
+func _ready():
+	iteration.pressed.connect(func(): inputvalue(0))
+	selection.pressed.connect(func(): inputvalue(1))
+	assignment.pressed.connect(func(): inputvalue(2))
+	haskell.pressed.connect(func(): inputvalue(3))
 # Called when the node enters the scene tree for the first time.
 	 # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func inputvalue(a):
+	if state == 0 :
+		state == 1
+		rungame(0)
+	
 func _process(delta):
 	if state == 0 :
 		emit_signal("off")
 	if state == 1 :
 		emit_signal("on")
 		rungame(0)
-	
-	
 
 func get_number():
 	var random_number = numbers[randi() % numbers.size()]
@@ -30,10 +38,8 @@ func get_number():
 func rungame(level):
 	ready
 
-func generatearray(a: int,c):
-	if a == 0 :
-		return c
-	if a != 0 :
-		for i in range(100):
-			generatearray(a-1, c.append(get_number))
+func appendtoarray(a: int,c: Array):
+	for i in range(a):
+		c.append(get_number)
+	return
 	

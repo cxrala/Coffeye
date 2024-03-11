@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://dt65bbepybr8l" path="res://assets/sprites/buttons/taskbar_icons/birddown.tres" id="3_cog37"]
 [ext_resource type="Texture2D" uid="uid://cpljp4kawcfr4" path="res://icon.svg" id="3_s12f3"]
 [ext_resource type="Script" path="res://assets/scripts/windows/Placeholderdrag.gd" id="4_rduy5"]
-[ext_resource type="PackedScene" uid="uid://ug4wxwch6omp" path="res://assets/scenes/minigames/cone_game.tscn" id="5_3tppj"]
 [ext_resource type="Texture2D" uid="uid://c7psy1j1kfrlj" path="res://assets/sprites/buttons/taskbar_icons/birdup.tres" id="5_fnhsn"]
 [ext_resource type="Script" path="res://assets/scripts/buttons/Button4.gd" id="5_qtpxt"]
 [ext_resource type="Texture2D" uid="uid://cxrud0qus42rw" path="res://assets/sprites/indicators/eye1.tres" id="6_4mxcu"]
@@ -22,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://cchrlc81a4wtt" path="res://assets/sprites/minigames/vscone/Iteration.tres" id="15_gdigs"]
 [ext_resource type="Script" path="res://assets/scenes/Game Controller.gd" id="15_t1l60"]
 [ext_resource type="Script" path="res://Timer.gd" id="16_y3vcr"]
+[ext_resource type="Texture2D" uid="uid://bbq3lp0c847vp" path="res://assets/sprites/minigames/vscone/IterationPressed.tres" id="17_hi5iy"]
+[ext_resource type="Texture2D" uid="uid://bvnismg6pny30" path="res://assets/sprites/minigames/vscone/SelectionPressed.tres" id="19_rjcvb"]
+[ext_resource type="Texture2D" uid="uid://bs08umbgtpbkn" path="res://assets/sprites/minigames/vscone/Selection.tres" id="21_jogwe"]
 [ext_resource type="Texture2D" uid="uid://q3at084pson6" path="res://assets/sprites/buttons/taskbar_icons/coneup.tres" id="26_t8lr2"]
 [ext_resource type="Texture2D" uid="uid://d3fi3lbrrwvp3" path="res://assets/sprites/buttons/taskbar_icons/conedown.tres" id="28_r3pwj"]
 [ext_resource type="AudioStream" uid="uid://de3ecj3mtxhdm" path="res://assets/audio/music/lofi3.mp3" id="29_fsasq"]
@@ -360,7 +362,9 @@ texture_normal = ExtResource("35_y1qje")
 texture_pressed = ExtResource("35_y1qje")
 stretch_mode = 4
 
-[connection signal="pressed" from="Taskbar/ConeButton" to="Taskbar/ConeButton/ConeGame" method="_on_cone_button_pressed"]
+[connection signal="pressed" from="Taskbar/ConeButton" to="Taskbar/ConeButton/Placeholder" method="_on_cone_button_pressed"]
+[connection signal="button_down" from="Taskbar/ConeButton/Placeholder/Button" to="Taskbar/ConeButton/Placeholder" method="_on_button_button_down"]
+[connection signal="button_up" from="Taskbar/ConeButton/Placeholder/Button" to="Taskbar/ConeButton/Placeholder" method="_on_button_button_up"]
 [connection signal="pressed" from="Taskbar/BirdButton" to="Taskbar/BirdButton/Placeholder" method="_on_cone_button_pressed"]
 [connection signal="pressed" from="Taskbar/FoxButton" to="Taskbar/FoxButton/Placeholder" method="_on_cone_button_pressed"]
 [connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]

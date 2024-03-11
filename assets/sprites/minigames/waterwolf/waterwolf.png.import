@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i5hefm1c11en"
-path="res://.godot/imported/CUDAS_Coffee.png-031a3c9a102168c93b3bd276d13247fe.ctex"
+uid="uid://bhc26b7g7ghqj"
+path="res://.godot/imported/waterwolf.png-02fad0ecb58811fec82ef6e3a157ed34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/buttons/CUDAS_Coffee.png"
-dest_files=["res://.godot/imported/CUDAS_Coffee.png-031a3c9a102168c93b3bd276d13247fe.ctex"]
+source_file="res://assets/sprites/minigames/waterwolf/waterwolf.png"
+dest_files=["res://.godot/imported/waterwolf.png-02fad0ecb58811fec82ef6e3a157ed34.ctex"]
 
 [params]
 

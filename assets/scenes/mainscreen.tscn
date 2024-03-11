@@ -3,17 +3,17 @@
 [ext_resource type="Script" path="res://assets/scripts/scenes/mainscreen.gd" id="1_vyssm"]
 [ext_resource type="Texture2D" uid="uid://82s2dkee6ujf" path="res://assets/sprites/backgrounds/DesktopBackground.png" id="2_xvgbq"]
 [ext_resource type="Texture2D" uid="uid://dt65bbepybr8l" path="res://assets/sprites/buttons/taskbar_icons/birddown.tres" id="3_cog37"]
-[ext_resource type="Texture2D" uid="uid://cpljp4kawcfr4" path="res://icon.svg" id="3_s12f3"]
-[ext_resource type="Script" path="res://assets/scripts/windows/Placeholderdrag.gd" id="4_rduy5"]
+[ext_resource type="PackedScene" uid="uid://dvnttryrxl3e3" path="res://assets/scenes/minigames/bird_game.tscn" id="4_tpgt0"]
 [ext_resource type="PackedScene" uid="uid://ug4wxwch6omp" path="res://assets/scenes/minigames/cone_game.tscn" id="5_3tppj"]
 [ext_resource type="Texture2D" uid="uid://c7psy1j1kfrlj" path="res://assets/sprites/buttons/taskbar_icons/birdup.tres" id="5_fnhsn"]
 [ext_resource type="Script" path="res://assets/scripts/buttons/Button4.gd" id="5_qtpxt"]
+[ext_resource type="PackedScene" uid="uid://v2entjpjav83" path="res://assets/scenes/minigames/fox_game.tscn" id="5_r6ewf"]
 [ext_resource type="Texture2D" uid="uid://cxrud0qus42rw" path="res://assets/sprites/indicators/eye1.tres" id="6_4mxcu"]
-[ext_resource type="Texture2D" uid="uid://bwqq8yv4wtfo6" path="res://assets/sprites/buttons/taskbar_icons/foxup.tres" id="7_8yolj"]
+[ext_resource type="Texture2D" uid="uid://bwqq8yv4wtfo6" path="res://assets/sprites/buttons/taskbar_icons/wolfup.tres" id="7_8yolj"]
 [ext_resource type="Texture2D" uid="uid://bi1a3wqikmna2" path="res://assets/sprites/indicators/eye2.tres" id="7_q83rs"]
 [ext_resource type="Texture2D" uid="uid://cgrjxsolld11y" path="res://assets/sprites/indicators/eye 3.tres" id="8_f350j"]
 [ext_resource type="Texture2D" uid="uid://dsqq6at63rne5" path="res://assets/sprites/indicators/eye4.tres" id="9_2qbwj"]
-[ext_resource type="Texture2D" uid="uid://cx537sbw7euh3" path="res://assets/sprites/buttons/taskbar_icons/foxdown.tres" id="9_is2xg"]
+[ext_resource type="Texture2D" uid="uid://cx537sbw7euh3" path="res://assets/sprites/buttons/taskbar_icons/wolfdown.tres" id="9_is2xg"]
 [ext_resource type="Texture2D" uid="uid://cn6ny150pjien" path="res://assets/sprites/indicators/eye5.tres" id="10_n7krk"]
 [ext_resource type="Texture2D" uid="uid://bkc7hly5t26vn" path="res://assets/sprites/backgrounds/Taskbar.png" id="12_di4jq"]
 [ext_resource type="Script" path="res://Timer.gd" id="16_y3vcr"]
@@ -191,54 +191,43 @@ offset_bottom = 204.0
 
 [node name="ConeGame" parent="Taskbar" instance=ExtResource("5_3tppj")]
 z_index = 0
-position = Vector2(366, -98)
+position = Vector2(165.8, -117.8)
 scale = Vector2(1, 0.549)
 
-[node name="Placeholder" type="Sprite2D" parent="Taskbar"]
-position = Vector2(384, -98)
-scale = Vector2(1, 0.55)
-texture = ExtResource("3_s12f3")
-script = ExtResource("4_rduy5")
+[node name="BirdGame" parent="Taskbar" instance=ExtResource("4_tpgt0")]
+position = Vector2(174.2, -77.6)
 
-[node name="Game Controller" type="Node2D" parent="Taskbar/Placeholder"]
+[node name="WolfGame" parent="Taskbar" instance=ExtResource("5_r6ewf")]
+position = Vector2(270.2, -86)
 
-[node name="Placeholder2" type="Sprite2D" parent="Taskbar"]
-position = Vector2(402, -98)
-scale = Vector2(1, 0.55)
-texture = ExtResource("3_s12f3")
-script = ExtResource("4_rduy5")
-
-[node name="Game Controller" type="Node2D" parent="Taskbar/Placeholder2"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Taskbar"]
+[node name="TaskbarSprite" type="Sprite2D" parent="Taskbar"]
 z_index = 1
 position = Vector2(192, 12)
-scale = Vector2(1, 1)
 texture = ExtResource("12_di4jq")
 
-[node name="ConeButton" type="TextureButton" parent="Taskbar/Sprite2D"]
+[node name="ConeButton" type="TextureButton" parent="Taskbar/TaskbarSprite"]
 offset_left = -26.0
-offset_top = -10.0
-offset_right = -9.99998
-offset_bottom = 9.0
+offset_top = -9.0
+offset_right = -10.0
+offset_bottom = 10.0
 texture_normal = ExtResource("26_t8lr2")
 texture_pressed = ExtResource("28_r3pwj")
 stretch_mode = 5
 
-[node name="BirdButton" type="TextureButton" parent="Taskbar/Sprite2D"]
-offset_left = -7.99998
-offset_top = -10.0
-offset_right = 8.00002
-offset_bottom = 9.0
+[node name="BirdButton" type="TextureButton" parent="Taskbar/TaskbarSprite"]
+offset_left = -8.0
+offset_top = -9.0
+offset_right = 8.0
+offset_bottom = 10.0
 texture_normal = ExtResource("5_fnhsn")
 texture_pressed = ExtResource("3_cog37")
 stretch_mode = 5
 
-[node name="FoxButton" type="TextureButton" parent="Taskbar/Sprite2D"]
+[node name="WolfButton" type="TextureButton" parent="Taskbar/TaskbarSprite"]
 offset_left = 10.0
-offset_top = -10.0
+offset_top = -9.0
 offset_right = 26.0
-offset_bottom = 9.0
+offset_bottom = 10.0
 texture_normal = ExtResource("7_8yolj")
 texture_pressed = ExtResource("9_is2xg")
 stretch_mode = 5
@@ -297,7 +286,7 @@ stream = ExtResource("34_yegks")
 [node name="MonitorBorder" parent="." instance=ExtResource("36_plwqe")]
 z_index = 2
 
-[connection signal="pressed" from="Taskbar/Sprite2D/ConeButton" to="Taskbar/ConeGame" method="_on_cone_button_pressed"]
-[connection signal="pressed" from="Taskbar/Sprite2D/BirdButton" to="Taskbar/Placeholder" method="_on_cone_button_pressed"]
-[connection signal="pressed" from="Taskbar/Sprite2D/FoxButton" to="Taskbar/Placeholder2" method="_on_cone_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/ConeButton" to="Taskbar/ConeGame" method="_on_cone_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/BirdButton" to="Taskbar/BirdGame" method="_on_cone_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/WolfButton" to="Taskbar/WolfGame" method="_on_cone_button_pressed"]
 [connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]

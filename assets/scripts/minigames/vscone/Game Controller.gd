@@ -5,6 +5,7 @@ var state = 0
 var level = 1 
 signal off
 signal on
+signal value
 @export var iteration : TextureButton
 @export var selection : TextureButton
 @export var assignment : TextureButton
@@ -51,6 +52,6 @@ func makeglow(array, pointer) :
 	 
 func appendtoarray(a: int,c: Array):
 	for i in range(a):
-		c.append(get_number)
+		c.append(get_number())
 	return
 	

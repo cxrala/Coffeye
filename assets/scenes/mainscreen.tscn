@@ -181,6 +181,19 @@ script = ExtResource("1_vyssm")
 position = Vector2(192, 108)
 texture = ExtResource("2_xvgbq")
 
+[node name="ConeGame" parent="." instance=ExtResource("5_3tppj")]
+z_index = 0
+position = Vector2(165.8, 62.2)
+scale = Vector2(1, 0.549)
+
+[node name="BirdGame" parent="." instance=ExtResource("4_tpgt0")]
+position = Vector2(174.2, 102.4)
+scale = Vector2(1, 0.55)
+
+[node name="WolfGame" parent="." instance=ExtResource("5_r6ewf")]
+position = Vector2(270.2, 94)
+scale = Vector2(1, 1)
+
 [node name="Taskbar" type="Control" parent="."]
 z_index = 1
 layout_mode = 3
@@ -188,17 +201,6 @@ anchors_preset = 0
 offset_top = 180.0
 offset_right = 384.0
 offset_bottom = 204.0
-
-[node name="ConeGame" parent="Taskbar" instance=ExtResource("5_3tppj")]
-z_index = 0
-position = Vector2(165.8, -117.8)
-scale = Vector2(1, 0.549)
-
-[node name="BirdGame" parent="Taskbar" instance=ExtResource("4_tpgt0")]
-position = Vector2(174.2, -77.6)
-
-[node name="WolfGame" parent="Taskbar" instance=ExtResource("5_r6ewf")]
-position = Vector2(270.2, -86)
 
 [node name="TaskbarSprite" type="Sprite2D" parent="Taskbar"]
 z_index = 1
@@ -286,7 +288,7 @@ stream = ExtResource("34_yegks")
 [node name="MonitorBorder" parent="." instance=ExtResource("36_plwqe")]
 z_index = 2
 
-[connection signal="pressed" from="Taskbar/TaskbarSprite/ConeButton" to="Taskbar/ConeGame" method="_on_taskbar_button_pressed"]
-[connection signal="pressed" from="Taskbar/TaskbarSprite/BirdButton" to="Taskbar/BirdGame" method="_on_taskbar_button_pressed"]
-[connection signal="pressed" from="Taskbar/TaskbarSprite/WolfButton" to="Taskbar/WolfGame" method="_on_taskbar_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/ConeButton" to="ConeGame" method="_on_taskbar_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/BirdButton" to="BirdGame" method="_on_taskbar_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/WolfButton" to="WolfGame" method="_on_taskbar_button_pressed"]
 [connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]

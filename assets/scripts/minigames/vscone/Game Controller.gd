@@ -5,6 +5,7 @@ var state = 0
 var level = 1 
 signal off
 signal on
+signal value
 @export var iteration : TextureButton
 @export var selection : TextureButton
 @export var assignment : TextureButton

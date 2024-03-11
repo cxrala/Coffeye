@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ug4wxwch6omp" path="res://assets/scenes/minigames/cone_game.tscn" id="5_3tppj"]
 [ext_resource type="Texture2D" uid="uid://c7psy1j1kfrlj" path="res://assets/sprites/buttons/taskbar_icons/birdup.tres" id="5_fnhsn"]
 [ext_resource type="Script" path="res://assets/scripts/buttons/Button4.gd" id="5_qtpxt"]
-[ext_resource type="PackedScene" uid="uid://v2entjpjav83" path="res://assets/scenes/minigames/fox_game.tscn" id="5_r6ewf"]
+[ext_resource type="PackedScene" uid="uid://v2entjpjav83" path="res://assets/scenes/minigames/wolf_game.tscn" id="5_r6ewf"]
 [ext_resource type="Texture2D" uid="uid://cxrud0qus42rw" path="res://assets/sprites/indicators/eye1.tres" id="6_4mxcu"]
 [ext_resource type="Texture2D" uid="uid://bwqq8yv4wtfo6" path="res://assets/sprites/buttons/taskbar_icons/wolfup.tres" id="7_8yolj"]
 [ext_resource type="Texture2D" uid="uid://bi1a3wqikmna2" path="res://assets/sprites/indicators/eye2.tres" id="7_q83rs"]
@@ -24,7 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://brlgcyq0015d8" path="res://assets/audio/music/lofi5.mp3" id="32_6r3pk"]
 [ext_resource type="AudioStream" uid="uid://de7n4cmeeqvt1" path="res://assets/audio/music/lofi7.mp3" id="33_sg8bv"]
 [ext_resource type="AudioStream" uid="uid://4s5if03loyds" path="res://assets/audio/music/lofi8.mp3" id="34_yegks"]
-[ext_resource type="PackedScene" path="res://assets/scenes/monitor_border.tscn" id="36_plwqe"]
+[ext_resource type="PackedScene" uid="uid://dmdsmp0t0tult" path="res://assets/scenes/monitor_border.tscn" id="36_plwqe"]
 [ext_resource type="Script" path="res://assets/scripts/scenes/Node2D.gd" id="36_v54uy"]
 [ext_resource type="Texture2D" uid="uid://cmsb6l5if3dny" path="res://assets/sprites/indicators/eye/eye7.tres" id="37_3scmm"]
 [ext_resource type="Texture2D" uid="uid://dwoh7og8ynlb3" path="res://assets/sprites/indicators/eye/eye0.tres" id="42_g286k"]
@@ -286,7 +286,7 @@ stream = ExtResource("34_yegks")
 [node name="MonitorBorder" parent="." instance=ExtResource("36_plwqe")]
 z_index = 2
 
-[connection signal="pressed" from="Taskbar/TaskbarSprite/ConeButton" to="Taskbar/ConeGame" method="_on_cone_button_pressed"]
-[connection signal="pressed" from="Taskbar/TaskbarSprite/BirdButton" to="Taskbar/BirdGame" method="_on_cone_button_pressed"]
-[connection signal="pressed" from="Taskbar/TaskbarSprite/WolfButton" to="Taskbar/WolfGame" method="_on_cone_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/ConeButton" to="Taskbar/ConeGame" method="_on_taskbar_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/BirdButton" to="Taskbar/BirdGame" method="_on_taskbar_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/WolfButton" to="Taskbar/WolfGame" method="_on_taskbar_button_pressed"]
 [connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]

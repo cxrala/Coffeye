@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://ug4wxwch6omp"]
 
 [ext_resource type="Texture2D" uid="uid://cpljp4kawcfr4" path="res://icon.svg" id="1_kud8h"]
-[ext_resource type="Script" path="res://assets/scripts/windows/Placeholderdrag.gd" id="2_hwmkh"]
+[ext_resource type="Script" path="res://assets/scripts/windows/Window.gd" id="2_ynuw8"]
 [ext_resource type="Texture2D" uid="uid://cchrlc81a4wtt" path="res://assets/sprites/minigames/vscone/Iteration.tres" id="3_au2eg"]
 [ext_resource type="Texture2D" uid="uid://bbq3lp0c847vp" path="res://assets/sprites/minigames/vscone/IterationPressed.tres" id="4_r72f5"]
 [ext_resource type="Texture2D" uid="uid://bs08umbgtpbkn" path="res://assets/sprites/minigames/vscone/Selection.tres" id="5_aneo6"]
@@ -22,7 +22,7 @@ z_index = 1
 position = Vector2(262.479, -305.975)
 scale = Vector2(7.1026, 3.9147)
 texture = ExtResource("1_kud8h")
-script = ExtResource("2_hwmkh")
+script = ExtResource("2_ynuw8")
 
 [node name="Iteration Button" type="TextureButton" parent="." node_paths=PackedStringArray("controller", "timer")]
 offset_left = -50.2257
@@ -94,13 +94,12 @@ controller = NodePath("../Game Controller")
 timer = NodePath("../Timer")
 metadata/_edit_use_anchors_ = true
 
-[node name="Game Controller" type="Node2D" parent="." node_paths=PackedStringArray("iteration", "selection", "assignment", "haskell", "sequencetimer")]
+[node name="Game Controller" type="Node2D" parent="." node_paths=PackedStringArray("iteration", "selection", "assignment", "haskell")]
 script = ExtResource("13_7c620")
 iteration = NodePath("../Iteration Button")
 selection = NodePath("../Selection Button")
 assignment = NodePath("../Assignment Button")
 haskell = NodePath("../Haskell Button")
-sequencetimer = NodePath("../SequenceTimer")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

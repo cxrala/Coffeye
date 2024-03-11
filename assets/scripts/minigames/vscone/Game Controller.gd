@@ -21,14 +21,12 @@ func _ready():
 func inputvalue(a):
 	if state == 0 :
 		state == 1
+		emit_signal("on")
 		rungame(0)
 	
 func _process(delta):
 	if state == 0 :
 		emit_signal("off")
-	if state == 1 :
-		emit_signal("on")
-		rungame(0)
 
 func get_number():
 	var random_number = numbers[randi() % numbers.size()]

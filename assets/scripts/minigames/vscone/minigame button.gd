@@ -13,12 +13,14 @@ func _ready():
 
 func setglow():
 	glow = 1
+	self.texture_normal = standardtexture
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 func makeglow(): 
-	shiny = !shiny
-	if shiny == true :
-		self.texture_normal = glowtexture
-	if shiny == false :
-		self.texture_normal = standardtexture 
+	if glow == 0 :
+		shiny = !shiny
+		if shiny == true :
+			self.texture_normal = glowtexture
+		if shiny == false :
+			self.texture_normal = standardtexture 

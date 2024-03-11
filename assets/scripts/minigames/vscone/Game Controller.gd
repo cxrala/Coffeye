@@ -6,6 +6,7 @@ var level = 1
 signal off
 signal on
 
+@export iteration : TextureButton
 
 # Called when the node enters the scene tree for the first time.
 	 # Replace with function body.

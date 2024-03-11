@@ -19,7 +19,6 @@ texture = ExtResource("1_kud8h")
 script = ExtResource("2_hwmkh")
 
 [node name="Iteration Button" type="TextureButton" parent="."]
-visible = false
 offset_left = -50.2257
 offset_top = -10.6898
 offset_right = -22.2257

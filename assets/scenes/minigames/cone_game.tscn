@@ -120,3 +120,5 @@ wait_time = 0.5
 autostart = true
 
 [node name="SequenceTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="ConeGameClose" to="." method="_minimise"]

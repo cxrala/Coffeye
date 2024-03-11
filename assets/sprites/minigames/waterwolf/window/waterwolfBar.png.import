@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0yfkg43vk5k3"
-path="res://.godot/imported/waterwolfClose.png-9db320af04128ab8e038dd1034ebc350.ctex"
+uid="uid://c1t7hstwld5wk"
+path="res://.godot/imported/waterwolfBar.png-d0206ad3b1ba660c4a21359fc09bd911.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/minigames/waterwolf/waterwolfClose.png"
-dest_files=["res://.godot/imported/waterwolfClose.png-9db320af04128ab8e038dd1034ebc350.ctex"]
+source_file="res://assets/sprites/minigames/waterwolf/window/waterwolfBar.png"
+dest_files=["res://.godot/imported/waterwolfBar.png-d0206ad3b1ba660c4a21359fc09bd911.ctex"]
 
 [params]
 

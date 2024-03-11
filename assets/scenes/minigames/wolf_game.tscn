@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://v2entjpjav83"]
 
-[ext_resource type="Texture2D" uid="uid://bhc26b7g7ghqj" path="res://assets/sprites/minigames/waterwolf/waterwolf.png" id="1_a4li2"]
+[ext_resource type="Texture2D" uid="uid://c1t7hstwld5wk" path="res://assets/sprites/minigames/waterwolf/window/waterwolfBar.png" id="2_4pn3v"]
 [ext_resource type="Script" path="res://assets/scripts/windows/Window.gd" id="2_y6s0f"]
-[ext_resource type="Texture2D" uid="uid://c1t7hstwld5wk" path="res://assets/sprites/minigames/waterwolf/waterwolfBar.png" id="3_ooguk"]
-[ext_resource type="Texture2D" uid="uid://0yfkg43vk5k3" path="res://assets/sprites/minigames/waterwolf/waterwolfClose.png" id="4_5lfya"]
+[ext_resource type="Texture2D" uid="uid://bhc26b7g7ghqj" path="res://assets/sprites/minigames/waterwolf/window/waterwolf.png" id="3_nq8tv"]
+[ext_resource type="Texture2D" uid="uid://0yfkg43vk5k3" path="res://assets/sprites/minigames/waterwolf/window/waterwolfClose.png" id="4_ojodv"]
 
 [node name="WolfGameBar" type="Node2D" node_paths=PackedStringArray("bar")]
 script = ExtResource("2_y6s0f")
@@ -14,20 +14,20 @@ offset_left = -88.0
 offset_top = -4.0
 offset_right = 88.0
 offset_bottom = 4.0
-texture_normal = ExtResource("3_ooguk")
-texture_pressed = ExtResource("3_ooguk")
+texture_normal = ExtResource("2_4pn3v")
+texture_pressed = ExtResource("2_4pn3v")
 
 [node name="WolfGame" type="Sprite2D" parent="."]
 position = Vector2(0, 64)
-texture = ExtResource("1_a4li2")
+texture = ExtResource("3_nq8tv")
 
 [node name="WolfGameClose" type="TextureButton" parent="."]
 offset_left = 80.0
 offset_top = -4.0
 offset_right = 88.0
 offset_bottom = 4.0
-texture_normal = ExtResource("4_5lfya")
-texture_pressed = ExtResource("4_5lfya")
+texture_normal = ExtResource("4_ojodv")
+texture_pressed = ExtResource("4_ojodv")
 
 [node name="Game Controller" type="Node2D" parent="."]
 

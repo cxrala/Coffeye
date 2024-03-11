@@ -182,16 +182,14 @@ position = Vector2(192, 108)
 texture = ExtResource("2_xvgbq")
 
 [node name="ConeGame" parent="." instance=ExtResource("5_3tppj")]
-z_index = 0
-position = Vector2(165.8, 62.2)
-scale = Vector2(1, 0.549)
+position = Vector2(192, 20)
 
 [node name="BirdGame" parent="." instance=ExtResource("4_tpgt0")]
 position = Vector2(174.2, 102.4)
 scale = Vector2(1, 0.55)
 
 [node name="WolfGame" parent="." instance=ExtResource("5_r6ewf")]
-position = Vector2(270.2, 94)
+position = Vector2(192, 20)
 scale = Vector2(1, 1)
 
 [node name="Taskbar" type="Control" parent="."]

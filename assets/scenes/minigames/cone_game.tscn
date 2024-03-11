@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://ug4wxwch6omp"]
+
+[ext_resource type="Texture2D" uid="uid://cpljp4kawcfr4" path="res://icon.svg" id="1_kud8h"]
+[ext_resource type="Script" path="res://assets/scripts/windows/Placeholderdrag.gd" id="2_hwmkh"]
+[ext_resource type="Texture2D" uid="uid://cchrlc81a4wtt" path="res://assets/sprites/minigames/vscone/Iteration.tres" id="3_au2eg"]
+[ext_resource type="Texture2D" uid="uid://bbq3lp0c847vp" path="res://assets/sprites/minigames/vscone/IterationPressed.tres" id="4_r72f5"]
+[ext_resource type="Texture2D" uid="uid://bs08umbgtpbkn" path="res://assets/sprites/minigames/vscone/Selection.tres" id="5_aneo6"]
+[ext_resource type="Texture2D" uid="uid://bvnismg6pny30" path="res://assets/sprites/minigames/vscone/SelectionPressed.tres" id="6_53cbi"]
+[ext_resource type="Texture2D" uid="uid://rguwnx1a6im3" path="res://assets/sprites/minigames/vscone/Assignment.tres" id="7_kj6hb"]
+[ext_resource type="Texture2D" uid="uid://j1fg6wt0kly3" path="res://assets/sprites/minigames/vscone/AssignmentPressed.tres" id="8_mqow8"]
+[ext_resource type="Texture2D" uid="uid://b51ufnl1t3gi2" path="res://assets/sprites/minigames/vscone/Lambda.tres" id="9_n7jiw"]
+[ext_resource type="Texture2D" uid="uid://d1eav2k28wept" path="res://assets/sprites/minigames/vscone/LambdaPressed.tres" id="10_f5xh4"]
+
+[node name="ConeGame" type="Sprite2D"]
+z_index = 1
+position = Vector2(262.479, -305.975)
+scale = Vector2(7.1026, 3.9147)
+texture = ExtResource("1_kud8h")
+script = ExtResource("2_hwmkh")
+
+[node name="Iteration Button" type="TextureButton" parent="."]
+visible = false
+offset_left = -50.2257
+offset_top = -10.6898
+offset_right = -22.2257
+offset_bottom = 33.3102
+texture_normal = ExtResource("3_au2eg")
+texture_pressed = ExtResource("4_r72f5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Selection Button" type="TextureButton" parent="."]
+offset_left = 23.5171
+offset_top = -11.8004
+offset_right = 51.5171
+offset_bottom = 32.1996
+texture_normal = ExtResource("5_aneo6")
+texture_pressed = ExtResource("6_53cbi")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = -62.0
+offset_top = -63.0
+offset_right = 63.0
+offset_bottom = -48.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Assignment Button" type="TextureButton" parent="."]
+offset_left = -15.454
+offset_top = 14.0217
+offset_right = 12.546
+offset_bottom = 58.0217
+texture_normal = ExtResource("7_kj6hb")
+texture_pressed = ExtResource("8_mqow8")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Haskell Button" type="TextureButton" parent="."]
+offset_left = -15.454
+offset_top = -45.3969
+offset_right = 12.546
+offset_bottom = -1.39694
+texture_normal = ExtResource("9_n7jiw")
+texture_pressed = ExtResource("10_f5xh4")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Game Controller" type="Node2D" parent="."]
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

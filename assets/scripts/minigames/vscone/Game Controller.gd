@@ -9,6 +9,7 @@ signal on
 @export var selection : TextureButton
 @export var assignment : TextureButton
 @export var haskell : TextureButton
+@export var sequencetimer : Timer
 
 func _ready():
 	iteration.pressed.connect(func(): inputvalue(0))
@@ -21,14 +22,12 @@ func _ready():
 func inputvalue(a):
 	if state == 0 :
 		state == 1
+		emit_signal("on")
 		rungame(0)
 	
 func _process(delta):
 	if state == 0 :
 		emit_signal("off")
-	if state == 1 :
-		emit_signal("on")
-		rungame(0)
 
 func get_number():
 	var random_number = numbers[randi() % numbers.size()]
@@ -36,8 +35,20 @@ func get_number():
 	# We may get the same fruit multiple times in a row.
 	return random_number
 func rungame(level):
-	ready
-
+	var array = []
+	appendtoarray(1,array)
+	var pointer = 0 
+	makeglow(array,pointer)
+	
+func makeglow(array, pointer) :
+	if pointer == array.size() :
+		# start accepting input
+		pass
+	elif pointer < array.size() :
+		emit_signal("value",array[pointer])
+		sequencetimer.timeout.connect(func() : makeglow(array,pointer + 1))
+	
+	 
 func appendtoarray(a: int,c: Array):
 	for i in range(a):
 		c.append(get_number)

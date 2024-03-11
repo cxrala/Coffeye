@@ -24,7 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://brlgcyq0015d8" path="res://assets/audio/music/lofi5.mp3" id="32_6r3pk"]
 [ext_resource type="AudioStream" uid="uid://de7n4cmeeqvt1" path="res://assets/audio/music/lofi7.mp3" id="33_sg8bv"]
 [ext_resource type="AudioStream" uid="uid://4s5if03loyds" path="res://assets/audio/music/lofi8.mp3" id="34_yegks"]
-[ext_resource type="PackedScene" uid="uid://dmdsmp0t0tult" path="res://assets/scenes/monitor_border.tscn" id="36_plwqe"]
+[ext_resource type="PackedScene" path="res://assets/scenes/monitor_border.tscn" id="36_plwqe"]
 [ext_resource type="Script" path="res://assets/scripts/scenes/Node2D.gd" id="36_v54uy"]
 [ext_resource type="Texture2D" uid="uid://cmsb6l5if3dny" path="res://assets/sprites/indicators/eye/eye7.tres" id="37_3scmm"]
 [ext_resource type="Texture2D" uid="uid://dwoh7og8ynlb3" path="res://assets/sprites/indicators/eye/eye0.tres" id="42_g286k"]

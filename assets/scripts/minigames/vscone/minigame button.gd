@@ -3,6 +3,7 @@ extends TextureButton
 @export var standardtexture: Texture2D
 @export var controller : Node2D
 @export var timer : Timer
+@export var buttonindex : int
 var shiny = false 
 var glow = 0
 # Called when the node enters the scene tree for the first time.$"../Haskell Button"

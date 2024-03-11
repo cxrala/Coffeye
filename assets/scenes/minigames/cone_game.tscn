@@ -94,16 +94,19 @@ controller = NodePath("../Game Controller")
 timer = NodePath("../Timer")
 metadata/_edit_use_anchors_ = true
 
-[node name="Game Controller" type="Node2D" parent="." node_paths=PackedStringArray("iteration", "selection", "assignment", "haskell")]
+[node name="Game Controller" type="Node2D" parent="." node_paths=PackedStringArray("iteration", "selection", "assignment", "haskell", "sequencetimer")]
 script = ExtResource("13_7c620")
 iteration = NodePath("../Iteration Button")
 selection = NodePath("../Selection Button")
 assignment = NodePath("../Assignment Button")
 haskell = NodePath("../Haskell Button")
+sequencetimer = NodePath("../SequenceTimer")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="SequenceTimer" type="Timer" parent="."]
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

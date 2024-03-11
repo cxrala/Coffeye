@@ -10,7 +10,10 @@ var glow = 0
 func _ready():
 	controller.on.connect(setglow)
 	timer.timeout.connect(makeglow)
+	controller.value.connect(sequentialglow)
 	pass # Replace with function body.
+func sequentialglow(number):
+	pass
 
 func setglow():
 	glow = 1

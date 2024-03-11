@@ -9,11 +9,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if dragging:
-		position = get_global_mouse_position() - of
+		position = (0.2 * get_global_mouse_position()) - of
 
 func _on_button_button_down():
 	dragging = true # Replace with function body.
-	of = get_global_mouse_position() - position
+	of = (0.2 * get_global_mouse_position()) - position
 
 
 func _on_button_button_up():
@@ -22,4 +22,3 @@ func _on_button_button_up():
 
 func _on_cone_button_pressed():
 	visible = !visible;
-	position = Vector2 (262,-306)  # Replace with function body.

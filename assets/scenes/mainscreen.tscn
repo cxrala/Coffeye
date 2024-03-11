@@ -173,45 +173,48 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 texture_filter = 1
+scale = Vector2(5, 5)
 script = ExtResource("1_vyssm")
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
+position = Vector2(192, 108)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_13jsy")
 
 [node name="Taskbar" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 965.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_top = 193.0
+offset_right = 384.0
+offset_bottom = 216.0
 
 [node name="ConeButton" type="TextureButton" parent="Taskbar"]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 10.0
-offset_right = 180.0
-offset_bottom = 105.0
+offset_left = 20.0
+offset_top = 1.0
+offset_right = 36.0
+offset_bottom = 20.0
 texture_normal = ExtResource("26_t8lr2")
 texture_pressed = ExtResource("28_r3pwj")
 stretch_mode = 5
 
 [node name="ConeGame" parent="Taskbar/ConeButton" instance=ExtResource("5_3tppj")]
-position = Vector2(162.479, -315.975)
+position = Vector2(200, -100)
+scale = Vector2(1, 0.549)
 
 [node name="BirdButton" type="TextureButton" parent="Taskbar"]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 10.0
-offset_right = 270.0
-offset_bottom = 105.0
+offset_left = 38.0
+offset_top = 1.0
+offset_right = 54.0
+offset_bottom = 20.0
 texture_normal = ExtResource("5_fnhsn")
 texture_pressed = ExtResource("3_cog37")
 stretch_mode = 5
 
 [node name="Placeholder" type="Sprite2D" parent="Taskbar/BirdButton"]
-position = Vector2(262.479, -305.975)
-scale = Vector2(7.1026, 3.9147)
+position = Vector2(200, -100)
+scale = Vector2(1, 0.55)
 texture = ExtResource("3_s12f3")
 script = ExtResource("4_rduy5")
 
@@ -219,27 +222,27 @@ script = ExtResource("4_rduy5")
 
 [node name="FoxButton" type="TextureButton" parent="Taskbar"]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 10.0
-offset_right = 360.0
-offset_bottom = 105.0
+offset_left = 56.0
+offset_top = 1.0
+offset_right = 72.0
+offset_bottom = 20.0
 texture_normal = ExtResource("7_8yolj")
 texture_pressed = ExtResource("9_is2xg")
 stretch_mode = 5
 
 [node name="Placeholder" type="Sprite2D" parent="Taskbar/FoxButton"]
-position = Vector2(262.479, -305.975)
-scale = Vector2(7.1026, 3.9147)
+position = Vector2(200, -100)
+scale = Vector2(1, 0.55)
 texture = ExtResource("3_s12f3")
 script = ExtResource("4_rduy5")
 
 [node name="Game Controller" type="Node2D" parent="Taskbar/FoxButton/Placeholder"]
 
 [node name="Button4" type="Button" parent="."]
-offset_left = 1874.0
+offset_left = 300.0
 offset_top = 2.0
-offset_right = 1921.0
-offset_bottom = 58.0
+offset_right = 318.0
+offset_bottom = 33.0
 text = "X"
 script = ExtResource("5_qtpxt")
 
@@ -253,8 +256,7 @@ sprite_frames = SubResource("SpriteFrames_ehnir")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 
 [node name="EyeNode" type="Node2D" parent="."]
-position = Vector2(1820, 140)
-scale = Vector2(5, 5)
+position = Vector2(364, 28)
 script = ExtResource("36_v54uy")
 
 [node name="Eye" type="Sprite2D" parent="EyeNode"]
@@ -289,10 +291,10 @@ stream = ExtResource("34_yegks")
 
 [node name="Coffee" type="TextureButton" parent="."]
 texture_filter = 1
-offset_left = 1440.0
-offset_top = 760.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = 288.0
+offset_top = 152.0
+offset_right = 384.0
+offset_bottom = 216.0
 texture_normal = ExtResource("35_y1qje")
 texture_pressed = ExtResource("35_y1qje")
 stretch_mode = 4

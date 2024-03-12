@@ -1,8 +1,9 @@
-[gd_scene load_steps=45 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=46 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Script" path="res://assets/scripts/scenes/mainscreen.gd" id="1_vyssm"]
 [ext_resource type="Texture2D" uid="uid://82s2dkee6ujf" path="res://assets/sprites/backgrounds/DesktopBackground.png" id="2_xvgbq"]
 [ext_resource type="Texture2D" uid="uid://dt65bbepybr8l" path="res://assets/sprites/buttons/taskbar_icons/birddown.tres" id="3_cog37"]
+[ext_resource type="Script" path="res://assets/scripts/windows/WindowController.gd" id="3_yrjf4"]
 [ext_resource type="PackedScene" uid="uid://dvnttryrxl3e3" path="res://assets/scenes/minigames/bird_game.tscn" id="4_tpgt0"]
 [ext_resource type="PackedScene" uid="uid://ug4wxwch6omp" path="res://assets/scenes/minigames/cone_game.tscn" id="5_3tppj"]
 [ext_resource type="Texture2D" uid="uid://c7psy1j1kfrlj" path="res://assets/sprites/buttons/taskbar_icons/birdup.tres" id="5_fnhsn"]
@@ -181,19 +182,37 @@ script = ExtResource("1_vyssm")
 position = Vector2(192, 108)
 texture = ExtResource("2_xvgbq")
 
-[node name="ConeGame" parent="." instance=ExtResource("5_3tppj")]
-position = Vector2(192, 20)
+[node name="WindowController" type="Control" parent="." node_paths=PackedStringArray("windows")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 384.0
+offset_bottom = 216.0
+script = ExtResource("3_yrjf4")
+windows = [NodePath("ConeGame"), NodePath("BirdGame"), NodePath("WolfGame")]
 
-[node name="BirdGame" parent="." instance=ExtResource("4_tpgt0")]
-position = Vector2(174.2, 102.4)
-scale = Vector2(1, 0.55)
+[node name="ConeGame" parent="WindowController" instance=ExtResource("5_3tppj")]
+layout_mode = 0
+offset_left = 192.0
+offset_top = -160.0
+offset_right = 368.0
+offset_bottom = -32.0
 
-[node name="WolfGame" parent="." instance=ExtResource("5_r6ewf")]
-position = Vector2(192, 20)
-scale = Vector2(1, 1)
+[node name="BirdGame" parent="WindowController" instance=ExtResource("4_tpgt0")]
+layout_mode = 0
+offset_left = 174.2
+offset_top = -77.6
+offset_right = 174.2
+offset_bottom = -77.6
+
+[node name="WolfGame" parent="WindowController" instance=ExtResource("5_r6ewf")]
+layout_mode = 0
+offset_left = 192.0
+offset_top = -160.0
+offset_right = 368.0
+offset_bottom = -32.0
 
 [node name="Taskbar" type="Control" parent="."]
-z_index = 1
+z_index = 4
 layout_mode = 3
 anchors_preset = 0
 offset_top = 180.0
@@ -284,9 +303,9 @@ stream = ExtResource("33_sg8bv")
 stream = ExtResource("34_yegks")
 
 [node name="MonitorBorder" parent="." instance=ExtResource("36_plwqe")]
-z_index = 2
+z_index = 5
 
-[connection signal="pressed" from="Taskbar/TaskbarSprite/ConeButton" to="ConeGame" method="_on_taskbar_button_pressed"]
-[connection signal="pressed" from="Taskbar/TaskbarSprite/BirdButton" to="BirdGame" method="_on_taskbar_button_pressed"]
-[connection signal="pressed" from="Taskbar/TaskbarSprite/WolfButton" to="WolfGame" method="_on_taskbar_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/ConeButton" to="WindowController/ConeGame" method="_on_taskbar_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/BirdButton" to="WindowController/BirdGame" method="_on_taskbar_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/WolfButton" to="WindowController/WolfGame" method="_on_taskbar_button_pressed"]
 [connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]

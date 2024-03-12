@@ -1,126 +1,151 @@
-[gd_scene load_steps=19 format=3 uid="uid://ug4wxwch6omp"]
+[gd_scene load_steps=20 format=3 uid="uid://ug4wxwch6omp"]
 
 [ext_resource type="Texture2D" uid="uid://bqjupxtojoiut" path="res://assets/sprites/minigames/vscone/window/vsconeBar.png" id="1_c2q5v"]
+[ext_resource type="Texture2D" uid="uid://duehlkcs046hq" path="res://assets/sprites/minigames/WindowBackButton.png" id="1_d3dyw"]
 [ext_resource type="Texture2D" uid="uid://cxdmctkxe8jbe" path="res://assets/sprites/minigames/vscone/window/vsconeClose.png" id="2_jskit"]
 [ext_resource type="Texture2D" uid="uid://ds1bul2srwem0" path="res://assets/sprites/minigames/vscone/window/vscone.png" id="2_v2g1g"]
 [ext_resource type="Script" path="res://assets/scripts/windows/Window.gd" id="2_ynuw8"]
 [ext_resource type="Texture2D" uid="uid://cchrlc81a4wtt" path="res://assets/sprites/minigames/vscone/Iteration.tres" id="3_au2eg"]
 [ext_resource type="Texture2D" uid="uid://bbq3lp0c847vp" path="res://assets/sprites/minigames/vscone/IterationPressed.tres" id="4_r72f5"]
 [ext_resource type="Texture2D" uid="uid://bs08umbgtpbkn" path="res://assets/sprites/minigames/vscone/Selection.tres" id="5_aneo6"]
-[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/minigame button.gd" id="5_np4g2"]
 [ext_resource type="Texture2D" uid="uid://bvnismg6pny30" path="res://assets/sprites/minigames/vscone/SelectionPressed.tres" id="6_53cbi"]
 [ext_resource type="Texture2D" uid="uid://b3g35jy6ukwjb" path="res://assets/sprites/minigames/vscone/IterationGlow.tres" id="6_cjam7"]
+[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/VsconeButton.gd" id="7_87fcl"]
 [ext_resource type="Texture2D" uid="uid://rguwnx1a6im3" path="res://assets/sprites/minigames/vscone/Assignment.tres" id="7_kj6hb"]
 [ext_resource type="Texture2D" uid="uid://j1fg6wt0kly3" path="res://assets/sprites/minigames/vscone/AssignmentPressed.tres" id="8_mqow8"]
 [ext_resource type="Texture2D" uid="uid://c533rp8kfx0ie" path="res://assets/sprites/minigames/vscone/SelectionGlow.tres" id="9_a0rk3"]
 [ext_resource type="Texture2D" uid="uid://b51ufnl1t3gi2" path="res://assets/sprites/minigames/vscone/Lambda.tres" id="9_n7jiw"]
 [ext_resource type="Texture2D" uid="uid://d1eav2k28wept" path="res://assets/sprites/minigames/vscone/LambdaPressed.tres" id="10_f5xh4"]
 [ext_resource type="Texture2D" uid="uid://dx7fk6812iq4f" path="res://assets/sprites/minigames/vscone/AssignmentGlow.tres" id="12_j0ppu"]
-[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/Game Controller.gd" id="13_7c620"]
 [ext_resource type="Texture2D" uid="uid://d2n0vvn0gkddq" path="res://assets/sprites/minigames/vscone/LambdaGlow.tres" id="15_lsamx"]
+[ext_resource type="Script" path="res://assets/scripts/minigames/vscone/GameController.gd" id="18_gony4"]
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("bar")]
+[node name="Window" type="TextureButton" node_paths=PackedStringArray("bar")]
+offset_right = 176.0
+offset_bottom = 128.0
+action_mode = 0
+texture_normal = ExtResource("1_d3dyw")
+texture_pressed = ExtResource("1_d3dyw")
 script = ExtResource("2_ynuw8")
-bar = NodePath("ConeGameBar")
+windowTopLeftCorner = Vector2(0, 0)
+bar = NodePath("Node2D/ConeGameBar")
 
-[node name="ConeGameBar" type="TextureButton" parent="."]
-offset_left = -88.0
-offset_top = -4.0
-offset_right = 88.0
-offset_bottom = 4.0
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ConeGameBar" type="TextureButton" parent="Node2D"]
+offset_right = 176.0
+offset_bottom = 8.0
+mouse_filter = 1
+keep_pressed_outside = true
 texture_normal = ExtResource("1_c2q5v")
 texture_pressed = ExtResource("1_c2q5v")
 
-[node name="ConeGame" type="Sprite2D" parent="."]
-position = Vector2(0, 64)
+[node name="ConeGame" type="Sprite2D" parent="Node2D"]
+position = Vector2(88, 68)
 texture = ExtResource("2_v2g1g")
 
-[node name="ConeGameClose" type="TextureButton" parent="."]
-offset_left = 80.0
-offset_top = -4.0
-offset_right = 88.0
-offset_bottom = 4.0
+[node name="ConeGameClose" type="TextureButton" parent="Node2D"]
+offset_left = 168.0
+offset_right = 176.0
+offset_bottom = 8.0
+mouse_filter = 1
 texture_normal = ExtResource("2_jskit")
 texture_pressed = ExtResource("2_jskit")
 
-[node name="Haskell Button" type="TextureButton" parent="." node_paths=PackedStringArray("controller", "timer")]
-offset_left = 8.0
-offset_top = 20.0
-offset_right = 40.0
-offset_bottom = 52.0
+[node name="Haskell Button" type="TextureButton" parent="Node2D" node_paths=PackedStringArray("controller", "timer", "flashingtimer")]
+offset_left = 96.0
+offset_top = 24.0
+offset_right = 128.0
+offset_bottom = 56.0
+mouse_filter = 1
 texture_normal = ExtResource("9_n7jiw")
 texture_pressed = ExtResource("10_f5xh4")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("5_np4g2")
+script = ExtResource("7_87fcl")
 glowtexture = ExtResource("15_lsamx")
 standardtexture = ExtResource("9_n7jiw")
+pressedtexture = ExtResource("10_f5xh4")
 controller = NodePath("../Game Controller")
-timer = NodePath("../Timer")
-metadata/_edit_use_anchors_ = true
+timer = NodePath("../StartTimer")
+flashingtimer = NodePath("../FlashingTimer")
 
-[node name="Iteration Button" type="TextureButton" parent="." node_paths=PackedStringArray("controller", "timer")]
-offset_left = 40.0
-offset_top = 52.0
-offset_right = 72.0
-offset_bottom = 84.0
+[node name="Iteration Button" type="TextureButton" parent="Node2D" node_paths=PackedStringArray("controller", "timer", "flashingtimer")]
+offset_left = 128.0
+offset_top = 56.0
+offset_right = 160.0
+offset_bottom = 88.0
+mouse_filter = 1
 texture_normal = ExtResource("3_au2eg")
 texture_pressed = ExtResource("4_r72f5")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("5_np4g2")
+script = ExtResource("7_87fcl")
 glowtexture = ExtResource("6_cjam7")
 standardtexture = ExtResource("3_au2eg")
+pressedtexture = ExtResource("4_r72f5")
 controller = NodePath("../Game Controller")
-timer = NodePath("../Timer")
+timer = NodePath("../StartTimer")
+buttonindex = 1
+flashingtimer = NodePath("../FlashingTimer")
 
-[node name="Assignment Button" type="TextureButton" parent="." node_paths=PackedStringArray("controller", "timer")]
-offset_left = 8.0
-offset_top = 84.0
-offset_right = 40.0
-offset_bottom = 116.0
+[node name="Assignment Button" type="TextureButton" parent="Node2D" node_paths=PackedStringArray("controller", "timer", "flashingtimer")]
+offset_left = 96.0
+offset_top = 88.0
+offset_right = 128.0
+offset_bottom = 120.0
+mouse_filter = 1
 texture_normal = ExtResource("7_kj6hb")
 texture_pressed = ExtResource("8_mqow8")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("5_np4g2")
+script = ExtResource("7_87fcl")
 glowtexture = ExtResource("12_j0ppu")
 standardtexture = ExtResource("7_kj6hb")
+pressedtexture = ExtResource("8_mqow8")
 controller = NodePath("../Game Controller")
-timer = NodePath("../Timer")
-metadata/_edit_use_anchors_ = true
+timer = NodePath("../StartTimer")
+buttonindex = 2
+flashingtimer = NodePath("../FlashingTimer")
 
-[node name="Selection Button" type="TextureButton" parent="." node_paths=PackedStringArray("controller", "timer")]
-offset_left = -24.0
-offset_top = 52.0
-offset_right = 8.0
-offset_bottom = 84.0
+[node name="Selection Button" type="TextureButton" parent="Node2D" node_paths=PackedStringArray("controller", "timer", "flashingtimer")]
+offset_left = 64.0
+offset_top = 56.0
+offset_right = 96.0
+offset_bottom = 88.0
+mouse_filter = 1
 texture_normal = ExtResource("5_aneo6")
 texture_pressed = ExtResource("6_53cbi")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("5_np4g2")
+script = ExtResource("7_87fcl")
 glowtexture = ExtResource("9_a0rk3")
 standardtexture = ExtResource("5_aneo6")
+pressedtexture = ExtResource("6_53cbi")
 controller = NodePath("../Game Controller")
-timer = NodePath("../Timer")
-metadata/_edit_use_anchors_ = true
+timer = NodePath("../StartTimer")
+buttonindex = 3
+flashingtimer = NodePath("../FlashingTimer")
 
-[node name="Game Controller" type="Node2D" parent="." node_paths=PackedStringArray("iteration", "selection", "assignment", "haskell")]
-position = Vector2(262.479, -305.975)
+[node name="Game Controller" type="Node2D" parent="Node2D" node_paths=PackedStringArray("iteration", "selection", "assignment", "haskell", "sequencetimer", "buttons")]
+position = Vector2(350.479, -301.975)
 scale = Vector2(7.1026, 3.9147)
-script = ExtResource("13_7c620")
+script = ExtResource("18_gony4")
 iteration = NodePath("../Iteration Button")
 selection = NodePath("../Selection Button")
 assignment = NodePath("../Assignment Button")
 haskell = NodePath("../Haskell Button")
+sequencetimer = NodePath("../SequenceTimer")
+buttons = [NodePath("../Haskell Button"), NodePath("../Iteration Button"), NodePath("../Assignment Button"), NodePath("../Selection Button")]
 
-[node name="Timer" type="Timer" parent="."]
+[node name="StartTimer" type="Timer" parent="Node2D"]
 wait_time = 0.5
 autostart = true
 
-[node name="SequenceTimer" type="Timer" parent="."]
+[node name="SequenceTimer" type="Timer" parent="Node2D"]
+wait_time = 0.5
 
-[node name="FlashingTimer" type="Timer" parent="."]
+[node name="FlashingTimer" type="Timer" parent="Node2D"]
+wait_time = 0.25
 
-[connection signal="pressed" from="ConeGameClose" to="." method="_minimise"]
+[connection signal="pressed" from="Node2D/ConeGameClose" to="." method="_minimise"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfihewkutrpt0"
-path="res://.godot/imported/Insanity.png-3b6ca749ee7a6ec84c5fec53e360faeb.ctex"
+uid="uid://biq65cuhwp5st"
+path="res://.godot/imported/Box2.png-a602439b29ccdd37aac295df90c76437.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/indicators/Insanity.png"
-dest_files=["res://.godot/imported/Insanity.png-3b6ca749ee7a6ec84c5fec53e360faeb.ctex"]
+source_file="res://assets/sprites/indicators/Box2.png"
+dest_files=["res://.godot/imported/Box2.png-a602439b29ccdd37aac295df90c76437.ctex"]
 
 [params]
 

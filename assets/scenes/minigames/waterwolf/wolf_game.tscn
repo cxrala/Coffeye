@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://0yfkg43vk5k3" path="res://assets/sprites/minigames/waterwolf/window/waterwolfClose.png" id="4_ojodv"]
 [ext_resource type="Script" path="res://assets/scripts/minigames/waterwolf/GameController.gd" id="6_l1flk"]
 [ext_resource type="Script" path="res://assets/scripts/minigames/waterwolf/Mouse.gd" id="8_37t38"]
-[ext_resource type="Texture2D" uid="uid://b4wsy86vvp1m0" path="res://assets/sprites/minigames/waterwolf/MouseUp.tres" id="8_mpcs2"]
-[ext_resource type="Texture2D" uid="uid://bxcplavepxfkb" path="res://assets/sprites/minigames/waterwolf/MouseDown.tres" id="9_2pl5y"]
+[ext_resource type="Texture2D" path="res://assets/sprites/minigames/waterwolf/MouseUp.tres" id="8_mpcs2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/minigames/waterwolf/MouseDown.tres" id="9_2pl5y"]
 [ext_resource type="PackedScene" uid="uid://clxj5p7bm6r6g" path="res://assets/scenes/minigames/waterwolf/pipe.tscn" id="9_46xc2"]
 
 [node name="WolfWindow" type="Control" node_paths=PackedStringArray("minigameController", "overWindow", "bar")]
@@ -25,6 +25,7 @@ overWindow = NodePath("OverWindow")
 bar = NodePath("OverWindow/Node2D/WolfGameBar")
 
 [node name="OverWindow" type="TextureButton" parent="."]
+layout_mode = 0
 offset_right = 176.0
 offset_bottom = 128.0
 mouse_filter = 1

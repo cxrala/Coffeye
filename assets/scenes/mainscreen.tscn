@@ -22,13 +22,13 @@
 [ext_resource type="Texture2D" uid="uid://b27r7gwv5rvq4" path="res://assets/sprites/buttons/taskbar_icons/leafup.tres" id="14_n5dij"]
 [ext_resource type="Theme" uid="uid://css40iplnp7ux" path="res://assets/themes/defaultTheme.tres" id="14_uyjmr"]
 [ext_resource type="Texture2D" uid="uid://bprdpk1wb71d3" path="res://assets/sprites/buttons/taskbar_icons/leafdown.tres" id="15_kgq7j"]
-[ext_resource type="Script" path="res://Timer.gd" id="16_y3vcr"]
 [ext_resource type="Texture2D" uid="uid://dy2pkw4kelchu" path="res://assets/sprites/buttons/taskbar_icons/spoteelfyup.tres" id="18_c2hpj"]
 [ext_resource type="Texture2D" uid="uid://w6x1kpiv3ya4" path="res://assets/sprites/buttons/taskbar_icons/spoteelfydown.tres" id="19_s7ejr"]
 [ext_resource type="Texture2D" uid="uid://q3at084pson6" path="res://assets/sprites/buttons/taskbar_icons/coneup.tres" id="26_t8lr2"]
 [ext_resource type="Texture2D" uid="uid://d3fi3lbrrwvp3" path="res://assets/sprites/buttons/taskbar_icons/conedown.tres" id="28_r3pwj"]
 [ext_resource type="Script" path="res://assets/scripts/indicators/EyeNode.gd" id="36_v54uy"]
 [ext_resource type="Texture2D" uid="uid://cmsb6l5if3dny" path="res://assets/sprites/indicators/eye/eye7.tres" id="37_3scmm"]
+[ext_resource type="Script" path="res://assets/scripts/player_state/player_state.gd" id="38_1yw8w"]
 [ext_resource type="Texture2D" uid="uid://cx7nrvbs22uyy" path="res://assets/sprites/backgrounds/MonitorBorder.png" id="38_idg1o"]
 [ext_resource type="Texture2D" uid="uid://i5hefm1c11en" path="res://assets/sprites/buttons/CUDAS_Coffee.png" id="39_nsbsd"]
 [ext_resource type="Texture2D" uid="uid://dwoh7og8ynlb3" path="res://assets/sprites/indicators/eye/eye0.tres" id="42_g286k"]
@@ -332,21 +332,8 @@ sprite_frames = SubResource("SpriteFrames_ehnir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 
-[node name="EyeNode" type="Node2D" parent="."]
-position = Vector2(364, 28)
-script = ExtResource("36_v54uy")
-
-[node name="Eye" type="Sprite2D" parent="EyeNode"]
-texture = ExtResource("42_rgfkj")
-
-[node name="EyeAnimator" type="AnimationPlayer" parent="EyeNode"]
-libraries = {
-"": SubResource("AnimationLibrary_g7umh")
-}
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-script = ExtResource("16_y3vcr")
+[node name="PlayerState" type="Node" parent="."]
+script = ExtResource("38_1yw8w")
 
 [node name="MonitorBorder" type="Sprite2D" parent="."]
 z_index = 10
@@ -361,10 +348,23 @@ offset_bottom = 108.0
 texture_normal = ExtResource("39_nsbsd")
 texture_pressed = ExtResource("39_nsbsd")
 
+[node name="EyeNode" type="Node2D" parent="MonitorBorder" node_paths=PackedStringArray("playerState")]
+position = Vector2(172, -80)
+scale = Vector2(1, 1)
+script = ExtResource("36_v54uy")
+playerState = NodePath("../../PlayerState")
+
+[node name="Eye" type="Sprite2D" parent="MonitorBorder/EyeNode"]
+texture = ExtResource("42_rgfkj")
+
+[node name="EyeAnimator" type="AnimationPlayer" parent="MonitorBorder/EyeNode"]
+libraries = {
+"": SubResource("AnimationLibrary_g7umh")
+}
+
 [connection signal="pressed" from="Taskbar/TaskbarSprite/ConeButton" to="WindowController/ConeGame" method="_on_taskbar_button_pressed"]
 [connection signal="pressed" from="Taskbar/TaskbarSprite/BirdButton" to="WindowController/BirdGame" method="_on_taskbar_button_pressed"]
 [connection signal="pressed" from="Taskbar/TaskbarSprite/WolfButton" to="WindowController/WolfGame" method="_on_taskbar_button_pressed"]
 [connection signal="pressed" from="Taskbar/TaskbarSprite/LeafButton" to="WindowController/LeafWindow" method="_on_taskbar_button_pressed"]
 [connection signal="pressed" from="Taskbar/TaskbarSprite/SpoteelfyButton" to="WindowController/SpoteelfyWindow" method="_on_taskbar_button_pressed"]
-[connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]
-[connection signal="button_down" from="MonitorBorder/CoffeeButton" to="EyeNode" method="_on_coffee_button_pressed"]
+[connection signal="button_down" from="MonitorBorder/CoffeeButton" to="PlayerState" method="coffee"]

@@ -3,4 +3,4 @@ class_name TrackTuple
 
 @export var title : String
 @export var composer : String
-@export var track : Audio
+@export var track : AudioStream

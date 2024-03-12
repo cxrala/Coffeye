@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TrackTuple" load_steps=3 format=3 uid="uid://c72b28xtfobca"]
+
+[ext_resource type="Script" path="res://assets/scripts/minigames/spoteelfy/TrackTuple.gd" id="1_amfhf"]
+[ext_resource type="AudioStream" uid="uid://de7n4cmeeqvt1" path="res://assets/audio/music/lofi/lofi7.mp3" id="2_k3bxm"]
+
+[resource]
+script = ExtResource("1_amfhf")
+title = "Baroque inspired lofi beats to fugue to"
+composer = "Choral Coral"
+track = ExtResource("2_k3bxm")

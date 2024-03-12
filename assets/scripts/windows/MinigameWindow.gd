@@ -9,7 +9,7 @@ class_name MinigameWindow
 signal taskComplete
 signal taskProgress
 
-# Called when the node enters the scene tree for the first time.
+# Called when the node eoverWindow.nters the scene tree for the first time.
 func _ready():
 	super()
 	minigameController.finished_task_event.connect(_complete_task);

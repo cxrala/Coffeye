@@ -1,4 +1,4 @@
-extends TextureButton
+extends Control
 class_name GameWindow
 
 var dragging = false
@@ -9,6 +9,7 @@ var off = Vector2 (0,0)
 @export var desktopTopLeftCorner = Vector2 (16, 12)
 # Called when the node enters the scene tree for the first time.
 
+@export var overWindow : TextureButton
 @export var bar : TextureButton
 
 func _ready():
@@ -57,7 +58,7 @@ func _on_bar_up():
 func _on_taskbar_button_pressed():
 	visible = !visible;
 	if (visible):
-		pressed.emit()
+		overWindow.button_down.emit()
 		set_processing_subtree(true, true)
 	else:
 		set_processing_subtree(false, false)

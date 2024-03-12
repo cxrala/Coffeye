@@ -7,7 +7,7 @@ signal refocus
 func _ready():
 	for i in range(windows.size()):
 		move_child(windows[i], windows.size()-1)
-		windows[i].pressed.connect(func() : refocus_windows(i))
+		windows[i].overWindow.button_down.connect(func() : refocus_windows(i))
 		windows[i].z_index = i
 	pass # Replace with function body.
 

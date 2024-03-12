@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://b54n7r5xscobb"]
+
+[ext_resource type="Script" path="res://assets/scripts/minigames/spoteelfy/Track.gd" id="1_0aqhp"]
+[ext_resource type="Theme" uid="uid://css40iplnp7ux" path="res://assets/themes/defaultTheme.tres" id="1_ryexa"]
+[ext_resource type="Texture2D" uid="uid://c1ily1ctdd7py" path="res://assets/sprites/minigames/spoteelfy/trackButton.png" id="2_fjxl6"]
+
+[node name="TrackDisplay" type="Node2D" node_paths=PackedStringArray("trackButton", "trackName", "trackComposer", "trackLength")]
+script = ExtResource("1_0aqhp")
+trackButton = NodePath("Button")
+trackName = NodePath("TrackName")
+trackComposer = NodePath("TrackComposer")
+trackLength = NodePath("TrackLength")
+
+[node name="Button" type="TextureButton" parent="."]
+offset_right = 172.0
+offset_bottom = 8.0
+mouse_filter = 1
+texture_normal = ExtResource("2_fjxl6")
+texture_pressed = ExtResource("2_fjxl6")
+
+[node name="TrackName" type="Label" parent="."]
+offset_right = 56.0
+offset_bottom = 6.0
+theme = ExtResource("1_ryexa")
+theme_override_font_sizes/font_size = 4
+text = "Asian inspired lofi beats to study to"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TrackComposer" type="Label" parent="."]
+offset_left = 58.0
+offset_right = 114.0
+offset_bottom = 6.0
+theme = ExtResource("1_ryexa")
+theme_override_font_sizes/font_size = 4
+text = "Pandaka"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TrackLength" type="Label" parent="."]
+offset_left = 116.0
+offset_right = 172.0
+offset_bottom = 6.0
+theme = ExtResource("1_ryexa")
+theme_override_font_sizes/font_size = 4
+text = "2:35"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AlbumTuple" load_steps=7 format=3 uid="uid://bph6tg2v7xa3q"]
+
+[ext_resource type="Script" path="res://assets/scripts/minigames/spoteelfy/AlbumTuple.gd" id="1_0lnhb"]
+[ext_resource type="Texture2D" uid="uid://dnbdgr3r3ineh" path="res://assets/sprites/albums/lofiCover.png" id="1_5by6v"]
+[ext_resource type="Resource" uid="uid://uqewv1dnxhce" path="res://assets/audio/music/lofi/lofi1.tres" id="2_lysfr"]
+[ext_resource type="Resource" uid="uid://cir0dul2yabxa" path="res://assets/audio/music/lofi/lofi2.tres" id="3_3bfgg"]
+[ext_resource type="Resource" uid="uid://ooad8b503lk6" path="res://assets/audio/music/lofi/lofi4.tres" id="4_uma2h"]
+[ext_resource type="Resource" uid="uid://c72b28xtfobca" path="res://assets/audio/music/lofi/lofi7.tres" id="5_var7x"]
+
+[resource]
+script = ExtResource("1_0lnhb")
+albumName = "Coffeye OST ~ CUDAS inspired lofi beats to draw to"
+albumCover = ExtResource("1_5by6v")
+tracks = Array[Resource("res://assets/scripts/minigames/spoteelfy/TrackTuple.gd")]([ExtResource("2_lysfr"), ExtResource("3_3bfgg"), ExtResource("4_uma2h"), ExtResource("5_var7x")])

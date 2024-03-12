@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TrackTuple" load_steps=3 format=3 uid="uid://uqewv1dnxhce"]
+
+[ext_resource type="Script" path="res://assets/scripts/minigames/spoteelfy/TrackTuple.gd" id="1_8roci"]
+[ext_resource type="AudioStream" uid="uid://b3fbq34kh2grj" path="res://assets/audio/music/lofi/lofi1.mp3" id="2_yywr6"]
+
+[resource]
+script = ExtResource("1_8roci")
+title = "Asian inspired lofi beats to study to"
+composer = "Pandaka"
+track = ExtResource("2_yywr6")

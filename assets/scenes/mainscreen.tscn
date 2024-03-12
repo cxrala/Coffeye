@@ -1,6 +1,5 @@
-[gd_scene load_steps=58 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=53 format=3 uid="uid://bd0r1njn22wdj"]
 
-[ext_resource type="Script" path="res://assets/scripts/scenes/mainscreen.gd" id="1_vyssm"]
 [ext_resource type="Texture2D" uid="uid://82s2dkee6ujf" path="res://assets/sprites/backgrounds/DesktopBackground.png" id="2_xvgbq"]
 [ext_resource type="Texture2D" uid="uid://dt65bbepybr8l" path="res://assets/sprites/buttons/taskbar_icons/birddown.tres" id="3_cog37"]
 [ext_resource type="Script" path="res://assets/scripts/windows/WindowController.gd" id="3_yrjf4"]
@@ -29,10 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://q3at084pson6" path="res://assets/sprites/buttons/taskbar_icons/coneup.tres" id="26_t8lr2"]
 [ext_resource type="Texture2D" uid="uid://d3fi3lbrrwvp3" path="res://assets/sprites/buttons/taskbar_icons/conedown.tres" id="28_r3pwj"]
 [ext_resource type="AudioStream" uid="uid://de3ecj3mtxhdm" path="res://assets/audio/music/lofi/lofi3.mp3" id="29_fsasq"]
-[ext_resource type="AudioStream" uid="uid://kucjw78r18fp" path="res://assets/audio/music/lofi/lofi4.mp3" id="31_nn7ne"]
-[ext_resource type="AudioStream" uid="uid://brlgcyq0015d8" path="res://assets/audio/music/lofi/lofi5.mp3" id="32_6r3pk"]
-[ext_resource type="AudioStream" uid="uid://de7n4cmeeqvt1" path="res://assets/audio/music/lofi/lofi7.mp3" id="33_sg8bv"]
-[ext_resource type="AudioStream" uid="uid://4s5if03loyds" path="res://assets/audio/music/lofi/lofi8.mp3" id="34_yegks"]
 [ext_resource type="Script" path="res://assets/scripts/scenes/Node2D.gd" id="36_v54uy"]
 [ext_resource type="Texture2D" uid="uid://cmsb6l5if3dny" path="res://assets/sprites/indicators/eye/eye7.tres" id="37_3scmm"]
 [ext_resource type="Texture2D" uid="uid://cx7nrvbs22uyy" path="res://assets/sprites/backgrounds/MonitorBorder.png" id="38_idg1o"]
@@ -209,7 +204,6 @@ _data = {
 [node name="Node2D" type="Node2D"]
 texture_filter = 1
 scale = Vector2(5, 5)
-script = ExtResource("1_vyssm")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(192, 108)
@@ -357,21 +351,6 @@ script = ExtResource("16_y3vcr")
 
 [node name="lo-fi3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("29_fsasq")
-autoplay = true
-
-[node name="lo-fi4" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("31_nn7ne")
-
-[node name="lo-fi5" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("32_6r3pk")
-
-[node name="lof-fi6" type="AudioStreamPlayer2D" parent="."]
-
-[node name="lo-fi7" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("33_sg8bv")
-
-[node name="lo-fi8" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("34_yegks")
 
 [node name="MonitorBorder" type="Sprite2D" parent="."]
 z_index = 10

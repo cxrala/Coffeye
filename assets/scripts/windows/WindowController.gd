@@ -12,13 +12,14 @@ func _ready():
 	pass # Replace with function body.
 
 func refocus_windows(windowNum : int):
-	print("Refocusing:")
-	print(windowNum)
 	var oldZ = windows[windowNum].z_index
 	var newZ = windows.size()
-	move_child(windows[windowNum], windows.size()-1)
-	for window in windows:
-		window.refocus(oldZ, newZ)
+	if (oldZ != newZ):
+		print("Refocusing:")
+		print(windowNum)
+		move_child(windows[windowNum], windows.size()-1)
+		for window in windows:
+			window.refocus(oldZ, newZ)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

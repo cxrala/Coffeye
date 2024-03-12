@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://assets/scripts/windows/Window.gd" id="2_lafnj"]
 
 [node name="BirdGame" type="TextureButton"]
+clip_contents = true
 offset_left = 384.0
 offset_top = -98.0
 offset_right = 384.0

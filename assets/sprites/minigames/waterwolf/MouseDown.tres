@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bxcplavepxfkb"]
+
+[ext_resource type="Texture2D" uid="uid://bcdwl6s03wg5i" path="res://assets/sprites/minigames/waterwolf/MousePointer.png" id="1_sxncu"]
+
+[resource]
+atlas = ExtResource("1_sxncu")
+region = Rect2(0, 0, 16, 16)

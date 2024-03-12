@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://v2entjpjav83"]
+
+[ext_resource type="Theme" uid="uid://css40iplnp7ux" path="res://assets/themes/defaultTheme.tres" id="1_32fwc"]
+[ext_resource type="Texture2D" uid="uid://duehlkcs046hq" path="res://assets/sprites/minigames/WindowBackButton.png" id="1_v6ok8"]
+[ext_resource type="Texture2D" uid="uid://c1t7hstwld5wk" path="res://assets/sprites/minigames/waterwolf/window/waterwolfBar.png" id="2_4pn3v"]
+[ext_resource type="Script" path="res://assets/scripts/windows/MinigameWindow.gd" id="3_t5lnw"]
+[ext_resource type="Texture2D" uid="uid://cm340gn64syu8" path="res://assets/sprites/minigames/waterwolf/window/waterwolfSearchBar.png" id="4_e4r7t"]
+[ext_resource type="Texture2D" uid="uid://cd488yghnslnv" path="res://assets/sprites/minigames/waterwolf/window/waterwolfBody.png" id="4_e4w07"]
+[ext_resource type="Texture2D" uid="uid://0yfkg43vk5k3" path="res://assets/sprites/minigames/waterwolf/window/waterwolfClose.png" id="4_ojodv"]
+[ext_resource type="Script" path="res://assets/scripts/minigames/waterwolf/GameController.gd" id="6_l1flk"]
+[ext_resource type="Script" path="res://assets/scripts/minigames/waterwolf/Mouse.gd" id="8_37t38"]
+[ext_resource type="Texture2D" uid="uid://b4wsy86vvp1m0" path="res://assets/sprites/minigames/waterwolf/MouseUp.tres" id="8_mpcs2"]
+[ext_resource type="Texture2D" uid="uid://bxcplavepxfkb" path="res://assets/sprites/minigames/waterwolf/MouseDown.tres" id="9_2pl5y"]
+[ext_resource type="PackedScene" uid="uid://clxj5p7bm6r6g" path="res://assets/scenes/minigames/waterwolf/pipe.tscn" id="9_46xc2"]
+
+[node name="WolfWindow" type="TextureButton" node_paths=PackedStringArray("minigameController", "bar")]
+clip_contents = true
+offset_right = 176.0
+offset_bottom = 128.0
+theme = ExtResource("1_32fwc")
+action_mode = 0
+texture_normal = ExtResource("1_v6ok8")
+texture_pressed = ExtResource("1_v6ok8")
+script = ExtResource("3_t5lnw")
+minigameController = NodePath("Node2D/Game Controller")
+bar = NodePath("Node2D/WolfGameBar")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(88, 4)
+
+[node name="WolfGame" type="TextureButton" parent="Node2D"]
+offset_left = -88.0
+offset_top = 28.0
+offset_right = 88.0
+offset_bottom = 124.0
+mouse_filter = 1
+action_mode = 0
+texture_normal = ExtResource("4_e4w07")
+
+[node name="Game Controller" type="Node2D" parent="Node2D" node_paths=PackedStringArray("mouse", "scoreRect")]
+script = ExtResource("6_l1flk")
+pipeScene = ExtResource("9_46xc2")
+mouse = NodePath("../Mouse")
+scoreRect = NodePath("../ColorRect/ScoreRect")
+
+[node name="Mouse" type="Sprite2D" parent="Node2D"]
+position = Vector2(-64, 80)
+texture = ExtResource("8_mpcs2")
+script = ExtResource("8_37t38")
+mouseFlap = ExtResource("8_mpcs2")
+mouseFall = ExtResource("9_2pl5y")
+
+[node name="WolfGameBar" type="TextureButton" parent="Node2D"]
+offset_left = -88.0
+offset_top = -4.0
+offset_right = 88.0
+offset_bottom = 4.0
+mouse_filter = 1
+keep_pressed_outside = true
+texture_normal = ExtResource("2_4pn3v")
+texture_pressed = ExtResource("2_4pn3v")
+
+[node name="SearchBar" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(0, 16)
+texture = ExtResource("4_e4r7t")
+
+[node name="ColorRect" type="ColorRect" parent="Node2D"]
+offset_left = -72.0
+offset_top = 14.0
+offset_right = 12.0
+offset_bottom = 22.0
+color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[node name="ScoreRect" type="ColorRect" parent="Node2D/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.964706, 0.458824, 0.478431, 1)
+
+[node name="WolfGameClose" type="TextureButton" parent="Node2D"]
+offset_left = 80.0
+offset_top = -4.0
+offset_right = 88.0
+offset_bottom = 4.0
+mouse_filter = 1
+texture_normal = ExtResource("4_ojodv")
+texture_pressed = ExtResource("4_ojodv")
+
+[connection signal="button_down" from="Node2D/WolfGame" to="Node2D/Game Controller" method="flap_input"]
+[connection signal="pressed" from="Node2D/WolfGameClose" to="." method="_minimise"]

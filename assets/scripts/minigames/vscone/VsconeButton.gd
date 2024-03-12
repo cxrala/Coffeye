@@ -67,9 +67,9 @@ func reverttexture():
 	
 func setglow():
 	glow = 1
-	self.texture_normal = standardtexture
-	self.texture_pressed = pressedtexture
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	
+func startglow():
+	glow = 0
 
 func _process(delta):
 	pass

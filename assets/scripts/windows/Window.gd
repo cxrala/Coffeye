@@ -4,7 +4,7 @@ class_name GameWindow
 var dragging = false
 var off = Vector2 (0,0)
 @export var windowSize = Vector2 (176, 128)
-@export var windowTopLeftCorner = Vector2 (-88, -4)
+@export var windowTopLeftCorner = Vector2 (0, 0)
 @export var desktopSize = Vector2 (352, 204)
 @export var desktopTopLeftCorner = Vector2 (16, 12)
 # Called when the node enters the scene tree for the first time.
@@ -16,8 +16,11 @@ func _ready():
 	if bar:
 		bar.button_down.connect(_on_bar_down)
 		bar.button_up.connect(_on_bar_up)
+	else:
+		print("Missing window bar")
 	visible = false
-
+	set_processing_subtree(false, false)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if dragging:
@@ -34,13 +37,15 @@ func _process(delta):
 func refocus(newTopOldZ : int, top : int):
 	if (z_index > newTopOldZ):
 		z_index -= 1
-		set_processing_subtree(true, false)
+		if (visible):
+			set_processing_subtree(true, false)
 		#set_process_input(true)
 		#set_process_unhandled_input(true)
 		#set_process_unhandled_key_input(true)
 	elif (z_index == newTopOldZ):
 		z_index = top
-		set_processing_subtree(true, true)
+		if (visible):
+			set_processing_subtree(true, true)
 
 func _on_bar_down():
 	dragging = true

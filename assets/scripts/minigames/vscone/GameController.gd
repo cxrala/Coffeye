@@ -1,10 +1,11 @@
-extends Node2D
+extends MinigameController
+
 var numbers = [0,1,2,3]
 var state = 0
 var level = 1 
 var input = false
 var array = []
-var response = []
+var response : Array[Callable]
 var inputpointer = 0
 var flashpointer = 0
 signal off
@@ -17,23 +18,51 @@ signal value
 @export var sequencetimer : Timer
 @export var buttons : Array[VsconeButton]
 
-func _ready():
-	response = []
-	sequencetimer.timeout.connect(makeglow)
-	startinput()
+@export var scoreRect1 : ColorRect
+@export var scoreRect2 : ColorRect
 
-func startgame():
+func _ready():
+	#super()._ready()
+	scoreRect1.size.y = 0
+	scoreRect2.size.y = 0
+	level = 0
+	sequencetimer.timeout.connect(makeglow)
+	disable_all()
+	response = []
+	for i in range(len(buttons)):
+		response.append(startinput)
+
+func reset():
+	scoreRect1.size.y = 0
+	scoreRect2.size.y = 0
+	level = 0
+	sequencetimer.timeout.connect(makeglow)
+	disable_all()
+
+func start_game():
+	startinput()
+	
+func start_play():
+	state = 1
 	emit_signal("on")
 	array = []
-	rungame(1)
+	level = 1
+	rungame()
 		
 func checkinput(a:int):
 	if a == array[inputpointer] :
 		if inputpointer == array.size() - 1 :
+			scoreRect2.size.y = 119 * (inputpointer + 1) / target
 			inputpointer = 0
 			noinput()
-			rungame(array.size() + 1)
+			if (level >= target):
+				finished_task_event.emit()
+				reset()
+			else:
+				level = array.size() + 1
+				rungame()
 		elif inputpointer < array.size() :
+			scoreRect2.size.y = 119 * (inputpointer + 1) / target
 			noinput()
 			inputpointer = inputpointer + 1
 			takeinput()
@@ -47,6 +76,7 @@ func restart_attempt():
 	pass
 
 func _process(delta):
+	super._process(delta)
 	if state == 0 :
 		emit_signal("off")
 
@@ -56,7 +86,7 @@ func get_number():
 	# We may get the same fruit multiple times in a row.
 	return random_number
 	
-func rungame(level : int):
+func rungame():
 	appendtoarray(level - array.size(), array)
 	startsequence()
 	
@@ -77,6 +107,8 @@ func makeglow() :
 	sequencetimer.stop()
 	if flashpointer == array.size() :
 		inputpointer = 0
+		scoreRect1.size.y = 119 * level / target
+		scoreRect2.size.y = 119 * inputpointer / target
 		noinput()
 		enable_all()
 		takeinput()
@@ -87,13 +119,15 @@ func makeglow() :
 	
 func noinput():
 	input = false
-	for i in range(buttons.size()):
-		buttons[i].pressed.disconnect(response[i]);
+	if (response.size() != 0):
+		for i in range(buttons.size()):
+			buttons[i].pressed.disconnect(response[i]);
 	
 func startinput():
 	for i in range(buttons.size()):
-		response.append(startgame)
+		response[i] = start_play
 		buttons[i].pressed.connect(response[i])
+		buttons[i].startglow()
 
 func takeinput():
 	input = true

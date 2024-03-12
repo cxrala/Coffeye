@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=52 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Texture2D" uid="uid://82s2dkee6ujf" path="res://assets/sprites/backgrounds/DesktopBackground.png" id="2_xvgbq"]
 [ext_resource type="Texture2D" uid="uid://dt65bbepybr8l" path="res://assets/sprites/buttons/taskbar_icons/birddown.tres" id="3_cog37"]
@@ -27,8 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://w6x1kpiv3ya4" path="res://assets/sprites/buttons/taskbar_icons/spoteelfydown.tres" id="19_s7ejr"]
 [ext_resource type="Texture2D" uid="uid://q3at084pson6" path="res://assets/sprites/buttons/taskbar_icons/coneup.tres" id="26_t8lr2"]
 [ext_resource type="Texture2D" uid="uid://d3fi3lbrrwvp3" path="res://assets/sprites/buttons/taskbar_icons/conedown.tres" id="28_r3pwj"]
-[ext_resource type="AudioStream" uid="uid://de3ecj3mtxhdm" path="res://assets/audio/music/lofi/lofi3.mp3" id="29_fsasq"]
-[ext_resource type="Script" path="res://assets/scripts/scenes/Node2D.gd" id="36_v54uy"]
+[ext_resource type="Script" path="res://assets/scripts/indicators/EyeNode.gd" id="36_v54uy"]
 [ext_resource type="Texture2D" uid="uid://cmsb6l5if3dny" path="res://assets/sprites/indicators/eye/eye7.tres" id="37_3scmm"]
 [ext_resource type="Texture2D" uid="uid://cx7nrvbs22uyy" path="res://assets/sprites/backgrounds/MonitorBorder.png" id="38_idg1o"]
 [ext_resource type="Texture2D" uid="uid://i5hefm1c11en" path="res://assets/sprites/buttons/CUDAS_Coffee.png" id="39_nsbsd"]
@@ -315,10 +314,10 @@ texture_normal = ExtResource("18_c2hpj")
 texture_pressed = ExtResource("19_s7ejr")
 
 [node name="Button4" type="Button" parent="."]
-offset_left = 286.4
-offset_top = 12.2
-offset_right = 303.4
-offset_bottom = 34.2
+offset_left = 368.6
+offset_top = 0.200001
+offset_right = 385.6
+offset_bottom = 22.2
 theme = ExtResource("14_uyjmr")
 text = "x
 "
@@ -348,9 +347,6 @@ libraries = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 script = ExtResource("16_y3vcr")
-
-[node name="lo-fi3" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("29_fsasq")
 
 [node name="MonitorBorder" type="Sprite2D" parent="."]
 z_index = 10

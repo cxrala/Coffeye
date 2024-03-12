@@ -49,6 +49,7 @@ func _ready():
 	pass # Replace with function body.
 
 func start_game():
+	progress = 0
 	can_start = true
 	
 func start_play():

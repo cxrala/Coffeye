@@ -1,0 +1,231 @@
+[gd_scene load_steps=16 format=3 uid="uid://bd6mf0thryadu"]
+
+[ext_resource type="Script" path="res://assets/scripts/windows/Spoteelfy.gd" id="2_l347n"]
+[ext_resource type="Resource" uid="uid://bph6tg2v7xa3q" path="res://assets/audio/music/lofi/lofi.tres" id="3_mllqr"]
+[ext_resource type="Texture2D" uid="uid://d4lhdrgroxeyy" path="res://assets/sprites/minigames/spoteelfy/spoteelfyBody.png" id="4_ehe8s"]
+[ext_resource type="Texture2D" uid="uid://b4b2fgqwnts1" path="res://assets/sprites/minigames/spoteelfy/spoteelfyBar.png" id="5_1fhl1"]
+[ext_resource type="Texture2D" uid="uid://d2nmoy3h58kmo" path="res://assets/sprites/minigames/spoteelfy/spoteelfyClose.png" id="6_3etkt"]
+[ext_resource type="Texture2D" uid="uid://dnbdgr3r3ineh" path="res://assets/sprites/albums/lofiCover.png" id="6_jxh2m"]
+[ext_resource type="Texture2D" uid="uid://cl8mohhamua7g" path="res://assets/sprites/minigames/spoteelfy/transport.tres" id="7_t44kc"]
+[ext_resource type="Texture2D" uid="uid://brxsnrme6wn0t" path="res://assets/sprites/minigames/spoteelfy/playAlbum.tres" id="7_x68d2"]
+[ext_resource type="Texture2D" uid="uid://dwfe1yaw8457i" path="res://assets/sprites/minigames/spoteelfy/playButton.tres" id="8_kg5xr"]
+[ext_resource type="Theme" uid="uid://css40iplnp7ux" path="res://assets/themes/defaultTheme.tres" id="8_xdrg0"]
+[ext_resource type="Texture2D" uid="uid://damv8jshknp14" path="res://assets/sprites/minigames/spoteelfy/rewindButton.tres" id="9_nd0gs"]
+[ext_resource type="PackedScene" uid="uid://b54n7r5xscobb" path="res://assets/scenes/minigames/spoteelfy/track.tscn" id="10_4tp8h"]
+[ext_resource type="Texture2D" uid="uid://tw5r8j2de2aj" path="res://assets/sprites/minigames/spoteelfy/skipButton.tres" id="10_a25da"]
+[ext_resource type="Script" path="res://assets/scripts/minigames/spoteelfy/StartStop.gd" id="13_l1pgi"]
+[ext_resource type="Texture2D" uid="uid://bam83q1bhsgqn" path="res://assets/sprites/minigames/spoteelfy/pauseButton.tres" id="14_2kk8h"]
+
+[node name="SpoteelfyWindow" type="Control" node_paths=PackedStringArray("audio", "albumCoverSprite", "albumNameLabel", "audioBar", "trackSection", "startStopButton", "rewindButton", "skipButton", "trackName", "trackComposer", "trackTime", "trackEnd", "overWindow", "bar")]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 176.0
+offset_bottom = 128.0
+script = ExtResource("2_l347n")
+albums = Array[Resource("res://assets/scripts/minigames/spoteelfy/AlbumTuple.gd")]([ExtResource("3_mllqr")])
+audio = NodePath("AudioStreamPlayer2D")
+albumCoverSprite = NodePath("OverWindow/Node2D/AlbumCover")
+albumNameLabel = NodePath("OverWindow/Node2D/Label")
+audioBar = NodePath("OverWindow/Node2D/Sprite2D/ColorRect")
+trackSection = NodePath("OverWindow/Node2D/TrackSection")
+trackPrefab = ExtResource("10_4tp8h")
+startStopButton = NodePath("OverWindow/Node2D/Sprite2D/StartStop")
+rewindButton = NodePath("OverWindow/Node2D/Sprite2D/Rewind")
+skipButton = NodePath("OverWindow/Node2D/Sprite2D/Skip")
+trackName = NodePath("OverWindow/Node2D/Sprite2D/TrackName")
+trackComposer = NodePath("OverWindow/Node2D/Sprite2D/TrackComposer")
+trackTime = NodePath("OverWindow/Node2D/Sprite2D/TrackTime")
+trackEnd = NodePath("OverWindow/Node2D/Sprite2D/TrackEnd")
+overWindow = NodePath("OverWindow")
+bar = NodePath("OverWindow/Node2D/SpoteelfyBar")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="OverWindow" type="TextureButton" parent="."]
+offset_right = 176.0
+offset_bottom = 128.0
+action_mode = 0
+
+[node name="Node2D" type="Node2D" parent="OverWindow"]
+
+[node name="Spoteelfy" type="Sprite2D" parent="OverWindow/Node2D"]
+position = Vector2(88, 68)
+texture = ExtResource("4_ehe8s")
+
+[node name="SpoteelfyBar" type="TextureButton" parent="OverWindow/Node2D"]
+offset_right = 176.0
+offset_bottom = 8.0
+mouse_filter = 1
+keep_pressed_outside = true
+texture_normal = ExtResource("5_1fhl1")
+texture_pressed = ExtResource("5_1fhl1")
+metadata/_edit_use_anchors_ = true
+
+[node name="SpoteelfyClose" type="TextureButton" parent="OverWindow/Node2D"]
+offset_left = 168.0
+offset_right = 176.0
+offset_bottom = 8.0
+mouse_filter = 1
+texture_normal = ExtResource("6_3etkt")
+texture_pressed = ExtResource("6_3etkt")
+metadata/_edit_use_anchors_ = true
+
+[node name="AlbumCover" type="Sprite2D" parent="OverWindow/Node2D"]
+position = Vector2(20, 28)
+texture = ExtResource("6_jxh2m")
+
+[node name="Label" type="Label" parent="OverWindow/Node2D"]
+offset_left = 38.0
+offset_top = 12.0
+offset_right = 176.0
+offset_bottom = 35.0
+theme = ExtResource("8_xdrg0")
+text = "Coffeye OST ~ CUDAS inspired lofi beats to draw to"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayAlbum" type="TextureButton" parent="OverWindow/Node2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = 50.0
+offset_right = 14.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture_normal = ExtResource("7_x68d2")
+texture_pressed = ExtResource("7_x68d2")
+metadata/_edit_use_anchors_ = true
+
+[node name="TrackSection" type="Node2D" parent="OverWindow/Node2D"]
+position = Vector2(2, 66)
+
+[node name="Sprite2D" type="Sprite2D" parent="OverWindow/Node2D"]
+position = Vector2(88, 120)
+texture = ExtResource("7_t44kc")
+
+[node name="StartStop" type="TextureButton" parent="OverWindow/Node2D/Sprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -15.0
+offset_right = -83.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture_normal = ExtResource("8_kg5xr")
+texture_pressed = ExtResource("8_kg5xr")
+script = ExtResource("13_l1pgi")
+playTexture = ExtResource("8_kg5xr")
+pauseTexture = ExtResource("14_2kk8h")
+metadata/_edit_use_anchors_ = true
+
+[node name="Rewind" type="TextureButton" parent="OverWindow/Node2D/Sprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -13.0
+offset_right = -95.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture_normal = ExtResource("9_nd0gs")
+texture_pressed = ExtResource("9_nd0gs")
+metadata/_edit_use_anchors_ = true
+
+[node name="Skip" type="TextureButton" parent="OverWindow/Node2D/Sprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -13.0
+offset_right = -77.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture_normal = ExtResource("10_a25da")
+texture_pressed = ExtResource("10_a25da")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="OverWindow/Node2D/Sprite2D"]
+offset_left = -44.0
+offset_top = 4.0
+offset_right = 44.0
+offset_bottom = 6.0
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TrackName" type="Label" parent="OverWindow/Node2D/Sprite2D"]
+offset_left = -87.0
+offset_top = -7.0
+offset_right = -12.0
+offset_bottom = -1.0
+mouse_filter = 1
+theme = ExtResource("8_xdrg0")
+theme_override_font_sizes/font_size = 4
+text = "Asian inspired lofi beats to study to"
+clip_text = true
+text_overrun_behavior = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TrackComposer" type="Label" parent="OverWindow/Node2D/Sprite2D"]
+modulate = Color(0.698039, 0.698039, 0.698039, 1)
+offset_left = -87.0
+offset_top = -1.0
+offset_right = -12.0
+offset_bottom = 3.0
+mouse_filter = 1
+theme = ExtResource("8_xdrg0")
+theme_override_font_sizes/font_size = 3
+text = "Pandaka"
+clip_text = true
+text_overrun_behavior = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TrackTime" type="Label" parent="OverWindow/Node2D/Sprite2D"]
+modulate = Color(0.698039, 0.698039, 0.698039, 1)
+offset_left = -87.0
+offset_top = 3.0
+offset_right = -45.0
+offset_bottom = 7.0
+mouse_filter = 1
+theme = ExtResource("8_xdrg0")
+theme_override_font_sizes/font_size = 3
+text = "0:00"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TrackEnd" type="Label" parent="OverWindow/Node2D/Sprite2D"]
+modulate = Color(0.698039, 0.698039, 0.698039, 1)
+offset_left = 45.0
+offset_top = 3.0
+offset_right = 87.0
+offset_bottom = 7.0
+theme = ExtResource("8_xdrg0")
+theme_override_font_sizes/font_size = 3
+text = "3:47
+"
+clip_text = true
+text_overrun_behavior = 3
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="OverWindow/Node2D/SpoteelfyClose" to="." method="_minimise"]
+[connection signal="pressed" from="OverWindow/Node2D/PlayAlbum" to="." method="_play_track" binds= [0]]

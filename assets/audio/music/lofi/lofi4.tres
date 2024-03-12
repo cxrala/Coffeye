@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TrackTuple" load_steps=3 format=3 uid="uid://ooad8b503lk6"]
+
+[ext_resource type="Script" path="res://assets/scripts/minigames/spoteelfy/TrackTuple.gd" id="1_n3f57"]
+[ext_resource type="AudioStream" uid="uid://kucjw78r18fp" path="res://assets/audio/music/lofi/lofi4.mp3" id="2_lg6rl"]
+
+[resource]
+script = ExtResource("1_n3f57")
+title = "Dungeon inspired lofi beats to dig up time capsules to"
+composer = "Kon-Kon"
+track = ExtResource("2_lg6rl")

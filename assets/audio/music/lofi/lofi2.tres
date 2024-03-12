@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TrackTuple" load_steps=3 format=3 uid="uid://cir0dul2yabxa"]
+
+[ext_resource type="Script" path="res://assets/scripts/minigames/spoteelfy/TrackTuple.gd" id="1_211e4"]
+[ext_resource type="AudioStream" uid="uid://yy8x5m8lfale" path="res://assets/audio/music/lofi/lofi2.mp3" id="2_n7k8p"]
+
+[resource]
+script = ExtResource("1_211e4")
+title = "Chiptune inspired lofi beats to pixel art to"
+composer = "the Woodchippers"
+track = ExtResource("2_n7k8p")

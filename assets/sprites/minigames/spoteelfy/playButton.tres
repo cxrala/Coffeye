@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dwfe1yaw8457i"]
+
+[ext_resource type="Texture2D" uid="uid://bcw8gtijehean" path="res://assets/sprites/minigames/spoteelfy/spoteelfyButtonSheet.png" id="1_cspd1"]
+
+[resource]
+atlas = ExtResource("1_cspd1")
+region = Rect2(12.001, 1, 10, 10)

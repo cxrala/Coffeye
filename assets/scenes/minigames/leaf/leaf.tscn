@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6uvffqjpq2wk"]
+
+[ext_resource type="Script" path="res://assets/scripts/windows/TaskTracker.gd" id="2_5xckw"]
+[ext_resource type="Texture2D" uid="uid://cmkk8huknqe7m" path="res://assets/sprites/minigames/leaf/leafBody.png" id="3_latjl"]
+[ext_resource type="Texture2D" uid="uid://ch8ulmjnsd31o" path="res://assets/sprites/minigames/leaf/leafBar.png" id="4_b17hd"]
+[ext_resource type="Texture2D" uid="uid://crmfrf0uxeasr" path="res://assets/sprites/minigames/leaf/leafClose.png" id="5_q7jgt"]
+[ext_resource type="PackedScene" uid="uid://bis1xxshss3gi" path="res://assets/scenes/minigames/leaf/task.tscn" id="6_6w3tc"]
+
+[node name="LeafWindow" type="Control" node_paths=PackedStringArray("taskSection", "overWindow", "bar")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 176.0
+offset_bottom = 128.0
+script = ExtResource("2_5xckw")
+taskPrefab = ExtResource("6_6w3tc")
+taskSection = NodePath("OverWindow/Node2D/TaskSection")
+overWindow = NodePath("OverWindow")
+bar = NodePath("OverWindow/Node2D/LeafBar")
+
+[node name="OverWindow" type="TextureButton" parent="."]
+offset_right = 176.0
+offset_bottom = 128.0
+
+[node name="Node2D" type="Node2D" parent="OverWindow"]
+
+[node name="Leaf" type="Sprite2D" parent="OverWindow/Node2D"]
+position = Vector2(88, 68)
+texture = ExtResource("3_latjl")
+
+[node name="LeafBar" type="TextureButton" parent="OverWindow/Node2D"]
+offset_right = 176.0
+offset_bottom = 8.0
+mouse_filter = 1
+keep_pressed_outside = true
+texture_normal = ExtResource("4_b17hd")
+texture_pressed = ExtResource("4_b17hd")
+metadata/_edit_use_anchors_ = true
+
+[node name="LeafClose" type="TextureButton" parent="OverWindow/Node2D"]
+offset_left = 168.0
+offset_right = 176.0
+offset_bottom = 8.0
+mouse_filter = 1
+texture_normal = ExtResource("5_q7jgt")
+texture_pressed = ExtResource("5_q7jgt")
+metadata/_edit_use_anchors_ = true
+
+[node name="TaskSection" type="Node2D" parent="OverWindow/Node2D"]
+position = Vector2(9, 10)
+
+[connection signal="pressed" from="OverWindow/Node2D/LeafClose" to="." method="_minimise"]

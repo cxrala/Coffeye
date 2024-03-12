@@ -22,8 +22,6 @@ extends MinigameController
 
 @export var pipeGap = Vector2(8, 16)
 
-@export var score = 0
-
 @export var upperY = 28
 @export var lowerY = 124
 
@@ -55,7 +53,7 @@ func start_game():
 	
 func start_play():
 	scoreRect.size.x = 0
-	score = 0
+	progress = 0
 	started = true
 	can_start = false
 	timeToSpawn = modulatedSpawnTime
@@ -120,8 +118,8 @@ func _process(delta):
 				pass
 		
 		if (started && !pipe.scored && pipe.virtual_position.x + pipeGap.x < mouse.get_centre().x - mouse.mouseRadius):
-			score += 1
-			scoreRect.size.x = (score * 84 / target)
+			progress += 1
+			scoreRect.size.x = (progress * 84 / target)
 			pipe.scored = true
 		if pipe.virtual_position.x < -100:
 			remove_child(pipe)
@@ -133,7 +131,7 @@ func _process(delta):
 			game_over()
 	else:
 		if (pipes.size() == 0 && mouse.position.y > autoJumpThresh - 16 && mouse.position.y < autoJumpThresh):
-			if (score >= target):
+			if (progress >= target):
 				finished_task_event.emit()
 			else:
 				can_start = true

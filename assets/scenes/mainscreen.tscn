@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bd0r1njn22wdj"]
+[gd_scene load_steps=58 format=3 uid="uid://bd0r1njn22wdj"]
 
 [ext_resource type="Script" path="res://assets/scripts/scenes/mainscreen.gd" id="1_vyssm"]
 [ext_resource type="Texture2D" uid="uid://82s2dkee6ujf" path="res://assets/sprites/backgrounds/DesktopBackground.png" id="2_xvgbq"]
@@ -11,21 +11,28 @@
 [ext_resource type="PackedScene" uid="uid://v2entjpjav83" path="res://assets/scenes/minigames/waterwolf/wolf_game.tscn" id="5_r6ewf"]
 [ext_resource type="Texture2D" uid="uid://cxrud0qus42rw" path="res://assets/sprites/indicators/eye1.tres" id="6_4mxcu"]
 [ext_resource type="Texture2D" uid="uid://bwqq8yv4wtfo6" path="res://assets/sprites/buttons/taskbar_icons/wolfup.tres" id="7_8yolj"]
+[ext_resource type="PackedScene" uid="uid://c6uvffqjpq2wk" path="res://assets/scenes/minigames/leaf/leaf.tscn" id="7_p4kmt"]
 [ext_resource type="Texture2D" uid="uid://bi1a3wqikmna2" path="res://assets/sprites/indicators/eye2.tres" id="7_q83rs"]
+[ext_resource type="Script" path="res://assets/scripts/minigames/leaf/TaskTuple.gd" id="8_3s1o6"]
 [ext_resource type="Texture2D" uid="uid://cgrjxsolld11y" path="res://assets/sprites/indicators/eye 3.tres" id="8_f350j"]
 [ext_resource type="Texture2D" uid="uid://dsqq6at63rne5" path="res://assets/sprites/indicators/eye4.tres" id="9_2qbwj"]
 [ext_resource type="Texture2D" uid="uid://cx537sbw7euh3" path="res://assets/sprites/buttons/taskbar_icons/wolfdown.tres" id="9_is2xg"]
 [ext_resource type="Texture2D" uid="uid://cn6ny150pjien" path="res://assets/sprites/indicators/eye5.tres" id="10_n7krk"]
+[ext_resource type="PackedScene" uid="uid://bd6mf0thryadu" path="res://assets/scenes/minigames/spoteelfy/spoteelfy.tscn" id="11_tq0cq"]
 [ext_resource type="Texture2D" uid="uid://bkc7hly5t26vn" path="res://assets/sprites/backgrounds/Taskbar.png" id="12_di4jq"]
+[ext_resource type="Texture2D" uid="uid://b27r7gwv5rvq4" path="res://assets/sprites/buttons/taskbar_icons/leafup.tres" id="14_n5dij"]
 [ext_resource type="Theme" uid="uid://css40iplnp7ux" path="res://assets/themes/defaultTheme.tres" id="14_uyjmr"]
+[ext_resource type="Texture2D" uid="uid://bprdpk1wb71d3" path="res://assets/sprites/buttons/taskbar_icons/leafdown.tres" id="15_kgq7j"]
 [ext_resource type="Script" path="res://Timer.gd" id="16_y3vcr"]
+[ext_resource type="Texture2D" uid="uid://dy2pkw4kelchu" path="res://assets/sprites/buttons/taskbar_icons/spoteelfyup.tres" id="18_c2hpj"]
+[ext_resource type="Texture2D" uid="uid://w6x1kpiv3ya4" path="res://assets/sprites/buttons/taskbar_icons/spoteelfydown.tres" id="19_s7ejr"]
 [ext_resource type="Texture2D" uid="uid://q3at084pson6" path="res://assets/sprites/buttons/taskbar_icons/coneup.tres" id="26_t8lr2"]
 [ext_resource type="Texture2D" uid="uid://d3fi3lbrrwvp3" path="res://assets/sprites/buttons/taskbar_icons/conedown.tres" id="28_r3pwj"]
-[ext_resource type="AudioStream" uid="uid://de3ecj3mtxhdm" path="res://assets/audio/music/lofi3.mp3" id="29_fsasq"]
-[ext_resource type="AudioStream" uid="uid://kucjw78r18fp" path="res://assets/audio/music/lofi4.mp3" id="31_nn7ne"]
-[ext_resource type="AudioStream" uid="uid://brlgcyq0015d8" path="res://assets/audio/music/lofi5.mp3" id="32_6r3pk"]
-[ext_resource type="AudioStream" uid="uid://de7n4cmeeqvt1" path="res://assets/audio/music/lofi7.mp3" id="33_sg8bv"]
-[ext_resource type="AudioStream" uid="uid://4s5if03loyds" path="res://assets/audio/music/lofi8.mp3" id="34_yegks"]
+[ext_resource type="AudioStream" uid="uid://de3ecj3mtxhdm" path="res://assets/audio/music/lofi/lofi3.mp3" id="29_fsasq"]
+[ext_resource type="AudioStream" uid="uid://kucjw78r18fp" path="res://assets/audio/music/lofi/lofi4.mp3" id="31_nn7ne"]
+[ext_resource type="AudioStream" uid="uid://brlgcyq0015d8" path="res://assets/audio/music/lofi/lofi5.mp3" id="32_6r3pk"]
+[ext_resource type="AudioStream" uid="uid://de7n4cmeeqvt1" path="res://assets/audio/music/lofi/lofi7.mp3" id="33_sg8bv"]
+[ext_resource type="AudioStream" uid="uid://4s5if03loyds" path="res://assets/audio/music/lofi/lofi8.mp3" id="34_yegks"]
 [ext_resource type="Script" path="res://assets/scripts/scenes/Node2D.gd" id="36_v54uy"]
 [ext_resource type="Texture2D" uid="uid://cmsb6l5if3dny" path="res://assets/sprites/indicators/eye/eye7.tres" id="37_3scmm"]
 [ext_resource type="Texture2D" uid="uid://cx7nrvbs22uyy" path="res://assets/sprites/backgrounds/MonitorBorder.png" id="38_idg1o"]
@@ -39,6 +46,30 @@
 [ext_resource type="Texture2D" uid="uid://0xfe7vv42mvc" path="res://assets/sprites/indicators/eye/eye6.tres" id="49_ynso2"]
 [ext_resource type="Texture2D" uid="uid://b37ibr41sbdhr" path="res://assets/sprites/indicators/eye/eye8.tres" id="50_pf52i"]
 [ext_resource type="Texture2D" uid="uid://0ppis28ur7i7" path="res://assets/sprites/indicators/eye/eye9.tres" id="51_pqxfo"]
+
+[sub_resource type="Resource" id="Resource_nn36k"]
+script = ExtResource("8_3s1o6")
+name = "debug code"
+game = 0
+targets = Array[int]([2, 3])
+progress = 0
+complete = false
+
+[sub_resource type="Resource" id="Resource_iiqxo"]
+script = ExtResource("8_3s1o6")
+name = "research diss"
+game = 1
+targets = Array[int]([2, 3, 4])
+progress = 0
+complete = false
+
+[sub_resource type="Resource" id="Resource_d4cbp"]
+script = ExtResource("8_3s1o6")
+name = "pass tests"
+game = 0
+targets = Array[int]([5])
+progress = 0
+complete = false
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehnir"]
 animations = [{
@@ -190,28 +221,41 @@ anchors_preset = 0
 offset_right = 384.0
 offset_bottom = 216.0
 script = ExtResource("3_yrjf4")
-windows = [NodePath("ConeGame"), NodePath("BirdGame"), NodePath("WolfGame")]
+windows = [NodePath("ConeGame"), NodePath("BirdGame"), NodePath("WolfGame"), NodePath("LeafWindow"), NodePath("SpoteelfyWindow")]
 
 [node name="ConeGame" parent="WindowController" instance=ExtResource("5_3tppj")]
 layout_mode = 0
-offset_left = -17.6
-offset_top = 21.0
-offset_right = 158.4
-offset_bottom = 149.0
+offset_left = 398.0
+offset_top = 158.6
+offset_right = 574.0
+offset_bottom = 286.6
 
 [node name="BirdGame" parent="WindowController" instance=ExtResource("4_tpgt0")]
 layout_mode = 0
-offset_left = 174.2
-offset_top = -77.6
-offset_right = 174.2
-offset_bottom = -77.6
+offset_left = 208.6
+offset_top = 239.8
+offset_right = 384.6
+offset_bottom = 367.8
 
 [node name="WolfGame" parent="WindowController" instance=ExtResource("5_r6ewf")]
 layout_mode = 0
-offset_left = 182.0
-offset_top = 26.8
-offset_right = 358.0
-offset_bottom = 154.8
+offset_left = 390.8
+offset_top = 10.4
+offset_right = 566.8
+offset_bottom = 138.4
+
+[node name="LeafWindow" parent="WindowController" node_paths=PackedStringArray("minigames") instance=ExtResource("7_p4kmt")]
+layout_mode = 0
+offset_left = 3.6
+offset_top = 216.0
+offset_right = 179.6
+offset_bottom = 344.0
+minigames = [NodePath("../ConeGame"), NodePath("../WolfGame")]
+tasks = Array[ExtResource("8_3s1o6")]([SubResource("Resource_nn36k"), SubResource("Resource_iiqxo"), SubResource("Resource_d4cbp")])
+minigameIcons = Array[Texture2D]([ExtResource("26_t8lr2"), ExtResource("7_8yolj")])
+
+[node name="SpoteelfyWindow" parent="WindowController" instance=ExtResource("11_tq0cq")]
+layout_mode = 0
 
 [node name="Taskbar" type="Control" parent="."]
 z_index = 4
@@ -227,31 +271,54 @@ position = Vector2(192, 12)
 texture = ExtResource("12_di4jq")
 
 [node name="ConeButton" type="TextureButton" parent="Taskbar/TaskbarSprite"]
-offset_left = -26.0
+offset_left = -44.0
 offset_top = -9.0
-offset_right = -10.0
+offset_right = -28.0
 offset_bottom = 10.0
 texture_normal = ExtResource("26_t8lr2")
 texture_pressed = ExtResource("28_r3pwj")
 stretch_mode = 5
 
 [node name="BirdButton" type="TextureButton" parent="Taskbar/TaskbarSprite"]
-offset_left = -8.0
+offset_left = -26.0
 offset_top = -9.0
-offset_right = 8.0
+offset_right = -10.0
 offset_bottom = 10.0
 texture_normal = ExtResource("5_fnhsn")
 texture_pressed = ExtResource("3_cog37")
 stretch_mode = 5
 
 [node name="WolfButton" type="TextureButton" parent="Taskbar/TaskbarSprite"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -21.0
+offset_right = -184.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_8yolj")
+texture_pressed = ExtResource("9_is2xg")
+stretch_mode = 5
+
+[node name="LeafButton" type="TextureButton" parent="Taskbar/TaskbarSprite"]
 offset_left = 10.0
 offset_top = -9.0
 offset_right = 26.0
 offset_bottom = 10.0
-texture_normal = ExtResource("7_8yolj")
-texture_pressed = ExtResource("9_is2xg")
-stretch_mode = 5
+texture_normal = ExtResource("14_n5dij")
+texture_pressed = ExtResource("15_kgq7j")
+
+[node name="SpoteelfyButton" type="TextureButton" parent="Taskbar/TaskbarSprite"]
+offset_left = 28.0
+offset_top = -9.0
+offset_right = 44.0
+offset_bottom = 10.0
+texture_normal = ExtResource("18_c2hpj")
+texture_pressed = ExtResource("19_s7ejr")
 
 [node name="Button4" type="Button" parent="."]
 offset_left = 286.4
@@ -322,5 +389,7 @@ texture_pressed = ExtResource("39_nsbsd")
 [connection signal="pressed" from="Taskbar/TaskbarSprite/ConeButton" to="WindowController/ConeGame" method="_on_taskbar_button_pressed"]
 [connection signal="pressed" from="Taskbar/TaskbarSprite/BirdButton" to="WindowController/BirdGame" method="_on_taskbar_button_pressed"]
 [connection signal="pressed" from="Taskbar/TaskbarSprite/WolfButton" to="WindowController/WolfGame" method="_on_taskbar_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/LeafButton" to="WindowController/LeafWindow" method="_on_taskbar_button_pressed"]
+[connection signal="pressed" from="Taskbar/TaskbarSprite/SpoteelfyButton" to="WindowController/SpoteelfyWindow" method="_on_taskbar_button_pressed"]
 [connection signal="timeout" from="Timer" to="EyeNode" method="_on_timer_timeout"]
 [connection signal="button_down" from="MonitorBorder/CoffeeButton" to="EyeNode" method="_on_coffee_button_pressed"]

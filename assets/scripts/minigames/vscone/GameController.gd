@@ -2,7 +2,6 @@ extends MinigameController
 
 var numbers = [0,1,2,3]
 var state = 0
-var level = 1 
 var input = false
 var array = []
 var response : Array[Callable]
@@ -25,7 +24,7 @@ func _ready():
 	#super()._ready()
 	scoreRect1.size.y = 0
 	scoreRect2.size.y = 0
-	level = 0
+	progress = 0
 	sequencetimer.timeout.connect(makeglow)
 	disable_all()
 	response = []
@@ -35,7 +34,7 @@ func _ready():
 func reset():
 	scoreRect1.size.y = 0
 	scoreRect2.size.y = 0
-	level = 0
+	progress = 0
 	sequencetimer.timeout.connect(makeglow)
 	disable_all()
 
@@ -46,7 +45,7 @@ func start_play():
 	state = 1
 	emit_signal("on")
 	array = []
-	level = 1
+	progress = 1
 	rungame()
 		
 func checkinput(a:int):
@@ -55,11 +54,11 @@ func checkinput(a:int):
 			scoreRect2.size.y = 119 * (inputpointer + 1) / target
 			inputpointer = 0
 			noinput()
-			if (level >= target):
+			if (progress >= target):
 				finished_task_event.emit()
 				reset()
 			else:
-				level = array.size() + 1
+				progress = array.size() + 1
 				rungame()
 		elif inputpointer < array.size() :
 			scoreRect2.size.y = 119 * (inputpointer + 1) / target
@@ -87,7 +86,7 @@ func get_number():
 	return random_number
 	
 func rungame():
-	appendtoarray(level - array.size(), array)
+	appendtoarray(progress - array.size(), array)
 	startsequence()
 	
 func disable_all():
@@ -107,7 +106,7 @@ func makeglow() :
 	sequencetimer.stop()
 	if flashpointer == array.size() :
 		inputpointer = 0
-		scoreRect1.size.y = 119 * level / target
+		scoreRect1.size.y = 119 * progress / target
 		scoreRect2.size.y = 119 * inputpointer / target
 		noinput()
 		enable_all()

@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bis1xxshss3gi"]
+
+[ext_resource type="Script" path="res://assets/scripts/minigames/leaf/Task.gd" id="1_2galw"]
+[ext_resource type="Texture2D" uid="uid://q3at084pson6" path="res://assets/sprites/buttons/taskbar_icons/coneup.tres" id="1_vro2c"]
+[ext_resource type="Theme" uid="uid://css40iplnp7ux" path="res://assets/themes/defaultTheme.tres" id="2_p7gom"]
+
+[node name="Task" type="Node2D" node_paths=PackedStringArray("iconSprite", "base", "completionBar", "label")]
+script = ExtResource("1_2galw")
+iconSprite = NodePath("TaskbarIcon")
+base = NodePath("ColorRect")
+completionBar = NodePath("ColorRect2")
+label = NodePath("RichTextLabel")
+
+[node name="TaskbarIcon" type="Sprite2D" parent="."]
+position = Vector2(0, 8.5)
+texture = ExtResource("1_vro2c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 10.0
+offset_right = 165.0
+offset_bottom = 7.0
+color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 10.0
+offset_right = 165.0
+offset_bottom = 7.0
+color = Color(0.129412, 0.556863, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0.129412, 0.556863, 0, 1)
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 165.0
+offset_bottom = 20.0
+theme = ExtResource("2_p7gom")
+bbcode_enabled = true
+text = "[s]Task to do: 2/3[/s]"
+fit_content = true

@@ -1,14 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvnttryrxl3e3"]
+[gd_scene load_steps=5 format=3 uid="uid://dvnttryrxl3e3"]
 
 [ext_resource type="Script" path="res://assets/scripts/windows/Window.gd" id="2_lafnj"]
+[ext_resource type="Texture2D" uid="uid://bipyymq4hcrex" path="res://assets/sprites/minigames/bird/window/birdyBody.png" id="2_nhtb2"]
+[ext_resource type="Texture2D" uid="uid://c7l0db37fap14" path="res://assets/sprites/minigames/bird/window/birdBar.png" id="3_3o4ep"]
+[ext_resource type="Texture2D" uid="uid://omjyvih7mk3p" path="res://assets/sprites/minigames/bird/window/birdClose.png" id="4_wm6rk"]
 
-[node name="BirdGame" type="TextureButton"]
+[node name="BirdGame" type="TextureButton" node_paths=PackedStringArray("bar")]
 clip_contents = true
-offset_left = 384.0
-offset_top = -98.0
-offset_right = 384.0
-offset_bottom = -98.0
-scale = Vector2(1, 0.55)
+offset_right = 176.0
+offset_bottom = 128.0
 script = ExtResource("2_lafnj")
+bar = NodePath("Node2D/BirdGameBar")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="BirdGame" type="Sprite2D" parent="Node2D"]
+position = Vector2(88, 68)
+texture = ExtResource("2_nhtb2")
+
+[node name="BirdGameBar" type="TextureButton" parent="Node2D"]
+offset_right = 176.0
+offset_bottom = 8.0
+mouse_filter = 1
+keep_pressed_outside = true
+texture_normal = ExtResource("3_3o4ep")
+texture_pressed = ExtResource("3_3o4ep")
+
+[node name="BirdGameClose" type="TextureButton" parent="Node2D"]
+offset_left = 168.0
+offset_right = 176.0
+offset_bottom = 8.0
+mouse_filter = 1
+action_mode = 0
+texture_normal = ExtResource("4_wm6rk")
+texture_pressed = ExtResource("4_wm6rk")
 
 [node name="Game Controller" type="Node2D" parent="."]
+
+[connection signal="pressed" from="Node2D/BirdGameClose" to="." method="_minimise"]
